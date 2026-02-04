@@ -38,6 +38,7 @@
     <Grid Margin="20" RowDefinitions="Auto,Auto,*">
 		<Grid.Styles>
 			<Style Selector="TextBox">
+				<Setter Property="Foreground" Value="{Binding FontColor, Source={x:Static global:Global.Settings}, Mode=OneWay}"/>
 				<Setter Property="FontFamily" Value="{Binding FontFamily, Source={x:Static global:Global.Settings}, Converter={StaticResource StringToFontFamilyConverter}, Mode=OneWay}"/>
 			</Style>
 		</Grid.Styles>
