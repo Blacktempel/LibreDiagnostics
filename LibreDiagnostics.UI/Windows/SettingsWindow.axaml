@@ -180,9 +180,9 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition SharedSizeGroup="SetAdvFFCbFontFamily"/>
                                         </Grid.ColumnDefinitions>
-									    <TextBlock Grid.Column="0" Text="{Binding}"/>
-									    <TextBlock Grid.Column="1" Text=" - "/>
-									    <TextBlock Grid.Column="2" Text="{Binding}" FontFamily="{Binding, Converter={StaticResource StringToFontFamilyConverter}}"/>
+								    <TextBlock Grid.Column="0" Text="{Binding}"/>
+								    <TextBlock Grid.Column="1" Text=" - "/>
+								    <TextBlock Grid.Column="2" Text="{Binding}" FontFamily="{Binding, Converter={StaticResource StringToFontFamilyConverter}}"/>
                                     </ctrl:GridEx>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -191,10 +191,10 @@
 						<TextBlock Grid.Column="0" Grid.Row="3" Text="{x:Static lang:Resources.SettingsHorizontalOffset}"/>
                         <DockPanel Grid.Column="1" Grid.Row="3">
                             <ctrl:TextBoxNumber NumberType="Int"
-                                                Text="{Binding ElementName=HorizontalOffsetSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                                Text="{Binding ElementName=HorizontalOffsetSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource HorizontalOffsetFallback}}"
                                                 ToolTip.Tip="{x:Static lang:Resources.SettingsHorizontalOffsetTooltip}"/>
 							<Slider x:Name="HorizontalOffsetSlider" TickPlacement="BottomRight"
-                                    Value="{Binding Settings.HorizontalOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource HorizontalOffsetFallback}}"
+                                    Value="{Binding Settings.HorizontalOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Minimum="-2000" Maximum="2000" TickFrequency="1" LargeChange="200" IsSnapToTickEnabled="True"
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsHorizontalOffsetTooltip}"/>
                         </DockPanel>
@@ -202,10 +202,10 @@
 						<TextBlock Grid.Column="0" Grid.Row="4" Text="{x:Static lang:Resources.SettingsVerticalOffset}"/>
                         <DockPanel Grid.Column="1" Grid.Row="4">
                             <ctrl:TextBoxNumber NumberType="Int"
-                                                Text="{Binding ElementName=VerticalOffsetSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                                Text="{Binding ElementName=VerticalOffsetSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource VerticalOffsetFallback}}"
                                                 ToolTip.Tip="{x:Static lang:Resources.SettingsVerticalOffsetTooltip}"/>
 							<Slider x:Name="VerticalOffsetSlider" TickPlacement="BottomRight"
-                                    Value="{Binding Settings.VerticalOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource VerticalOffsetFallback}}"
+                                    Value="{Binding Settings.VerticalOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Minimum="-2000" Maximum="2000" TickFrequency="1" LargeChange="200" IsSnapToTickEnabled="True"
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsVerticalOffsetTooltip}"/>
                         </DockPanel>
@@ -213,10 +213,10 @@
 						<TextBlock Grid.Column="0" Grid.Row="5" Text="{x:Static lang:Resources.SettingsUpdateInterval}"/>
                         <DockPanel Grid.Column="1" Grid.Row="5">
                             <ctrl:TextBoxNumber NumberType="Int" AllowNegative="False"
-                                                Text="{Binding ElementName=UpdateIntervalSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                                Text="{Binding ElementName=UpdateIntervalSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource UpdateIntervalFallback}}"
                                                 ToolTip.Tip="{x:Static lang:Resources.SettingsUpdateIntervalTooltip}"/>
 							<Slider x:Name="UpdateIntervalSlider" TickPlacement="BottomRight"
-                                    Value="{Binding Settings.UpdateInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource UpdateIntervalFallback}}"
+                                    Value="{Binding Settings.UpdateInterval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Minimum="100" Maximum="30000" TickFrequency="100" LargeChange="1000" IsSnapToTickEnabled="True"
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsUpdateIntervalTooltip}"/>
                         </DockPanel>
@@ -264,10 +264,10 @@
 						<TextBlock Grid.Column="0" Grid.Row="2" Text="{x:Static lang:Resources.SettingsBackgroundOpacity}"/>
                         <DockPanel Grid.Column="1" Grid.Row="2">
                             <ctrl:TextBoxNumber NumberType="Double" AllowNegative="False"
-                                                Text="{Binding ElementName=BackgroundOpacitySlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                                Text="{Binding ElementName=BackgroundOpacitySlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BackgroundOpacityFallback}}"
                                                 ToolTip.Tip="{x:Static lang:Resources.SettingsBackgroundOpacityTooltip}"/>
 							<Slider x:Name="BackgroundOpacitySlider" TickPlacement="BottomRight"
-                                    Value="{Binding Settings.BackgroundOpacity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BackgroundOpacityFallback}}"
+                                    Value="{Binding Settings.BackgroundOpacity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Minimum="0.01" Maximum="1.0" TickFrequency="0.01" LargeChange="0.1" IsSnapToTickEnabled="True"
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsBackgroundOpacityTooltip}"/>
                         </DockPanel>
