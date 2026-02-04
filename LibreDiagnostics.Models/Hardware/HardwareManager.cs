@@ -247,7 +247,14 @@ namespace LibreDiagnostics.Models.Hardware
                         case HardwareMonitorType.Storage:
                             if (_Computer.IsStorageEnabled != cfg.Enabled)
                             {
+                                _Computer.HardwareAdded   -= OnStorageAdded;
+                                _Computer.HardwareRemoved -= OnStorageRemoved;
+
                                 _Computer.IsStorageEnabled = cfg.Enabled;
+
+                                _Computer.HardwareAdded   += OnStorageAdded;
+                                _Computer.HardwareRemoved += OnStorageRemoved;
+
                                 addOrRemoveConfig(cfg);
                             }
                             break;
@@ -295,8 +302,8 @@ namespace LibreDiagnostics.Models.Hardware
 
                 _Computer.Open();
 
-                _Computer.HardwareAdded   += OnHardwareAdded;
-                _Computer.HardwareRemoved += OnHardwareRemoved;
+                _Computer.HardwareAdded   += OnStorageAdded;
+                _Computer.HardwareRemoved += OnStorageRemoved;
 
                 _Board = GetHardware(HardwareType.Motherboard).FirstOrDefault();
 
@@ -376,32 +383,28 @@ namespace LibreDiagnostics.Models.Hardware
             }
         }
 
-        void OnHardwareAdded(IHardware hardware)
+        void OnStorageAdded(IHardware hardware)
         {
-            if (hardware.HardwareType == HardwareType.Storage)
+            if (hardware.HardwareType != HardwareType.Storage)
             {
-                Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnHardwareAdded)}: '{hardware.Name}'", DateTime.Now);
+                return;
+            }
 
-                OnStoragesChanged();
-            }
-            else
-            {
-                Logger.Instance.Add(LogLevel.Warn, $"{nameof(OnHardwareAdded)}: unhandled {nameof(HardwareType)} '{hardware.HardwareType}'.", DateTime.Now);
-            }
+            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageAdded)}: '{hardware.Name}'", DateTime.Now);
+
+            OnStoragesChanged();
         }
 
-        void OnHardwareRemoved(IHardware hardware)
+        void OnStorageRemoved(IHardware hardware)
         {
-            if (hardware.HardwareType == HardwareType.Storage)
+            if (hardware.HardwareType != HardwareType.Storage)
             {
-                Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnHardwareRemoved)}: '{hardware.Name}'", DateTime.Now);
+                return;
+            }
 
-                OnStoragesChanged();
-            }
-            else
-            {
-                Logger.Instance.Add(LogLevel.Warn, $"{nameof(OnHardwareRemoved)}: unhandled {nameof(HardwareType)} '{hardware.HardwareType}'.", DateTime.Now);
-            }
+            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageRemoved)}: '{hardware.Name}'", DateTime.Now);
+
+            OnStoragesChanged();
         }
 
         void OnStoragesChanged()
