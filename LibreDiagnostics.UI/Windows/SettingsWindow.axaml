@@ -180,9 +180,9 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition SharedSizeGroup="SetAdvFFCbFontFamily"/>
                                         </Grid.ColumnDefinitions>
-								    <TextBlock Grid.Column="0" Text="{Binding}"/>
-								    <TextBlock Grid.Column="1" Text=" - "/>
-								    <TextBlock Grid.Column="2" Text="{Binding}" FontFamily="{Binding, Converter={StaticResource StringToFontFamilyConverter}}"/>
+								        <TextBlock Grid.Column="0" Text="{Binding}"/>
+								        <TextBlock Grid.Column="1" Text=" - "/>
+								        <TextBlock Grid.Column="2" Text="{Binding}" FontFamily="{Binding, Converter={StaticResource StringToFontFamilyConverter}}"/>
                                     </ctrl:GridEx>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
