@@ -340,10 +340,10 @@
     <value>Versteckt das Programm in Alt + Tab.</value>
   </data>
   <data name="SettingsAlwaysOnTop" xml:space="preserve">
-    <value>Anzeige als oberstes Fenster</value>
+    <value>Immer im Vordergrund</value>
   </data>
   <data name="SettingsAlwaysOnTopTooltip" xml:space="preserve">
-    <value>Zeigt das Fenster immer über allen anderen.</value>
+    <value>Das Fenster bleibt immer im Vordergrund - über allen anderen Fenstern.</value>
   </data>
   <data name="SettingsAutoBackground" xml:space="preserve">
     <value>Automatische Hintergrundfarbe</value>
@@ -403,7 +403,7 @@
     <value>Personalisieren</value>
   </data>
   <data name="SettingsDock" xml:space="preserve">
-    <value>Dock</value>
+    <value>Andocken</value>
   </data>
   <data name="SettingsDockLeft" xml:space="preserve">
     <value>Links</value>
@@ -772,7 +772,7 @@
     <value>CPU Stromverbrauch</value>
   </data>
   <data name="CPUPowerLabel" xml:space="preserve">
-    <value>Stromverbrauch</value>
+    <value>Strom</value>
   </data>
   <data name="GPUPower" xml:space="preserve">
     <value>GPU Stromverbrauch</value>
@@ -784,7 +784,7 @@
     <value>Einstellungen öffnen</value>
   </data>
   <data name="SettingsHotKeyOpenSettingsTooltip" xml:space="preserve">
-    <value>Öffnet das Einstellungsfenster</value>
+    <value>Öffnet das Einstellungsfenster.</value>
   </data>
   <data name="ButtonUpdateAvailable" xml:space="preserve">
     <value>Update verfügbar</value>
