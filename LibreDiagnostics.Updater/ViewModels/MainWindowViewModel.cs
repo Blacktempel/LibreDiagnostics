@@ -75,6 +75,8 @@ namespace LibreDiagnostics.Updater.ViewModels
 
         static readonly DateTime FileNameDateTime = DateTime.Now;
 
+        static Thread _LogThread;
+
         #endregion
 
         #region Properties
@@ -102,8 +104,13 @@ namespace LibreDiagnostics.Updater.ViewModels
             if (Logger.Instance.IsEnabled)
             {
                 Logger.Instance.Add(LogLevel.Trace, message, DateTime.Now);
-                Logger.Instance.SaveToFile(@$"C:\LDT\UpdaterLog_{FileNameDateTime:yyyyMMdd_HHmmss}.txt", false);
+                SaveLogFile();
             }
+        }
+
+        static void SaveLogFile()
+        {
+            Logger.Instance.SaveToFile(@$"C:\LDT\UpdaterLog_{FileNameDateTime:yyyyMMdd_HHmmss}.txt", false);
         }
 
         async Task DoUpdate()
@@ -113,6 +120,20 @@ namespace LibreDiagnostics.Updater.ViewModels
             //Enable this for logging output (and verify directory of log file exists)
             //Logger.Instance.LogLevel = LogLevel.Trace;
             //Logger.Instance.IsEnabled = true;
+
+            if (Logger.Instance.IsEnabled)
+            {
+                _LogThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(5000);
+                        SaveLogFile();
+                    }
+                });
+                _LogThread.IsBackground = true;
+                _LogThread.Start();
+            }
 
             LogTrace("Arguments:");
             foreach (var arg in args)
@@ -301,6 +322,8 @@ namespace LibreDiagnostics.Updater.ViewModels
                         UseShellExecute = false
                     });
                 }
+
+                Environment.Exit(0);
             }
         }
 

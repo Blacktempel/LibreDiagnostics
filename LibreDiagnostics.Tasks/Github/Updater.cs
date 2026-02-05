@@ -188,8 +188,21 @@ namespace LibreDiagnostics.Tasks.Github
                     using var stream = SharpCompressStream.Create(zipFile);
                     using var archive = ArchiveFactory.Open(stream);
 
+                    //WriteToDirectoryAsync requires to create the directory before extracting to it
+                    if (!Directory.Exists(appPath))
+                    {
+                        Directory.CreateDirectory(appPath);
+                    }
+
+                    var options = new ExtractionOptions()
+                    {
+                        ExtractFullPath = true,
+                        PreserveFileTime = true,
+                        PreserveAttributes = true,
+                    };
+
                     var prog = new Progress<ProgressReport>(pr => progress?.Report(pr.PercentComplete.GetValueOrDefault()));
-                    await archive.WriteToDirectoryAsync(appPath, progress: prog);
+                    await archive.WriteToDirectoryAsync(appPath, options, prog);
 
                     //Check if extraction path contains only one folder (the main folder of the archive)
                     //If yes, move all files from that folder to the extraction path and delete the folder
@@ -206,7 +219,16 @@ namespace LibreDiagnostics.Tasks.Github
                         foreach (var file in extractedData)
                         {
                             var destFile = Path.Combine(appPath, Path.GetFileName(file));
-                            File.Move(file, destFile);
+                            Logger.Instance.Add(LogLevel.Trace, $"Moving '{file}' -> '{destFile}'.", DateTime.Now);
+
+                            if (Directory.Exists(file))
+                            {
+                                Directory.Move(file, destFile);
+                            }
+                            else
+                            {
+                                File.Move(file, destFile);
+                            }
                         }
 
                         //Delete the now empty directory
