@@ -2131,6 +2131,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are already on the latest version..
+        /// </summary>
+        public static string UpdateAlreadyUpToDateMessage {
+            get {
+                return ResourceManager.GetString("UpdateAlreadyUpToDateMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already up to date.
+        /// </summary>
+        public static string UpdateAlreadyUpToDateTitle {
+            get {
+                return ResourceManager.GetString("UpdateAlreadyUpToDateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A new version is available for download.\nWould you like to proceed with the update ?\n\nRelease notes:\n{0}.
         /// </summary>
         public static string UpdateAvailableMessage {

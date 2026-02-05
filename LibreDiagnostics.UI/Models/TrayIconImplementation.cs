@@ -111,6 +111,11 @@ namespace LibreDiagnostics.UI.Models
         const string DefaultTrayIconIcon         = @"avares://LibreDiagnostics.UI/Assets/Icon.ico";
         const string UpdateAvailableTrayIconIcon = @"avares://LibreDiagnostics.UI/Assets/Icon_Update.ico";
 
+        /// <summary>
+        /// Time in seconds.
+        /// </summary>
+        const int UpdateAlreadyUpToDateTimeout = 5;
+
         NativeMenuItem _UpdateMenu = null;
 
         DateTime? _LastClickTime;
@@ -276,6 +281,17 @@ namespace LibreDiagnostics.UI.Models
 
                     //Require confirmation
                     await Client.TryUpdate(updateCheckResult, true);
+
+                    //Already up to date
+                    if (updateCheckResult != null && !updateCheckResult.IsUpdateAvailable)
+                    {
+                        MessageBro.DoShowMessageTimeout(
+                            Resources.UpdateAlreadyUpToDateTitle,
+                            Resources.UpdateAlreadyUpToDateMessage,
+                            DialogButtons.OK,
+                            TimeSpan.FromSeconds(UpdateAlreadyUpToDateTimeout),
+                            out _);
+                    }
                 }
                 catch (Exception e)
                 {

@@ -209,7 +209,7 @@ namespace LibreDiagnostics.UI
             }
 
             //Check if an update is available
-            if (updateCheckResult?.IsUpdateAvailable == false)
+            if (updateCheckResult?.IsUpdateAvailable != true)
             {
                 return;
             }

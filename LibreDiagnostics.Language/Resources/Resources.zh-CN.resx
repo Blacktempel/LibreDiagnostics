@@ -819,4 +819,10 @@
   <data name="RAMCriticalLimitTooltip" xml:space="preserve">
     <value>该内存模块的临界温度极限。</value>
   </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>已是最新版本</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>你已经在使用最新版本。</value>
+  </data>
 </root>

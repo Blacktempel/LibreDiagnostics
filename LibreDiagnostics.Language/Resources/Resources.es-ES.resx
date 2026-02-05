@@ -819,4 +819,10 @@
   <data name="RAMCriticalLimitTooltip" xml:space="preserve">
     <value>Límite crítico de temperatura de este módulo de RAM.</value>
   </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>Ya está actualizado</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>Ya estás usando la versión más reciente.</value>
+  </data>
 </root>

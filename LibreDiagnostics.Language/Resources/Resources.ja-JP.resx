@@ -819,4 +819,10 @@
   <data name="RAMCriticalLimitTooltip" xml:space="preserve">
     <value>このメモリ モジュールの重要な温度制限。</value>
   </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>すでに最新の状態です</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>すでに最新バージョンを使用しています。</value>
+  </data>
 </root>
