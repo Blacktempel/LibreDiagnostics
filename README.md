@@ -86,6 +86,7 @@ Not all settings and features may be available on other operating systems.
 - English
 - German / Deutsch
 - Japanese
+- Spanish
 - Simplified Chinese (China)
 - Traditional Chinese (Taiwan)
 

@@ -355,7 +355,7 @@
     <value>Actualización automática</value>
   </data>
   <data name="SettingsAutoUpdateTooltip" xml:space="preserve">
-    <value>Verifica si hay actualizaciones disponibles al iniciar la aplicación de manera automática</value>
+    <value>Verifica si hay actualizaciones disponibles al iniciar la aplicación de manera automática.</value>
   </data>
   <data name="SettingsBackgroundColor" xml:space="preserve">
     <value>Color de fondo</value>
