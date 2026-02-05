@@ -113,7 +113,7 @@ namespace LibreDiagnostics.UI
                     {
                         updateCheckResult = await CheckUpdateAvailable();
 
-                        if (updateCheckResult?.IsUpdateAvailable == false)
+                        if (updateCheckResult?.IsUpdateAvailable != true)
                         {
                             return;
                         }
