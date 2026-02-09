@@ -64,7 +64,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                     Hardware.Sensors.Where(s => s.SensorType == SensorType.Load && s.Index == 0).FirstOrDefault();
 
                 //Slightly different sensor for Intel GPUs
-                if (_coreLoad == null && Hardware.HardwareType == HardwareType.GpuIntel)
+                if (Hardware.HardwareType == HardwareType.GpuIntel)
                 {
                     _coreLoad = Hardware.Sensors.Where(s => s.SensorType == SensorType.Load && s.Name.Contains("D3D 3D")).FirstOrDefault();
                 }
