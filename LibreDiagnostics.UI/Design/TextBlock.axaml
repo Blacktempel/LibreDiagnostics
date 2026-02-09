@@ -11,7 +11,6 @@
 		<Setter Property="Margin" Value="0"/>
 		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
 		<Setter Property="FontSize" Value="{Binding GlobalFontSize, Source={x:Static global:Global.FontManager}, Mode=OneWay}"/>
-		<Setter Property="behaviors:AutoWrapWidthAttached.Enable" Value="True"/>
 	</ControlTheme>
 
 	<ControlTheme x:Key="HardwareText" TargetType="TextBlock" BasedOn="{StaticResource DataText}">
