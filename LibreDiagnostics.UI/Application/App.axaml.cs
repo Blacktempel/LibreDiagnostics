@@ -21,6 +21,8 @@ using LibreDiagnostics.UI.Utilities;
 using LibreDiagnostics.UI.Windows;
 using System.Runtime.CompilerServices;
 
+using OS = BlackSharp.Core.Platform.OperatingSystem;
+
 namespace LibreDiagnostics.UI
 {
     public partial class App : Application
@@ -28,11 +30,31 @@ namespace LibreDiagnostics.UI
         #region Public
 
         // Avalonia configuration, don't remove; also used by visual designer.
-        public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        public static AppBuilder BuildAvaloniaApp(bool isDesigner)
+        {
+            var builder = AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .WithInterFont()
                 .LogToTrace();
+
+
+            if (!isDesigner
+             && !Global.Settings.UseHardwareAcceleration
+             && OS.IsWindows())
+            {
+                //No hardware acceleration
+                return builder
+                    .With(new Win32PlatformOptions()
+                    {
+                        RenderingMode = [Win32RenderingMode.Software]
+                    });
+            }
+            else
+            {
+                //Avalonia uses hardware acceleration by default
+                return builder;
+            }
+        }
 
         public override void Initialize()
         {

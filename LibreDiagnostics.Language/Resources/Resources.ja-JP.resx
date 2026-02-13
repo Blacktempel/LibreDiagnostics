@@ -825,4 +825,10 @@
   <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
     <value>すでに最新バージョンを使用しています。</value>
   </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>GPUアクセラレーション</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>GPUアクセラレーションはグラフィックカードを使用して計算を高速化し、アプリケーションのパフォーマンスを向上させます。</value>
+  </data>
 </root>

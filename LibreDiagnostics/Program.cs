@@ -21,6 +21,6 @@ namespace LibreDiagnostics
         }
 
         //For Avalonia Designer; do not remove, even if it shows "unused"
-        static object BuildAvaloniaApp() => App.BuildAvaloniaApp();
+        static object BuildAvaloniaApp() => App.BuildAvaloniaApp(true);
     }
 }

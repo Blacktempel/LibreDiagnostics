@@ -202,6 +202,14 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _ShowClock, value); }
         }
 
+        bool _UseHardwareAcceleration = true;
+        [JsonProperty]
+        public bool UseHardwareAcceleration
+        {
+            get { return _UseHardwareAcceleration; }
+            set { SetField(ref _UseHardwareAcceleration, value); }
+        }
+
         #endregion
 
         #region Customize

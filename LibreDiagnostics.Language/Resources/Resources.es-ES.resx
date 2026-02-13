@@ -825,4 +825,10 @@
   <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
     <value>Ya estás usando la versión más reciente.</value>
   </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>Aceleración GPU</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>La aceleración GPU utiliza la tarjeta gráfica para realizar cálculos más rápido y mejorar el rendimiento de la aplicación.</value>
+  </data>
 </root>

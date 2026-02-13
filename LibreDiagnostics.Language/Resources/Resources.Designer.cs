@@ -1906,6 +1906,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GPU acceleration.
+        /// </summary>
+        public static string SettingsUseHardwareAcceleration {
+            get {
+                return ResourceManager.GetString("SettingsUseHardwareAcceleration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPU acceleration uses the graphics card to perform calculations faster and improve the applications performance..
+        /// </summary>
+        public static string SettingsUseHardwareAccelerationTooltip {
+            get {
+                return ResourceManager.GetString("SettingsUseHardwareAccelerationTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vertical offset.
         /// </summary>
         public static string SettingsVerticalOffset {

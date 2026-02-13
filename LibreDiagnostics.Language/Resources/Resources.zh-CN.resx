@@ -825,4 +825,10 @@
   <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
     <value>你已经在使用最新版本。</value>
   </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>GPU加速</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>GPU加速使用显卡进行更快的计算，从而提升应用程序性能。</value>
+  </data>
 </root>

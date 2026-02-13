@@ -84,7 +84,7 @@
             <TabControl x:Name="SettingsTabControl" Margin="15,15,15,0" Padding="15">
                 <!-- General Tab -->
 				<TabItem Header="{x:Static lang:Resources.SettingsGeneralTab}">
-                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 						<TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static lang:Resources.SettingsDock}"/>
                         <ComboBox Grid.Column="1" Grid.Row="0"
                                   ItemsSource="{Binding DockingPositionList, Mode=OneWay}"
@@ -140,6 +140,11 @@
                         <CheckBox Grid.Column="1" Grid.Row="7"
                                   IsChecked="{Binding Settings.AutoUpdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsAutoUpdateTooltip}"/>
+
+						<TextBlock Grid.Column="0" Grid.Row="8" Text="{x:Static lang:Resources.SettingsUseHardwareAcceleration}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="8"
+                                  IsChecked="{Binding Settings.UseHardwareAcceleration, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  ToolTip.Tip="{x:Static lang:Resources.SettingsUseHardwareAccelerationTooltip}"/>
                     </ctrl:GridEx>
                 </TabItem>
                 <!-- Advanced Tab -->
