@@ -74,6 +74,8 @@ namespace LibreDiagnostics.Models.Hardware
             if (DateTime.Now - _LastLogWrite >= _LogInterval)
             {
                 LoggerUtilities.SaveLogFile();
+
+                _LastLogWrite = DateTime.Now;
             }
 
             UpdateBoard();
