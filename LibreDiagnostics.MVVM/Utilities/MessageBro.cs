@@ -63,7 +63,7 @@ namespace LibreDiagnostics.MVVM.Utilities
             CheckForUpdate?.Invoke();
         }
 
-        public static List<TextValuePair<int>> DoGetScreens()
+        public static List<TextValuePair<string>> DoGetScreens()
         {
             return GetScreens?.Invoke() ?? new();
         }
@@ -79,7 +79,7 @@ namespace LibreDiagnostics.MVVM.Utilities
         public static event Action OpenSettings;
         public static event Func<Task<string>> SaveFile;
         public static event Action ShutdownApplication;
-        public static event Func<List<TextValuePair<int>>> GetScreens;
+        public static event Func<List<TextValuePair<string>>> GetScreens;
         public static event Action CheckForUpdate;
 
         #endregion

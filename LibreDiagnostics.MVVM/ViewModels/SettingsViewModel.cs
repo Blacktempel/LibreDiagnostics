@@ -57,13 +57,13 @@ namespace LibreDiagnostics.MVVM.ViewModels
             set { SetField(ref _DockingPositionSelected, value); Settings.DockingPosition = _DockingPositionSelected.Value; }
         }
 
-        public List<TextValuePair<int>> ScreenList { get; private set; }
+        public List<TextValuePair<string>> ScreenList { get; private set; }
 
-        TextValuePair<int> _ScreenSelected;
-        public TextValuePair<int> ScreenSelected
+        TextValuePair<string> _ScreenSelected;
+        public TextValuePair<string> ScreenSelected
         {
             get { return _ScreenSelected; }
-            set { SetField(ref _ScreenSelected, value); Settings.ScreenIndex = _ScreenSelected.Value; }
+            set { SetField(ref _ScreenSelected, value); Settings.ScreenID = _ScreenSelected.Value; }
         }
 
         public List<TextValuePair<TextAlignment>> TextAlignmentList { get; private set; }
@@ -215,15 +215,7 @@ namespace LibreDiagnostics.MVVM.ViewModels
 
             ScreenList = MessageBro.DoGetScreens();
 
-            if (Settings.ScreenIndex < ScreenList.Count
-             && ScreenList.Count > 0)
-            {
-                ScreenSelected = ScreenList.FirstOrDefault(tvp => tvp.Value == Settings.ScreenIndex);
-            }
-            else
-            {
-                ScreenSelected = ScreenList.FirstOrDefault();
-            }
+            ScreenSelected = ScreenList.FirstOrDefault(tvp => tvp.Value == Settings.ScreenID, ScreenList.FirstOrDefault());
 
             TextAlignmentList = new List<TextValuePair<TextAlignment>>
             {

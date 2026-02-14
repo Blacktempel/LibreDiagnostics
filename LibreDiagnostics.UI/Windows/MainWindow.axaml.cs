@@ -11,7 +11,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform;
-using BlackSharp.Core.Extensions;
+using BlackSharp.UI.Avalonia.Extensions;
 using BlackSharp.UI.Avalonia.Media;
 using BlackSharp.UI.Avalonia.Platform.Interfaces;
 using BlackSharp.UI.Avalonia.Platform.Windows;
@@ -127,15 +127,16 @@ namespace LibreDiagnostics.UI.Windows
                 throw new InvalidOperationException("No screens were detected.");
             }
 
-            //Screen index invalid
-            if (!settings.ScreenIndex.Between(0, screens.Count - 1))
+            var defaultScreen = screens.FirstOrDefault();
+
+            //Screen ID invalid
+            if (settings.ScreenID == null)
             {
-                //Fallback to first screen
-                active = screens.FirstOrDefault();
+                active = defaultScreen;
             }
             else
             {
-                active = screens[settings.ScreenIndex];
+                active = screens.FirstOrDefault(s => s.GetSerialNumber() == settings.ScreenID, defaultScreen);
             }
 
             var bounds = active.WorkingArea;
@@ -217,7 +218,7 @@ namespace LibreDiagnostics.UI.Windows
                 //Check if any AppBar relevant settings have changed
                 if (e.OldSettings.IsAppBar         != e.NewSettings.IsAppBar
                  || e.OldSettings.DockingPosition  != e.NewSettings.DockingPosition
-                 || e.OldSettings.ScreenIndex      != e.NewSettings.ScreenIndex
+                 || e.OldSettings.ScreenID         != e.NewSettings.ScreenID
                  || e.OldSettings.AppWidth         != e.NewSettings.AppWidth
                  || e.OldSettings.HorizontalOffset != e.NewSettings.HorizontalOffset
                  || e.OldSettings.VerticalOffset   != e.NewSettings.VerticalOffset

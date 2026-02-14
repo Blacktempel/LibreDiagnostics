@@ -53,12 +53,12 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _DockingPosition, value); }
         }
 
-        int _ScreenIndex = 0;
+        string _ScreenID;
         [JsonProperty]
-        public int ScreenIndex
+        public string ScreenID
         {
-            get { return _ScreenIndex; }
-            set { SetField(ref _ScreenIndex, value); }
+            get { return _ScreenID; }
+            set { SetField(ref _ScreenID, value); }
         }
 
         string _Language = Culture.DEFAULT;
