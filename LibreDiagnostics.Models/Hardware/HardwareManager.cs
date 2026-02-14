@@ -292,7 +292,7 @@ namespace LibreDiagnostics.Models.Hardware
                 _Computer = new Computer()
                 {
                     IsCpuEnabled         = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.CPU),
-                    IsControllerEnabled  = false,
+                    IsControllerEnabled  = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Fan),
                     IsGpuEnabled         = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.GPU),
                     IsStorageEnabled     = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Storage),
                     IsMotherboardEnabled = true,

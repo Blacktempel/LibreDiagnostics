@@ -40,6 +40,7 @@ namespace LibreDiagnostics.Models.Helper
                     break;
                 case HardwareMonitorType.Fan:
                     yield return HardwareType.SuperIO;
+                    yield return HardwareType.Cooler;
                     break;
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}: '{type}'.");

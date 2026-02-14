@@ -85,7 +85,8 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
         {
             var hardwareTypes = HardwareMonitorTypeHelper.GetHardwareTypes(hardwareMonitorConfig.HardwareMonitorType);
 
-            var hardwareList = board.SubHardware.Where(hw => hardwareTypes.Contains(hw.HardwareType)).ToList();
+            var hardwareList = computer.Hardware.Where(hw => hardwareTypes.Contains(hw.HardwareType)).ToList();
+            hardwareList.AddRange(board.SubHardware.Where(hw => hardwareTypes.Contains(hw.HardwareType)).ToList());
 
             return GetHardware<HardwareMonitorFans>(hardwareList, hardwareMonitorConfig, (hw, hc) => new(hw, hc));
         }
