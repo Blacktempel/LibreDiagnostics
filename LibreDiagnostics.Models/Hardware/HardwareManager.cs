@@ -88,6 +88,17 @@ namespace LibreDiagnostics.Models.Hardware
 
         public List<HardwareConfig> GetHardware(HardwareMonitorType type)
         {
+            List<HardwareConfig> getHardware(HardwareMonitorType type)
+            {
+                return GetComputerHardware(HardwareMonitorTypeHelper.GetHardwareTypes(type).ToArray())
+                    .Select(h => new HardwareConfig
+                    {
+                        ID = h.Identifier.ToString(),
+                        Name = h.Name,
+                        ActualName = h.Name
+                    }).ToList();
+            }
+
             switch (type)
             {
                 case HardwareMonitorType.CPU:
@@ -96,21 +107,18 @@ namespace LibreDiagnostics.Models.Hardware
                 case HardwareMonitorType.Storage:
                 case HardwareMonitorType.Network:
                 case HardwareMonitorType.PowerMonitor:
-                    return GetHardware(HardwareMonitorTypeHelper.GetHardwareTypes(type).ToArray())
-                        .Select(h => new HardwareConfig
-                        {
-                            ID = h.Identifier.ToString(),
-                            Name = h.Name,
-                            ActualName = h.Name
-                        }).ToList();
+                    return getHardware(type);
                 case HardwareMonitorType.Fan:
-                    return GetBoardHardware(HardwareMonitorTypeHelper.GetHardwareTypes(type).ToArray())
+                    var hwComputer = getHardware(type);
+                    var hwBoard = GetBoardHardware(HardwareMonitorTypeHelper.GetHardwareTypes(type).ToArray())
                         .Select(h => new HardwareConfig
                         {
                             ID = h.Identifier.ToString(),
                             Name = h.Name,
                             ActualName = h.Name
                         }).ToList();
+
+                    return hwComputer.Concat(hwBoard).ToList();
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}.");
             }
@@ -144,7 +152,7 @@ namespace LibreDiagnostics.Models.Hardware
             _Board.SubHardware?.ToList().ForEach(h => h.Update());
         }
 
-        IEnumerable<IHardware> GetHardware(params HardwareType[] types)
+        IEnumerable<IHardware> GetComputerHardware(params HardwareType[] types)
         {
             return _Computer.Hardware.Where(h => types.Contains(h.HardwareType));
         }
@@ -318,7 +326,7 @@ namespace LibreDiagnostics.Models.Hardware
                 _Computer.HardwareAdded   += OnStorageAdded;
                 _Computer.HardwareRemoved += OnStorageRemoved;
 
-                _Board = GetHardware(HardwareType.Motherboard).FirstOrDefault();
+                _Board = GetComputerHardware(HardwareType.Motherboard).FirstOrDefault();
 
                 UpdateBoard();
 
