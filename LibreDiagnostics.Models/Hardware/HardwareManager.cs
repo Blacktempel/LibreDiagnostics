@@ -95,6 +95,7 @@ namespace LibreDiagnostics.Models.Hardware
                 case HardwareMonitorType.GPU:
                 case HardwareMonitorType.Storage:
                 case HardwareMonitorType.Network:
+                case HardwareMonitorType.PowerMonitor:
                     return GetHardware(HardwareMonitorTypeHelper.GetHardwareTypes(type).ToArray())
                         .Select(h => new HardwareConfig
                         {
@@ -160,17 +161,19 @@ namespace LibreDiagnostics.Models.Hardware
             switch (hardwareMonitorConfig.HardwareMonitorType)
             {
                 case HardwareMonitorType.CPU:
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.CPU    , monType, HardwareMonitorLoader.GetHardwareMonitorsCPU(_Computer, _Board, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.CPU         , monType, HardwareMonitorLoader.GetHardwareMonitorsCPU(_Computer, _Board, hardwareMonitorConfig));
                 case HardwareMonitorType.RAM:                
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.RAM    , monType, HardwareMonitorLoader.GetHardwareMonitorsRAM(_Computer, _Board, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.RAM         , monType, HardwareMonitorLoader.GetHardwareMonitorsRAM(_Computer, _Board, hardwareMonitorConfig));
                 case HardwareMonitorType.GPU:                
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.GPU    , monType, HardwareMonitorLoader.GetHardwareMonitorsGPU(_Computer, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.GPU         , monType, HardwareMonitorLoader.GetHardwareMonitorsGPU(_Computer, hardwareMonitorConfig));
                 case HardwareMonitorType.Storage:
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Drives , monType, HardwareMonitorLoader.GetHardwareMonitorsDrive(_Computer, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Drives      , monType, HardwareMonitorLoader.GetHardwareMonitorsDrive(_Computer, hardwareMonitorConfig));
                 case HardwareMonitorType.Network:
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Network, monType, HardwareMonitorLoader.GetHardwareMonitorsNetwork(_Computer, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Network     , monType, HardwareMonitorLoader.GetHardwareMonitorsNetwork(_Computer, hardwareMonitorConfig));
                 case HardwareMonitorType.Fan:
-                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Fan    , monType, HardwareMonitorLoader.GetHardwareMonitorsFan(_Computer, _Board, hardwareMonitorConfig));
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.Fan         , monType, HardwareMonitorLoader.GetHardwareMonitorsFan(_Computer, _Board, hardwareMonitorConfig));
+                case HardwareMonitorType.PowerMonitor:
+                    return new HardwarePanel(hardwareMonitorConfig.HardwareMonitorType, IconData.PowerMonitor, monType, HardwareMonitorLoader.GetHardwareMonitorsPowerMonitor(_Computer, hardwareMonitorConfig));
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}.");
             }
@@ -212,7 +215,9 @@ namespace LibreDiagnostics.Models.Hardware
                             //Create new panel to use new sensors
                             if (cfg.Enabled)
                             {
-                                HardwarePanels.TryInsert(cfg.Order, CreatePanel(cfg));
+                                var order = cfg.Order > HardwarePanels.Count ? (byte)HardwarePanels.Count : cfg.Order;
+
+                                HardwarePanels.TryInsert(order, CreatePanel(cfg));
                             }
                             else //Remove panel
                             {
@@ -275,6 +280,13 @@ namespace LibreDiagnostics.Models.Hardware
                                 addOrRemoveConfig(cfg);
                             }
                             break;
+                        case HardwareMonitorType.PowerMonitor:
+                            if (_Computer.IsPowerMonitorEnabled != cfg.Enabled)
+                            {
+                                _Computer.IsPowerMonitorEnabled = cfg.Enabled;
+                                addOrRemoveConfig(cfg);
+                            }
+                            break;
                         default:
                             break;
                     }
@@ -291,13 +303,14 @@ namespace LibreDiagnostics.Models.Hardware
 
                 _Computer = new Computer()
                 {
-                    IsCpuEnabled         = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.CPU),
-                    IsControllerEnabled  = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Fan),
-                    IsGpuEnabled         = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.GPU),
-                    IsStorageEnabled     = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Storage),
-                    IsMotherboardEnabled = true,
-                    IsMemoryEnabled      = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.RAM),
-                    IsNetworkEnabled     = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Network),
+                    IsMotherboardEnabled  = true,
+                    IsCpuEnabled          = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.CPU         ),
+                    IsControllerEnabled   = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Fan         ),
+                    IsGpuEnabled          = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.GPU         ),
+                    IsStorageEnabled      = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Storage     ),
+                    IsMemoryEnabled       = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.RAM         ),
+                    IsNetworkEnabled      = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.Network     ),
+                    IsPowerMonitorEnabled = e.NewSettings.IsMonitorEnabled(HardwareMonitorType.PowerMonitor),
                 };
 
                 _Computer.Open();

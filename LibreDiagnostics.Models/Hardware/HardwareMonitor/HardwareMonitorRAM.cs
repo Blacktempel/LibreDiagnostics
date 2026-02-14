@@ -114,7 +114,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (tempSensor != null)
                 {
-                    sensorList.Add(new MetricRAM(tempSensor, HardwareMetricKey.RAMTemp, DataType.Celcius));
+                    sensorList.Add(new MetricRAM(tempSensor, HardwareMetricKey.RAMTemp, DataType.Celsius));
                 }
             }
 

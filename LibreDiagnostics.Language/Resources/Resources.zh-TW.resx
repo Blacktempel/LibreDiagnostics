@@ -831,4 +831,43 @@
   <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
     <value>GPU加速使用顯卡進行更快的計算，從而提升應用程式效能。</value>
   </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>溫度</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>單針電壓</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>總電流</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>單針電流</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>耗電量</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>監控風扇</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>溫度</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>電壓</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>電流</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>電流</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>耗電量</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>風扇</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>功率監控</value>
+  </data>
 </root>

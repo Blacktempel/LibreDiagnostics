@@ -831,4 +831,43 @@
   <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
     <value>GPUアクセラレーションはグラフィックカードを使用して計算を高速化し、アプリケーションのパフォーマンスを向上させます。</value>
   </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>ピン電圧</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>総電流</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>ピン電流</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>消費電力</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>モニターファン</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>電圧</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>電流</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>電流</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>消費電力</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>ファン</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>電力モニター</value>
+  </data>
 </root>

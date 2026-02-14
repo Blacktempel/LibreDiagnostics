@@ -50,5 +50,12 @@ namespace LibreDiagnostics.Models.Enums
         DriveTemp        ,
 
         FanSpeed     = 50,
+
+        PowerMonitorTemp         = 60,
+        PowerMonitorPinVoltage       ,
+        PowerMonitorTotalCurrent     ,
+        PowerMonitorPinCurrent       ,
+        PowerMonitorPower            ,
+        PowerMonitorFan              ,
     }
 }

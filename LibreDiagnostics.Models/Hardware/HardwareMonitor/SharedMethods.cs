@@ -34,10 +34,10 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             monitor.HardwareMetrics.ForEach(hm =>
             {
                 if (hm is MetricBase mb
-                 && mb.DataType.AnyOf(DataType.Celcius, DataType.Fahrenheit))
+                 && mb.DataType.AnyOf(DataType.Celsius, DataType.Fahrenheit))
                 {
                     mb.Converter = useFahrenheit ? ConverterFactory.GetConverterShared<CelsiusToFahrenheitConverter>() : null;
-                    mb.DataType = useFahrenheit ? DataType.Fahrenheit : DataType.Celcius;
+                    mb.DataType = useFahrenheit ? DataType.Fahrenheit : DataType.Celsius;
                 }
             });
         }
@@ -49,7 +49,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             monitor.HardwareMetrics.ForEach(hm =>
             {
                 if (hm is MetricBase mb
-                 && mb.DataType.AnyOf(DataType.Celcius, DataType.Fahrenheit))
+                 && mb.DataType.AnyOf(DataType.Celsius, DataType.Fahrenheit))
                 {
                     mb.AlertValue = temperatureAlert;
                 }

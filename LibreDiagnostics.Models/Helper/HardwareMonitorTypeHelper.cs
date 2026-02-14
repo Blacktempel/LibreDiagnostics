@@ -42,6 +42,9 @@ namespace LibreDiagnostics.Models.Helper
                     yield return HardwareType.SuperIO;
                     yield return HardwareType.Cooler;
                     break;
+                case HardwareMonitorType.PowerMonitor:
+                    yield return HardwareType.PowerMonitor;
+                    break;
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}: '{type}'.");
             }
@@ -68,6 +71,9 @@ namespace LibreDiagnostics.Models.Helper
 
                 case HardwareMonitorType.Fan:
                     return Resources.Fan;
+
+                case HardwareMonitorType.PowerMonitor:
+                    return Resources.PowerMonitor;
 
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}: '{type}'.");

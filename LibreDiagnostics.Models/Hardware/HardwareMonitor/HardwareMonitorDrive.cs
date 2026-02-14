@@ -177,7 +177,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (tempSensor != null)
                 {
-                    hardwareMetricList.Add(new MetricBoardItem(tempSensor, HardwareMetricKey.DriveTemp, DataType.Celcius));
+                    hardwareMetricList.Add(new MetricBoardItem(tempSensor, HardwareMetricKey.DriveTemp, DataType.Celsius));
                 }
             }
 

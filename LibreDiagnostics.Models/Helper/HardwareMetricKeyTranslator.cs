@@ -36,6 +36,9 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareMonitorType.Fan:
                     return Resources.Fan;
 
+                case HardwareMonitorType.PowerMonitor:
+                    return Resources.PowerMonitor;
+
                 default:
                     throw new ArgumentException($"Invalid {nameof(HardwareMonitorType)}: '{type}'.");
             }
@@ -143,6 +146,24 @@ namespace LibreDiagnostics.Models.Helper
 
                 case HardwareMetricKey.FanSpeed:
                     return Resources.FanSpeed;
+
+                case HardwareMetricKey.PowerMonitorTemp:
+                    return Resources.PowerMonitorTemp;
+
+                case HardwareMetricKey.PowerMonitorPinVoltage:
+                    return Resources.PowerMonitorPinVoltage;
+
+                case HardwareMetricKey.PowerMonitorTotalCurrent:
+                    return Resources.PowerMonitorTotalCurrent;
+
+                case HardwareMetricKey.PowerMonitorPinCurrent:
+                    return Resources.PowerMonitorPinCurrent;
+
+                case HardwareMetricKey.PowerMonitorPower:
+                    return Resources.PowerMonitorPower;
+
+                case HardwareMetricKey.PowerMonitorFan:
+                    return Resources.PowerMonitorFan;
 
                 default:
                     return "Unknown";
@@ -252,6 +273,24 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareMetricKey.FanSpeed:
                     return Resources.FanSpeedLabel;
 
+                case HardwareMetricKey.PowerMonitorTemp:
+                    return Resources.PowerMonitorTempLabel;
+
+                case HardwareMetricKey.PowerMonitorPinVoltage:
+                    return Resources.PowerMonitorPinVoltageLabel;
+
+                case HardwareMetricKey.PowerMonitorTotalCurrent:
+                    return Resources.PowerMonitorTotalCurrentLabel;
+
+                case HardwareMetricKey.PowerMonitorPinCurrent:
+                    return Resources.PowerMonitorPinCurrentLabel;
+
+                case HardwareMetricKey.PowerMonitorPower:
+                    return Resources.PowerMonitorPowerLabel;
+
+                case HardwareMetricKey.PowerMonitorFan:
+                    return Resources.PowerMonitorFanLabel;
+
                 default:
                     return "Unknown";
             }
@@ -324,7 +363,7 @@ namespace LibreDiagnostics.Models.Helper
                 case DataType.RPM:
                     return " RPM";
 
-                case DataType.Celcius:
+                case DataType.Celsius:
                     return " °C";
 
                 case DataType.Fahrenheit:
@@ -335,6 +374,9 @@ namespace LibreDiagnostics.Models.Helper
 
                 case DataType.Watt:
                     return " W";
+
+                case DataType.Ampere:
+                    return " A";
 
                 default:
                     throw new ArgumentException($"Invalid {nameof(DataType)}.");

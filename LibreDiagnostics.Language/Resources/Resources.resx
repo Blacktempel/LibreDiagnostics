@@ -831,4 +831,43 @@
   <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
     <value>GPU acceleration uses the graphics card to perform calculations faster and improve the applications performance.</value>
   </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Pin Voltage</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Total Current</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Pin Current</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Power Monitor Fan</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Fan</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Power Monitor</value>
+  </data>
 </root>

@@ -91,6 +91,15 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             return GetHardware<HardwareMonitorFans>(hardwareList, hardwareMonitorConfig, (hw, hc) => new(hw, hc));
         }
 
+        public static List<HardwareMonitorPowerMonitor> GetHardwareMonitorsPowerMonitor(Computer computer, HardwareMonitorConfig hardwareMonitorConfig)
+        {
+            var hardwareTypes = HardwareMonitorTypeHelper.GetHardwareTypes(hardwareMonitorConfig.HardwareMonitorType);
+
+            var hardwareList = computer.Hardware.Where(hw => hardwareTypes.Contains(hw.HardwareType)).ToList();
+
+            return GetHardware<HardwareMonitorPowerMonitor>(hardwareList, hardwareMonitorConfig, (hw, hc) => new(hw, hc));
+        }
+
         #endregion
 
         #region Private

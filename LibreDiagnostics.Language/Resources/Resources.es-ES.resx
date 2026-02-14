@@ -831,4 +831,43 @@
   <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
     <value>La aceleración GPU utiliza la tarjeta gráfica para realizar cálculos más rápido y mejorar el rendimiento de la aplicación.</value>
   </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Voltaje por pin</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Corriente total</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Corriente por pin</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Consumo energético</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Ventilador del monitor</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Voltaje</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Corriente</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Corriente</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Potencia</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Ventilador</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Monitor de energía</value>
+  </data>
 </root>

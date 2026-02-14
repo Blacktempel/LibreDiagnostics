@@ -265,6 +265,15 @@ namespace LibreDiagnostics.Models.Configuration
         {
             var defaultConfig = Default;
 
+            //Insert default config for missing hardware monitor types
+            foreach (var defaultItem in defaultConfig)
+            {
+                if (!hardwareMonitorConfigs.Any(hmc => hmc.HardwareMonitorType == defaultItem.HardwareMonitorType))
+                {
+                    hardwareMonitorConfigs.Add(defaultItem.Clone());
+                }
+            }
+
             foreach (var hardwareMonitorConfig in hardwareMonitorConfigs)
             {
                 var hmcRecord = hardwareMonitorConfigs.SingleOrDefault(hmc => hmc.HardwareMonitorType == hardwareMonitorConfig.HardwareMonitorType, hardwareMonitorConfig);
@@ -490,6 +499,29 @@ namespace LibreDiagnostics.Models.Configuration
                     {
                         Configuration.HardwareConfigOptions.Defaults.HardwareNames,
                         Configuration.HardwareConfigOptions.Defaults.ShowInactiveFans,
+                    }
+                },
+                new()
+                {
+                    HardwareMonitorType = HardwareMonitorType.PowerMonitor,
+                    Enabled = false,
+                    Order = order++,
+                    HardwareConfig = new(),
+                    MetricConfig = new()
+                    {
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorTemp        , Enabled = true  },
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorPinVoltage  , Enabled = false },
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorTotalCurrent, Enabled = true  },
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorPinCurrent  , Enabled = false },
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorPower       , Enabled = true  },
+                        new() { HardwareMetricKey = HardwareMetricKey.PowerMonitorFan         , Enabled = true  },
+                    },
+                    HardwareConfigOptions = new()
+                    {
+                        Configuration.HardwareConfigOptions.Defaults.HardwareNames,
+                        Configuration.HardwareConfigOptions.Defaults.UseFahrenheit,
+                        Configuration.HardwareConfigOptions.Defaults.RoundAll,
+                        Configuration.HardwareConfigOptions.Defaults.TempAlert,
                     }
                 },
             };

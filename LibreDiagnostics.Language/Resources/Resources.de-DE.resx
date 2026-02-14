@@ -831,4 +831,43 @@
   <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
     <value>Die GPU-Beschleunigung nutzt die Grafikkarte, um Berechnungen schneller durchzuführen und die Leistung der Anwendung zu verbessern.</value>
   </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Temperatur</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Pin Spannung</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Gesamtstrom</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Pin Strom</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Stromverbrauch</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Monitor Lüfter</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Spannung</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Strom</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Strom</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Strom</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Lüfter</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Leistungsüberwachung</value>
+  </data>
 </root>

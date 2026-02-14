@@ -112,7 +112,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (tempSensor != null)
                 {
-                    sensorList.Add(new MetricGPU(tempSensor, HardwareMetricKey.GPUTemp, DataType.Celcius));
+                    sensorList.Add(new MetricGPU(tempSensor, HardwareMetricKey.GPUTemp, DataType.Celsius));
                 }
             }
 

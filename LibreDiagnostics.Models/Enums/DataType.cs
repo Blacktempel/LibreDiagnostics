@@ -33,9 +33,10 @@ namespace LibreDiagnostics.Models.Enums
         Voltage,
         Percent,
         RPM,
-        Celcius,
+        Celsius,
         Fahrenheit,
         IP,
         Watt,
+        Ampere,
     }
 }

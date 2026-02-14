@@ -11,13 +11,14 @@ namespace LibreDiagnostics.Models.Globals
 {
     public static class IconData
     {
-        public static string Clock   { get; set; }
+        public static string Clock        { get; set; }
 
-        public static string CPU     { get; set; }
-        public static string RAM     { get; set; }
-        public static string GPU     { get; set; }
-        public static string Drives  { get; set; }
-        public static string Network { get; set; }
-        public static string Fan     { get; set; }
+        public static string CPU          { get; set; }
+        public static string RAM          { get; set; }
+        public static string GPU          { get; set; }
+        public static string Drives       { get; set; }
+        public static string Network      { get; set; }
+        public static string Fan          { get; set; }
+        public static string PowerMonitor { get; set; }
     }
 }

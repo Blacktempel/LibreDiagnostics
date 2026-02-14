@@ -745,6 +745,123 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Power Monitor.
+        /// </summary>
+        public static string PowerMonitor {
+            get {
+                return ResourceManager.GetString("PowerMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Power Monitor Fan.
+        /// </summary>
+        public static string PowerMonitorFan {
+            get {
+                return ResourceManager.GetString("PowerMonitorFan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fan.
+        /// </summary>
+        public static string PowerMonitorFanLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorFanLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin Current.
+        /// </summary>
+        public static string PowerMonitorPinCurrent {
+            get {
+                return ResourceManager.GetString("PowerMonitorPinCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string PowerMonitorPinCurrentLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorPinCurrentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin Voltage.
+        /// </summary>
+        public static string PowerMonitorPinVoltage {
+            get {
+                return ResourceManager.GetString("PowerMonitorPinVoltage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltage.
+        /// </summary>
+        public static string PowerMonitorPinVoltageLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorPinVoltageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Power.
+        /// </summary>
+        public static string PowerMonitorPower {
+            get {
+                return ResourceManager.GetString("PowerMonitorPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Power.
+        /// </summary>
+        public static string PowerMonitorPowerLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorPowerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string PowerMonitorTemp {
+            get {
+                return ResourceManager.GetString("PowerMonitorTemp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temp.
+        /// </summary>
+        public static string PowerMonitorTempLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorTempLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Current.
+        /// </summary>
+        public static string PowerMonitorTotalCurrent {
+            get {
+                return ResourceManager.GetString("PowerMonitorTotalCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string PowerMonitorTotalCurrentLabel {
+            get {
+                return ResourceManager.GetString("PowerMonitorTotalCurrentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RAM.
         /// </summary>
         public static string RAM {

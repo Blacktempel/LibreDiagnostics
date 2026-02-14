@@ -18,5 +18,6 @@ namespace LibreDiagnostics.Models.Enums
         Storage,
         Network,
         Fan,
+        PowerMonitor,
     }
 }
