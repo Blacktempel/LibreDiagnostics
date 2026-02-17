@@ -33,12 +33,15 @@ namespace LibreDiagnostics.UI.Platform.Windows.Interop
         public const int ABN_FULLSCREENAPP = 2;
         public const int ABN_WINDOWARRANGE = 3;
 
-        public const int SWP_NOSIZE = 0x0001;
-        public const int SWP_NOMOVE = 0x0002;
+        public const int SWP_NOSIZE       = 0x0001;
+        public const int SWP_NOMOVE       = 0x0002;
+        public const int SWP_FRAMECHANGED = 0x0020;
 
         public const int WM_ACTIVATE          = 0x0006;
         public const int WM_WINDOWPOSCHANGING = 0x0046;
         public const int WM_WINDOWPOSCHANGED  = 0x0047;
+        public const int WM_DISPLAYCHANGE     = 0x007E;
+        public const int WM_SETTINGCHANGE     = 0x001A;
 
         [DllImport(DLL_NAME)]
         public static extern UIntPtr SHAppBarMessage(int dwMessage, ref APPBARDATA pData);

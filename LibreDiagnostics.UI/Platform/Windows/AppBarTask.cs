@@ -9,6 +9,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Threading;
 using BlackSharp.UI.Avalonia.Extensions;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
@@ -86,7 +87,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
 
             var screen = _Window.Screens.ScreenFromWindow(_Window);
             var renderScaling = _Window.RenderScaling;
-            var workArea = screen.WorkingArea;
+            var workArea = screen.Bounds;
 
             var desiredWidthPx = Math.Round(_Window.Width * renderScaling);
 
@@ -168,13 +169,24 @@ namespace LibreDiagnostics.UI.Platform.Windows
                     {
                         var pos = Marshal.PtrToStructure<WINDOWPOS>(lParam);
 
-                        pos.flags |= Shell32.SWP_NOMOVE;
+                        var isSystemMove =
+                            (pos.flags & Shell32.SWP_NOSIZE      ) == 0
+                         || (pos.flags & Shell32.SWP_FRAMECHANGED) != 0;
 
-                        Marshal.StructureToPtr(pos, lParam, false);
+                        if (!isSystemMove)
+                        {
+                            pos.flags |= Shell32.SWP_NOMOVE;
+
+                            Marshal.StructureToPtr(pos, lParam, false);
+                        }
                     }
                     break;
                 case Shell32.WM_WINDOWPOSCHANGED:
                     SendAppBarMessage(Shell32.ABM_WINDOWPOSCHANGED);
+                    break;
+                case Shell32.WM_DISPLAYCHANGE:
+                case Shell32.WM_SETTINGCHANGE:
+                    DelayedAppBarUpdate();
                     break;
                 default:
                     if (msg == _AppBarMessageID)
@@ -182,7 +194,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
                         switch (wParam.ToInt32())
                         {
                             case Shell32.ABN_POSCHANGED:
-                                AppBarUpdate();
+                                DelayedAppBarUpdate();
                                 handled = true;
                                 break;
                             case Shell32.ABN_FULLSCREENAPP:
@@ -194,6 +206,8 @@ namespace LibreDiagnostics.UI.Platform.Windows
                                 {
                                     WindowStyleHandler.SetTopMost(_Window, true);
                                 }
+
+                                DelayedAppBarUpdate();
                                 break;
                         }
                     }
@@ -201,6 +215,11 @@ namespace LibreDiagnostics.UI.Platform.Windows
             }
 
             return IntPtr.Zero;
+        }
+
+        void DelayedAppBarUpdate()
+        {
+            DispatcherTimer.RunOnce(AppBarUpdate, TimeSpan.FromMilliseconds(500));
         }
 
         #endregion
