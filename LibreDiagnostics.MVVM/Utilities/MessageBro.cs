@@ -9,7 +9,7 @@
 
 using BlackSharp.MVVM.Dialogs;
 using BlackSharp.MVVM.Dialogs.Enums;
-using LibreDiagnostics.Models.Helper;
+using LibreDiagnostics.Models.Platform;
 
 namespace LibreDiagnostics.MVVM.Utilities
 {
@@ -63,7 +63,7 @@ namespace LibreDiagnostics.MVVM.Utilities
             CheckForUpdate?.Invoke();
         }
 
-        public static List<TextValuePair<string>> DoGetScreens()
+        public static List<ScreenModel> DoGetScreens()
         {
             return GetScreens?.Invoke() ?? new();
         }
@@ -79,7 +79,7 @@ namespace LibreDiagnostics.MVVM.Utilities
         public static event Action OpenSettings;
         public static event Func<Task<string>> SaveFile;
         public static event Action ShutdownApplication;
-        public static event Func<List<TextValuePair<string>>> GetScreens;
+        public static event Func<List<ScreenModel>> GetScreens;
         public static event Action CheckForUpdate;
 
         #endregion

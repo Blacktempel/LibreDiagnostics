@@ -14,6 +14,7 @@ using BlackSharp.MVVM.ComponentModel;
 using LibreDiagnostics.Language;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
+using LibreDiagnostics.Models.Platform;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -53,12 +54,12 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _DockingPosition, value); }
         }
 
-        string _ScreenID;
+        ScreenModel _ScreenInfo;
         [JsonProperty]
-        public string ScreenID
+        public ScreenModel ScreenInfo
         {
-            get { return _ScreenID; }
-            set { SetField(ref _ScreenID, value); }
+            get { return _ScreenInfo; }
+            set { SetField(ref _ScreenInfo, value); }
         }
 
         string _Language = Culture.DEFAULT;
@@ -320,6 +321,8 @@ namespace LibreDiagnostics.Models.Configuration
         {
             var clone = (Settings)MemberwiseClone();
 
+            clone.ScreenInfo = ScreenInfo?.Clone();
+
             clone.HardwareMonitorConfigs = new(HardwareMonitorConfigs.Select(hm => hm.Clone()));
 
             return clone;
@@ -332,6 +335,16 @@ namespace LibreDiagnostics.Models.Configuration
         public void Copy(Settings from)
         {
             ShallowCopy.CopyValueTypeProperties(from, this);
+
+            if (ScreenInfo == null && from.ScreenInfo != null)
+            {
+                ScreenInfo = new();
+            }
+
+            if (from.ScreenInfo != null && ScreenInfo != null)
+            {
+                ShallowCopy.CopyValueTypeProperties(from.ScreenInfo, ScreenInfo);
+            }
 
             //Find differences in HardwareMonitorConfigs first
             from.HardwareMonitorConfigs

@@ -17,7 +17,7 @@ using BlackSharp.UI.Avalonia.Windows.Dialogs;
 using BlackSharp.UI.Avalonia.Windows.Dialogs.Enums;
 using LibreDiagnostics.Language.Resources;
 using LibreDiagnostics.Models.Events;
-using LibreDiagnostics.Models.Helper;
+using LibreDiagnostics.Models.Platform;
 using LibreDiagnostics.MVVM.Utilities;
 using LibreHardwareMonitor.Hardware;
 using LibreHardwareMonitor.Hardware.Storage;
@@ -108,14 +108,14 @@ namespace LibreDiagnostics.UI.Utilities
             return null;
         }
 
-        static List<TextValuePair<string>> GetScreens()
+        static List<ScreenModel> GetScreens()
         {
-            var list = new List<TextValuePair<string>>();
+            var list = new List<ScreenModel>();
 
             if (Design.IsDesignMode)
             {
-                list.Add(new() { Text = "Display 1 (#0)", Value = "ABC123" });
-                list.Add(new() { Text = "Display 2 (#1)", Value = "ABC456" });
+                list.Add(new() { Name = "Display 1 (#0)", ScreenIndex = 0, ScreenID = "ABC123" });
+                list.Add(new() { Name = "Display 2 (#1)", ScreenIndex = 1, ScreenID = "ABC456" });
 
                 return list;
             }
@@ -129,8 +129,9 @@ namespace LibreDiagnostics.UI.Utilities
                 {
                     list.Add(new()
                     {
-                        Text = $"{screens[i].DisplayName} (#{i})" ?? $"#{i}",
-                        Value = screens[i].GetSerialNumber()
+                        Name = $"{screens[i].DisplayName} (#{i})" ?? $"#{i}",
+                        ScreenIndex = i,
+                        ScreenID = screens[i].GetSerialNumber()
                     });
                 }
             }

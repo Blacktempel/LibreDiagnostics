@@ -129,14 +129,14 @@ namespace LibreDiagnostics.UI.Windows
 
             var defaultScreen = screens.FirstOrDefault();
 
-            //Screen ID invalid
-            if (settings.ScreenID == null)
+            //Screen invalid
+            if (settings.ScreenInfo == null)
             {
                 active = defaultScreen;
             }
             else
             {
-                active = screens.FirstOrDefault(s => s.GetSerialNumber() == settings.ScreenID, defaultScreen);
+                active = screens.FirstOrDefault(s => s.GetSerialNumber() == settings.ScreenInfo.ScreenID, defaultScreen);
             }
 
             var bounds = active.WorkingArea;
@@ -218,7 +218,11 @@ namespace LibreDiagnostics.UI.Windows
                 //Check if any AppBar relevant settings have changed
                 if (e.OldSettings.IsAppBar         != e.NewSettings.IsAppBar
                  || e.OldSettings.DockingPosition  != e.NewSettings.DockingPosition
-                 || e.OldSettings.ScreenID         != e.NewSettings.ScreenID
+                 || 
+                    (
+                        e.OldSettings.ScreenInfo?.ScreenIndex != e.NewSettings.ScreenInfo.ScreenIndex
+                     || e.OldSettings.ScreenInfo?.ScreenID    != e.NewSettings.ScreenInfo.ScreenID
+                    )
                  || e.OldSettings.AppWidth         != e.NewSettings.AppWidth
                  || e.OldSettings.HorizontalOffset != e.NewSettings.HorizontalOffset
                  || e.OldSettings.VerticalOffset   != e.NewSettings.VerticalOffset

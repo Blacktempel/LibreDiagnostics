@@ -98,9 +98,7 @@
                         <ComboBox Grid.Column="1" Grid.Row="1"
                                   ItemsSource="{Binding ScreenList, Mode=OneWay}"
                                   SelectedItem="{Binding ScreenSelected}"
-                                  DisplayMemberBinding="{Binding Text}"
-                                  SelectedValueBinding="{Binding Value}"
-                                  SelectedValue="{Binding ScreenSelected.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  DisplayMemberBinding="{Binding Name}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsScreenTooltip}"/>
 
 						<TextBlock Grid.Column="0" Grid.Row="2" Text="{x:Static lang:Resources.SettingsLanguage}"/>

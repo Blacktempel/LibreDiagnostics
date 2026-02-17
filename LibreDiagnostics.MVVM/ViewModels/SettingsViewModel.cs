@@ -16,6 +16,7 @@ using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Helper;
+using LibreDiagnostics.Models.Platform;
 using LibreDiagnostics.MVVM.Utilities;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -57,13 +58,13 @@ namespace LibreDiagnostics.MVVM.ViewModels
             set { SetField(ref _DockingPositionSelected, value); Settings.DockingPosition = _DockingPositionSelected.Value; }
         }
 
-        public List<TextValuePair<string>> ScreenList { get; private set; }
+        public List<ScreenModel> ScreenList { get; private set; }
 
-        TextValuePair<string> _ScreenSelected;
-        public TextValuePair<string> ScreenSelected
+        ScreenModel _ScreenSelected;
+        public ScreenModel ScreenSelected
         {
             get { return _ScreenSelected; }
-            set { SetField(ref _ScreenSelected, value); Settings.ScreenID = _ScreenSelected.Value; }
+            set { SetField(ref _ScreenSelected, value); Settings.ScreenInfo = _ScreenSelected; }
         }
 
         public List<TextValuePair<TextAlignment>> TextAlignmentList { get; private set; }
@@ -215,7 +216,15 @@ namespace LibreDiagnostics.MVVM.ViewModels
 
             ScreenList = MessageBro.DoGetScreens();
 
-            ScreenSelected = ScreenList.FirstOrDefault(tvp => tvp.Value == Settings.ScreenID, ScreenList.FirstOrDefault());
+            //Try to find ScreenID first
+            var screen = ScreenList.FirstOrDefault(tvp => tvp.ScreenID == Settings.ScreenInfo?.ScreenID);
+            if (screen == null)
+            {
+                //Try to find ScreenIndex if ScreenID was not found with fallback to first screen in list
+                screen = ScreenList.FirstOrDefault(tvp => tvp.ScreenIndex == Settings.ScreenInfo?.ScreenIndex, ScreenList.FirstOrDefault());
+            }
+
+            ScreenSelected = screen;
 
             TextAlignmentList = new List<TextValuePair<TextAlignment>>
             {
