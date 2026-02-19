@@ -795,8 +795,8 @@
   <data name="UpdateFailedMessage" xml:space="preserve">
     <value>更新失敗。\n您的網路連線正常嗎？\n\n{0}</value>
   </data>
-  <data name="ButtonLHMReport" xml:space="preserve">
-    <value>LHM 報告</value>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>匯出報告</value>
   </data>
   <data name="SaveFileTitle" xml:space="preserve">
     <value>儲存檔案</value>

@@ -134,6 +134,20 @@ namespace LibreDiagnostics.UI.Utilities
                         ScreenID = screens[i].GetSerialNumber()
                     });
                 }
+
+                //Check if any serial number is "valid" for more than one screen
+                var hasDuplicateID = list.Where(x => x.ScreenID != null)
+                          .GroupBy(x => x.ScreenID)
+                          .Any(g => g.Count() > 1);
+
+                //If there are duplicate IDs, set all IDs to null to default to index
+                if (hasDuplicateID)
+                {
+                    foreach (var screen in list)
+                    {
+                        screen.ScreenID = null;
+                    }
+                }
             }
 
             return list;

@@ -15,7 +15,7 @@ namespace LibreDiagnostics.Models.Interfaces
     public interface ITrayIcon
     {
         IRelayCommand      SettingsRequestedCommand  { get; }
-        IAsyncRelayCommand LHMReportRequestedCommand { get; }
+        IAsyncRelayCommand ReportRequestedCommand    { get; }
         IRelayCommand      RestartRequestedCommand   { get; }
         IRelayCommand      DonateRequestedCommand    { get; }
         IRelayCommand      GithubRequestedCommand    { get; }

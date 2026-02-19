@@ -106,15 +106,6 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LHM Report.
-        /// </summary>
-        public static string ButtonLHMReport {
-            get {
-                return ResourceManager.GetString("ButtonLHMReport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remind me in 1 month.
         /// </summary>
         public static string ButtonReminderOneMonth {
@@ -129,6 +120,15 @@ namespace LibreDiagnostics.Language.Resources {
         public static string ButtonReminderOneWeek {
             get {
                 return ResourceManager.GetString("ButtonReminderOneWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export report.
+        /// </summary>
+        public static string ButtonReport {
+            get {
+                return ResourceManager.GetString("ButtonReport", resourceCulture);
             }
         }
         

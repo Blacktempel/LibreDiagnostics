@@ -795,8 +795,8 @@
   <data name="UpdateFailedMessage" xml:space="preserve">
     <value>アップデートに失敗しました。\nインターネットに接続されていますか？\n\n{0}</value>
   </data>
-  <data name="ButtonLHMReport" xml:space="preserve">
-    <value>LHM 報告</value>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>レポートをエクスポート</value>
   </data>
   <data name="SaveFileTitle" xml:space="preserve">
     <value>ファイルを保存</value>

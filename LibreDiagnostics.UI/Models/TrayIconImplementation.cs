@@ -24,6 +24,7 @@ using LibreDiagnostics.MVVM.Utilities;
 using LibreDiagnostics.UI.Platform.Windows.Interop;
 using System.Diagnostics;
 using System.Reflection;
+using System.Text;
 using OS = BlackSharp.Core.Platform.OperatingSystem;
 
 namespace LibreDiagnostics.UI.Models
@@ -58,8 +59,8 @@ namespace LibreDiagnostics.UI.Models
                 },
                 new NativeMenuItem
                 {
-                    Header = Resources.ButtonLHMReport,
-                    Command = LHMReportRequestedCommand,
+                    Header = Resources.ButtonReport,
+                    Command = ReportRequestedCommand,
                 },
                 new NativeMenuItemSeparator(),
                 new NativeMenuItem
@@ -230,7 +231,7 @@ namespace LibreDiagnostics.UI.Models
         }
 
         [RelayCommand]
-        async Task LHMReportRequested()
+        async Task ReportRequested()
         {
             var filePath = await MessageBro.DoSaveFile();
 
@@ -239,14 +240,31 @@ namespace LibreDiagnostics.UI.Models
                 return;
             }
 
-            var report = Global.HardwareManager?.GetReport();
+            var reportLHM = Global.HardwareManager?.GetReport();
 
-            if (string.IsNullOrEmpty(report))
+            if (string.IsNullOrEmpty(reportLHM))
             {
                 return;
             }
 
-            File.WriteAllText(filePath, report);
+            var sb = new StringBuilder();
+            sb.AppendLine(reportLHM);
+            sb.AppendLine();
+            sb.AppendLine($"{nameof(LibreDiagnostics)} Report:");
+
+            var screens = MessageBro.DoGetScreens();
+
+            sb.AppendLine($"Number of Screens: {screens.Count}");
+            foreach (var screen in screens)
+            {
+                sb.AppendLine($"  {nameof(screen.Name)}: {screen.Name}");
+                sb.AppendLine($"    {nameof(screen.ScreenIndex)}: {screen.ScreenIndex}");
+                sb.AppendLine($"    {nameof(screen.ScreenID   )}: {screen.ScreenID   }");
+            }
+
+            sb.AppendLine();
+
+            File.WriteAllText(filePath, sb.ToString());
         }
 
         [RelayCommand]

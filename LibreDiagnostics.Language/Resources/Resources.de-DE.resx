@@ -795,8 +795,8 @@
   <data name="UpdateFailedMessage" xml:space="preserve">
     <value>Update fehlgeschlagen.\nBist du mit dem Internet verbunden ?\n\n{0}</value>
   </data>
-  <data name="ButtonLHMReport" xml:space="preserve">
-    <value>LHM Bericht</value>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>Bericht exportieren</value>
   </data>
   <data name="SaveFileTitle" xml:space="preserve">
     <value>Datei speichern</value>
