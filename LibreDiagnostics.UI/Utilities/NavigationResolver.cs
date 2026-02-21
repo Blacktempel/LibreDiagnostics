@@ -12,13 +12,13 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
 using BlackSharp.MVVM.Dialogs;
 using BlackSharp.MVVM.Dialogs.Enums;
-using BlackSharp.UI.Avalonia.Extensions;
 using BlackSharp.UI.Avalonia.Windows.Dialogs;
 using BlackSharp.UI.Avalonia.Windows.Dialogs.Enums;
 using LibreDiagnostics.Language.Resources;
 using LibreDiagnostics.Models.Events;
 using LibreDiagnostics.Models.Platform;
 using LibreDiagnostics.MVVM.Utilities;
+using LibreDiagnostics.UI.Platform;
 using LibreHardwareMonitor.Hardware;
 using LibreHardwareMonitor.Hardware.Storage;
 
@@ -114,8 +114,8 @@ namespace LibreDiagnostics.UI.Utilities
 
             if (Design.IsDesignMode)
             {
-                list.Add(new() { Name = "Display 1 (#0)", ScreenIndex = 0, ScreenID = "ABC123" });
-                list.Add(new() { Name = "Display 2 (#1)", ScreenIndex = 1, ScreenID = "ABC456" });
+                list.Add(new() { Name = "Display 1 (#0)", ScreenID = "ABC123" });
+                list.Add(new() { Name = "Display 2 (#1)", ScreenID = "ABC456" });
 
                 return list;
             }
@@ -125,29 +125,7 @@ namespace LibreDiagnostics.UI.Utilities
             {
                 var screens = wnd.MainWindow.Screens.All.ToList();
 
-                for (int i = 0; i < screens.Count; ++i)
-                {
-                    list.Add(new()
-                    {
-                        Name = $"{screens[i].DisplayName} (#{i})" ?? $"#{i}",
-                        ScreenIndex = i,
-                        ScreenID = screens[i].GetSerialNumber()
-                    });
-                }
-
-                //Check if any serial number is "valid" for more than one screen
-                var hasDuplicateID = list.Where(x => x.ScreenID != null)
-                          .GroupBy(x => x.ScreenID)
-                          .Any(g => g.Count() > 1);
-
-                //If there are duplicate IDs, set all IDs to null to default to index
-                if (hasDuplicateID)
-                {
-                    foreach (var screen in list)
-                    {
-                        screen.ScreenID = null;
-                    }
-                }
+                return ScreenManager.GetScreens(screens);
             }
 
             return list;

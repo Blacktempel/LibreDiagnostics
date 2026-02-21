@@ -258,8 +258,8 @@ namespace LibreDiagnostics.UI.Models
             foreach (var screen in screens)
             {
                 sb.AppendLine($"  {nameof(screen.Name)}: {screen.Name}");
-                sb.AppendLine($"    {nameof(screen.ScreenIndex)}: {screen.ScreenIndex}");
-                sb.AppendLine($"    {nameof(screen.ScreenID   )}: {screen.ScreenID   }");
+                sb.AppendLine($"    {nameof(screen.Strategy)}: {screen.Strategy}");
+                sb.AppendLine($"    {nameof(screen.ScreenID)}: {screen.ScreenID}");
             }
 
             sb.AppendLine();

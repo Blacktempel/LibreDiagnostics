@@ -11,7 +11,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform;
-using BlackSharp.UI.Avalonia.Extensions;
 using BlackSharp.UI.Avalonia.Media;
 using BlackSharp.UI.Avalonia.Platform.Interfaces;
 using BlackSharp.UI.Avalonia.Platform.Windows;
@@ -21,6 +20,7 @@ using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.MVVM.Utilities;
 using LibreDiagnostics.MVVM.ViewModels;
+using LibreDiagnostics.UI.Platform;
 using LibreDiagnostics.UI.Platform.Windows;
 using System.Windows.Input;
 
@@ -136,7 +136,7 @@ namespace LibreDiagnostics.UI.Windows
             }
             else
             {
-                active = screens.FirstOrDefault(s => s.GetSerialNumber() == settings.ScreenInfo.ScreenID, defaultScreen);
+                active = screens.FirstOrDefault(s => ScreenManager.GetScreenID(s, settings.ScreenInfo.Strategy) == settings.ScreenInfo.ScreenID, defaultScreen);
             }
 
             var bounds = active.WorkingArea;
@@ -220,8 +220,8 @@ namespace LibreDiagnostics.UI.Windows
                  || e.OldSettings.DockingPosition  != e.NewSettings.DockingPosition
                  || 
                     (
-                        e.OldSettings.ScreenInfo?.ScreenIndex != e.NewSettings.ScreenInfo.ScreenIndex
-                     || e.OldSettings.ScreenInfo?.ScreenID    != e.NewSettings.ScreenInfo.ScreenID
+                        e.OldSettings.ScreenInfo?.Strategy != e.NewSettings.ScreenInfo.Strategy
+                     || e.OldSettings.ScreenInfo?.ScreenID != e.NewSettings.ScreenInfo.ScreenID
                     )
                  || e.OldSettings.AppWidth         != e.NewSettings.AppWidth
                  || e.OldSettings.HorizontalOffset != e.NewSettings.HorizontalOffset

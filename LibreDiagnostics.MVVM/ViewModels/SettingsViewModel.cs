@@ -216,13 +216,7 @@ namespace LibreDiagnostics.MVVM.ViewModels
 
             ScreenList = MessageBro.DoGetScreens();
 
-            //Try to find ScreenID first
-            var screen = ScreenList.FirstOrDefault(tvp => tvp.ScreenID == Settings.ScreenInfo?.ScreenID);
-            if (screen == null)
-            {
-                //Try to find ScreenIndex if ScreenID was not found with fallback to first screen in list
-                screen = ScreenList.FirstOrDefault(tvp => tvp.ScreenIndex == Settings.ScreenInfo?.ScreenIndex, ScreenList.FirstOrDefault());
-            }
+            var screen = ScreenList.FirstOrDefault(tvp => tvp.ScreenID == Settings.ScreenInfo?.ScreenID, ScreenList.FirstOrDefault());
 
             ScreenSelected = screen;
 

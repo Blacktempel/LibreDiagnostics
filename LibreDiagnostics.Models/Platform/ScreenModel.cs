@@ -9,7 +9,9 @@
 
 using BlackSharp.Core.Interfaces;
 using BlackSharp.MVVM.ComponentModel;
+using LibreDiagnostics.Models.Enums;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace LibreDiagnostics.Models.Platform
 {
@@ -25,12 +27,13 @@ namespace LibreDiagnostics.Models.Platform
             set { SetField(ref _Name, value); }
         }
 
-        int _ScreenIndex;
+        ScreenIdentificationStrategy _Strategy;
         [JsonProperty]
-        public int ScreenIndex
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ScreenIdentificationStrategy Strategy
         {
-            get { return _ScreenIndex; }
-            set { SetField(ref _ScreenIndex, value); }
+            get { return _Strategy; }
+            set { SetField(ref _Strategy, value); }
         }
 
         string _ScreenID;
