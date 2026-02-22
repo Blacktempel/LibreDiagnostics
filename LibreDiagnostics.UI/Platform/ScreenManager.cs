@@ -25,48 +25,21 @@ namespace LibreDiagnostics.UI.Platform
             var list = new List<ScreenModel>();
 
             //First try to use serial number as unique identifier
-            foreach (var screen in screens)
-            {
-                list.Add(new()
-                {
-                    Name = screen.DisplayName,
-                    Strategy = ScreenIdentificationStrategy.SerialNumber,
-                    ScreenID = GetScreenID(screen, ScreenIdentificationStrategy.SerialNumber)
-                });
-            }
-
-            //If no duplicate IDs, return the list
-            if (!HasDuplicateID(list))
+            if (TryStrategy(screens, list, ScreenIdentificationStrategy.SerialNumber))
             {
                 return list;
             }
 
             //Serial numbers are not unique (probably lazy and/or cheap manufacturer), so we have to use a different strategy
-            foreach (var screen in screens)
-            {
-                list.Add(new()
-                {
-                    Name = screen.DisplayName,
-                    Strategy = ScreenIdentificationStrategy.HardwareID,
-                    ScreenID = GetScreenID(screen, ScreenIdentificationStrategy.HardwareID)
-                });
-            }
-
-            //If no duplicate IDs, return the list
-            if (!HasDuplicateID(list))
+            if (TryStrategy(screens, list, ScreenIdentificationStrategy.HardwareID))
             {
                 return list;
             }
 
             //Hardware IDs are not unique so just use the full device path as a last resort
-            foreach (var screen in screens)
+            if (TryStrategy(screens, list, ScreenIdentificationStrategy.FullDevicePath))
             {
-                list.Add(new()
-                {
-                    Name = screen.DisplayName,
-                    Strategy = ScreenIdentificationStrategy.FullDevicePath,
-                    ScreenID = GetScreenID(screen, ScreenIdentificationStrategy.FullDevicePath)
-                });
+                return list;
             }
 
             if (HasDuplicateID(list))
@@ -105,6 +78,23 @@ namespace LibreDiagnostics.UI.Platform
         #endregion
 
         #region Private
+
+        static bool TryStrategy(IReadOnlyList<Screen> screens, List<ScreenModel> list, ScreenIdentificationStrategy strategy)
+        {
+            list.Clear();
+
+            foreach (var screen in screens)
+            {
+                list.Add(new()
+                {
+                    Name = screen.DisplayName,
+                    Strategy = strategy,
+                    ScreenID = GetScreenID(screen, strategy)
+                });
+            }
+
+            return !HasDuplicateID(list);
+        }
 
         static bool HasDuplicateID(List<ScreenModel> list)
         {
