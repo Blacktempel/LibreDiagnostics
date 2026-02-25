@@ -11,6 +11,7 @@ using BlackSharp.Core.Logging;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 using SharpCompress.IO;
+using SharpCompress.Readers;
 using System.Text.Json;
 
 namespace LibreDiagnostics.Tasks.Github
@@ -186,7 +187,15 @@ namespace LibreDiagnostics.Tasks.Github
                     //Extract update
                     using var zipFile = File.OpenRead(updateFilePath);
                     using var stream = SharpCompressStream.Create(zipFile);
-                    using var archive = ArchiveFactory.Open(stream);
+
+                    var options = new ReaderOptions()
+                    {
+                        ExtractFullPath = true,
+                        PreserveFileTime = true,
+                        PreserveAttributes = true,
+                    };
+
+                    await using var archive = await ArchiveFactory.OpenAsyncArchive(stream, options);
 
                     //WriteToDirectoryAsync requires to create the directory before extracting to it
                     if (!Directory.Exists(appPath))
@@ -194,15 +203,8 @@ namespace LibreDiagnostics.Tasks.Github
                         Directory.CreateDirectory(appPath);
                     }
 
-                    var options = new ExtractionOptions()
-                    {
-                        ExtractFullPath = true,
-                        PreserveFileTime = true,
-                        PreserveAttributes = true,
-                    };
-
                     var prog = new Progress<ProgressReport>(pr => progress?.Report(pr.PercentComplete.GetValueOrDefault()));
-                    await archive.WriteToDirectoryAsync(appPath, options, prog);
+                    await archive.WriteToDirectoryAsync(appPath, prog);
 
                     //Check if extraction path contains only one folder (the main folder of the archive)
                     //If yes, move all files from that folder to the extraction path and delete the folder

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="BlackSharp.Core" Version="1.0.9" />
-    <PackageReference Include="SharpCompress" Version="0.44.5" />
+    <PackageReference Include="SharpCompress" Version="0.46.3" />
     <PackageReference Include="TaskScheduler" Version="2.12.2" />
   </ItemGroup>
 
