@@ -876,4 +876,10 @@
   <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
     <value>データレートの表示に使用する単位を定義します（例: Byte/s、KB/s、MB/s、...）。</value>
   </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>ドライブを起動</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>ドライブがスリープ中の場合、SMART データ更新のためにドライブのスリープ解除を強制します。NVMe には効果がありません。</value>
+  </data>
 </root>

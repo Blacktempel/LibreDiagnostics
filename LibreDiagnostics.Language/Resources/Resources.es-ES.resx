@@ -876,4 +876,10 @@
   <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
     <value>Define qué unidad se usa para mostrar las velocidades de datos (p. ej. Byte/s, KB/s, MB/s, ...).</value>
   </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Activar unidad</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Fuerza la activación de la unidad para actualizar los datos SMART si la unidad está en reposo. No tiene efecto en unidades NVMe.</value>
+  </data>
 </root>

@@ -876,4 +876,10 @@
   <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
     <value>定義顯示資料速率時使用的單位（例如：Byte/s、KB/s、MB/s、...）。</value>
   </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>喚醒硬碟</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>當硬碟處於休眠狀態時，強制喚醒硬碟以更新 SMART 資料。對 NVMe 無效。</value>
+  </data>
 </root>

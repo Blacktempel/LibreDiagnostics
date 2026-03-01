@@ -277,6 +277,9 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 }
             });
 
+            bool forceDriveWakeup = e.NewSettings.GetHardwareConfigOptionValue<bool>(HardwareMonitorType.Storage, HardwareConfigOption.ForceDriveWakeup);
+            (Hardware as StorageDevice).Storage.ForceWakeup = forceDriveWakeup;
+
             //Set Load Bar layout
             bool loadBarEnabled = e.NewSettings.IsConfigEnabled(HardwareMonitorType.Storage, HardwareMetricKey.DriveLoadBar);
             if (loadBarEnabled && ShouldLoadBarBeEnabled)

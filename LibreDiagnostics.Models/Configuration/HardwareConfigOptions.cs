@@ -108,6 +108,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsThrottleInterval;
                 case HardwareConfigOption.UsedSpaceAlert:
                     return Resources.SettingsUsedSpaceAlert;
+                case HardwareConfigOption.ForceDriveWakeup:
+                    return Resources.SettingsForceDriveWakeup;
 
                 case HardwareConfigOption.BandwidthInAlert:
                     return Resources.SettingsBandwidthInAlert;
@@ -146,6 +148,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsThrottleIntervalTooltip;
                 case HardwareConfigOption.UsedSpaceAlert:
                     return Resources.SettingsUsedSpaceAlertTooltip;
+                case HardwareConfigOption.ForceDriveWakeup:
+                    return Resources.SettingsForceDriveWakeupTooltip;
 
                 case HardwareConfigOption.BandwidthInAlert:
                     return Resources.SettingsBandwidthInAlertTooltip;
@@ -205,6 +209,7 @@ namespace LibreDiagnostics.Models.Configuration
             //Storage
             public static HardwareConfigOptions ThrottleInterval  { get { return GetDefaultConfig(HardwareConfigOption.ThrottleInterval , 0                ); } }
             public static HardwareConfigOptions UsedSpaceAlert    { get { return GetDefaultConfig(HardwareConfigOption.UsedSpaceAlert   , 0                ); } }
+            public static HardwareConfigOptions ForceDriveWakeup  { get { return GetDefaultConfig(HardwareConfigOption.ForceDriveWakeup , false            ); } }
 
             //Network
             public static HardwareConfigOptions BandwidthInAlert  { get { return GetDefaultConfig(HardwareConfigOption.BandwidthInAlert , 0                ); } }

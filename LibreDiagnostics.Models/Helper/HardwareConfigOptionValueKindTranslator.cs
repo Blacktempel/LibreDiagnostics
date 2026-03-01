@@ -22,6 +22,7 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareConfigOption.RoundAll:
                 case HardwareConfigOption.AllCoreClocks:
                 case HardwareConfigOption.CoreLoads:
+                case HardwareConfigOption.ForceDriveWakeup:
                 case HardwareConfigOption.ShowInactiveFans:
                     return HardwareConfigOptionValueKind.Boolean;
                 case HardwareConfigOption.TempAlert:

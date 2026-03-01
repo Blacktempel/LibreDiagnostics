@@ -876,4 +876,10 @@
   <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
     <value>Legt fest, in welcher Einheit Datenraten angezeigt werden (z. B. Byte/s, KB/s, MB/s, ...).</value>
   </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Festplatte aufwecken</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Erzwingt das Aufwecken der Festplatte für die SMART-Datenaktualisierung, wenn sie im Ruhezustand ist. Hat keine Wirkung bei NVMes.</value>
+  </data>
 </root>

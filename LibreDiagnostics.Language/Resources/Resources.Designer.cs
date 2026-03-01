@@ -1465,6 +1465,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wake drive.
+        /// </summary>
+        public static string SettingsForceDriveWakeup {
+            get {
+                return ResourceManager.GetString("SettingsForceDriveWakeup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forces drive to wakeup for SMART data update, if drive is asleep. Does nothing for NVMes..
+        /// </summary>
+        public static string SettingsForceDriveWakeupTooltip {
+            get {
+                return ResourceManager.GetString("SettingsForceDriveWakeupTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string SettingsGeneralTab {

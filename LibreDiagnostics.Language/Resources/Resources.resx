@@ -876,4 +876,10 @@
   <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
     <value>Defines which unit is used to display data rates (e.g. Byte/s, KB/s, MB/s, ...).</value>
   </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Wake drive</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Forces drive to wakeup for SMART data update, if drive is asleep. Does nothing for NVMes.</value>
+  </data>
 </root>

@@ -474,6 +474,7 @@ namespace LibreDiagnostics.Models.Configuration
                         Configuration.HardwareConfigOptions.Defaults.ThrottleInterval,
                         Configuration.HardwareConfigOptions.Defaults.TempAlert,
                         Configuration.HardwareConfigOptions.Defaults.UsedSpaceAlert,
+                        Configuration.HardwareConfigOptions.Defaults.ForceDriveWakeup,
                     }
                 },
                 new()

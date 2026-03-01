@@ -14,7 +14,7 @@
   <ItemGroup>
     <PackageReference Include="BlackSharp.Core" Version="1.0.11" />
     <PackageReference Include="BlackSharp.MVVM" Version="1.0.11" />
-    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.7-pre642" />
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.7-pre645" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 

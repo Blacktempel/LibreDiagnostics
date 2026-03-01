@@ -26,6 +26,7 @@ namespace LibreDiagnostics.Models.Enums
         //Storage
         ThrottleInterval  = 20,
         UsedSpaceAlert        ,
+        ForceDriveWakeup      ,
 
         //Network
         BandwidthInAlert  = 30,
