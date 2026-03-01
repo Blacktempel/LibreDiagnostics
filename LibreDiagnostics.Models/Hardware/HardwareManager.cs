@@ -10,6 +10,7 @@
 using BlackSharp.Core.Asynchronous;
 using BlackSharp.Core.Collections;
 using BlackSharp.Core.Converters;
+using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Logging;
 using BlackSharp.MVVM.ComponentModel;
 using LibreDiagnostics.Models.Configuration;
@@ -459,7 +460,7 @@ namespace LibreDiagnostics.Models.Hardware
 #if DEBUG
             var memory = Environment.WorkingSet;
             
-            var memoryInMB = memory == 0 ? 0 : DataStorageSizeConverter.ByteToMegabyte((ulong)memory);
+            var memoryInMB = memory == 0 ? 0 : DataUnitConverter.ToMegaByte(memory, DataUnit.Byte);
 
             Global.ProcessInformation.TotalMemorySize = memoryInMB;
 #endif

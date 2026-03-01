@@ -324,30 +324,6 @@ namespace LibreDiagnostics.Models.Helper
                 case DataType.Gigabyte:
                     return " GB";
 
-                case DataType.bps:
-                    return " bps";
-
-                case DataType.kbps:
-                    return " kbps";
-
-                case DataType.Mbps:
-                    return " Mbps";
-
-                case DataType.Gbps:
-                    return " Gbps";
-
-                case DataType.Bps:
-                    return " B/s";
-
-                case DataType.kBps:
-                    return " kB/s";
-
-                case DataType.MBps:
-                    return " MB/s";
-
-                case DataType.GBps:
-                    return " GB/s";
-
                 case DataType.MHz:
                     return " MHz";
 
@@ -377,6 +353,36 @@ namespace LibreDiagnostics.Models.Helper
 
                 case DataType.Ampere:
                     return " A";
+
+                case DataType.BytePerSecond:
+                    return " B/s";
+
+                case DataType.KiloBytePerSecond:
+                    return " KB/s";
+
+                case DataType.MegaBytePerSecond:
+                    return " MB/s";
+
+                case DataType.GigaBytePerSecond:
+                    return " GB/s";
+
+                case DataType.TeraBytePerSecond:
+                    return " TB/s";
+
+                case DataType.BitPerSecond:
+                    return " b/s";
+
+                case DataType.KiloBitPerSecond:
+                    return " Kb/s";
+
+                case DataType.MegaBitPerSecond:
+                    return " Mb/s";
+
+                case DataType.GigaBitPerSecond:
+                    return " Gb/s";
+
+                case DataType.TeraBitPerSecond:
+                    return " Tb/s";
 
                 default:
                     throw new ArgumentException($"Invalid {nameof(DataType)}.");

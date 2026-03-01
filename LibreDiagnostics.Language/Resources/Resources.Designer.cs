@@ -1357,6 +1357,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data rate unit.
+        /// </summary>
+        public static string SettingsDataRateUnit {
+            get {
+                return ResourceManager.GetString("SettingsDataRateUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defines which unit is used to display data rates (e.g. Byte/s, KB/s, MB/s, ...)..
+        /// </summary>
+        public static string SettingsDataRateUnitTooltip {
+            get {
+                return ResourceManager.GetString("SettingsDataRateUnitTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dock.
         /// </summary>
         public static string SettingsDock {

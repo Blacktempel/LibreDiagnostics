@@ -8,6 +8,7 @@
 */
 
 using BlackSharp.Core.Converters;
+using BlackSharp.Core.Converters.Enums;
 using LibreDiagnostics.Models.Interfaces;
 
 namespace LibreDiagnostics.Models.Converter
@@ -18,7 +19,7 @@ namespace LibreDiagnostics.Models.Converter
 
         public double Convert(double value)
         {
-            return (double)DataStorageSizeConverter.ByteToGigabyte((ulong)value);
+            return (double)DataUnitConverter.ToGigaByte((decimal)value, DataUnit.Byte);
         }
 
         public double ConvertBack(double value)

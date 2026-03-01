@@ -10,6 +10,7 @@
 #pragma warning disable CA1416 // Platform compatibility warning
 
 using BlackSharp.Core.Collections;
+using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Extensions;
 using DiskInfoToolkit;
 using LibreDiagnostics.Models.Configuration;
@@ -158,7 +159,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 var readActivity = Hardware.Sensors.Where(s => s.SensorType == SensorType.Load && s.Index == 51).FirstOrDefault();
                 if (readActivity != null)
                 {
-                    hardwareMetricList.Add(new MetricBoardItem(readActivity, HardwareMetricKey.DriveRead, DataType.kBps));
+                    hardwareMetricList.Add(new MetricBoardItem(readActivity, HardwareMetricKey.DriveRead, DataType.MegaBytePerSecond));
                 }
             }
 
@@ -167,7 +168,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 var writeActivity = Hardware.Sensors.Where(s => s.SensorType == SensorType.Load && s.Index == 52).FirstOrDefault();
                 if (writeActivity != null)
                 {
-                    hardwareMetricList.Add(new MetricBoardItem(writeActivity, HardwareMetricKey.DriveWrite, DataType.kBps));
+                    hardwareMetricList.Add(new MetricBoardItem(writeActivity, HardwareMetricKey.DriveWrite, DataType.MegaBytePerSecond));
                 }
             }
 
@@ -249,6 +250,9 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             SharedMethods.SetRoundAll     (this, HardwareMonitorType.Storage, e.NewSettings);
             SharedMethods.SetUseFahrenheit(this, HardwareMonitorType.Storage, e.NewSettings);
             SharedMethods.SetTempAlert    (this, HardwareMonitorType.Storage, e.NewSettings);
+
+            SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Storage, e.NewSettings, HardwareMetrics.FirstOrDefault(m => m.HardwareMetricKey == HardwareMetricKey.DriveRead ) as MetricBase, DataUnit.Byte);
+            SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Storage, e.NewSettings, HardwareMetrics.FirstOrDefault(m => m.HardwareMetricKey == HardwareMetricKey.DriveWrite) as MetricBase, DataUnit.Byte);
 
             long throttleInterval = e.NewSettings.GetHardwareConfigOptionValue<long>(HardwareMonitorType.Storage, HardwareConfigOption.ThrottleInterval);
             if (throttleInterval > 0)

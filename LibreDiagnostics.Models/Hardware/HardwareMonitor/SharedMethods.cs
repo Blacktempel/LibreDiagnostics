@@ -7,6 +7,7 @@
 *
 */
 
+using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Extensions;
 using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Converter;
@@ -54,6 +55,71 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                     mb.AlertValue = temperatureAlert;
                 }
             });
+        }
+
+        public static void SetDataRateUnit(IHardwareMonitor monitor, HardwareMonitorType hardwareMonitorType, Settings settings, MetricBase hardwareMetric, DataUnit source)
+        {
+            var dataRateUnit = settings.GetHardwareConfigOptionValue<DataUnit>(hardwareMonitorType, HardwareConfigOption.DataRateUnit);
+
+            SetDataRateUnit(hardwareMetric, source, dataRateUnit);
+        }
+
+        #endregion
+
+        #region Private
+
+        static void SetDataRateUnit(MetricBase metric, DataUnit source, DataUnit target)
+        {
+            if (!TryGetDataRateUnit(target, out var dataType))
+            {
+                target = DataUnit.MegaByte;
+                dataType = DataType.MegaBytePerSecond;
+            }
+
+            if (source != target)
+            {
+                metric.Converter = new DataRateUnitConverter(source, target);
+            }
+            else
+            {
+                metric.Converter = null;
+            }
+
+            metric.DataType = dataType;
+        }
+
+        static bool TryGetDataRateUnit(DataUnit dataUnit, out DataType dataType)
+        {
+            switch (dataUnit)
+            {
+                case DataUnit.Byte:
+                    dataType = DataType.BytePerSecond    ; break;
+                case DataUnit.KiloByte:
+                    dataType = DataType.KiloBytePerSecond; break;
+                case DataUnit.MegaByte:
+                    dataType = DataType.MegaBytePerSecond; break;
+                case DataUnit.GigaByte:
+                    dataType = DataType.GigaBytePerSecond; break;
+                case DataUnit.TeraByte:
+                    dataType = DataType.TeraBytePerSecond; break;
+
+                case DataUnit.Bit:
+                    dataType = DataType.BitPerSecond     ; break;
+                case DataUnit.KiloBit:
+                    dataType = DataType.KiloBitPerSecond ; break;
+                case DataUnit.MegaBit:
+                    dataType = DataType.MegaBitPerSecond ; break;
+                case DataUnit.GigaBit:
+                    dataType = DataType.GigaBitPerSecond ; break;
+                case DataUnit.TeraBit:
+                    dataType = DataType.TeraBitPerSecond ; break;
+
+                default:
+                    dataType = DataType.MegaBytePerSecond;
+                    return false;
+            }
+
+            return true;
         }
 
         #endregion

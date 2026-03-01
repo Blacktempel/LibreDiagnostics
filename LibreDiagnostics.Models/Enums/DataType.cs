@@ -20,14 +20,6 @@ namespace LibreDiagnostics.Models.Enums
         Kilobyte,
         Megabyte,
         Gigabyte,
-        bps,
-        kbps,
-        Mbps,
-        Gbps,
-        Bps,
-        kBps,
-        MBps,
-        GBps,
         MHz,
         GHz,
         Voltage,
@@ -38,5 +30,17 @@ namespace LibreDiagnostics.Models.Enums
         IP,
         Watt,
         Ampere,
+
+        BytePerSecond,
+        KiloBytePerSecond,
+        MegaBytePerSecond,
+        GigaBytePerSecond,
+        TeraBytePerSecond,
+
+        BitPerSecond,
+        KiloBitPerSecond,
+        MegaBitPerSecond,
+        GigaBitPerSecond,
+        TeraBitPerSecond,
     }
 }

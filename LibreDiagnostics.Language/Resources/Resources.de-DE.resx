@@ -870,4 +870,10 @@
   <data name="PowerMonitor" xml:space="preserve">
     <value>Leistungsüberwachung</value>
   </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>Datenraten-Einheit</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>Legt fest, in welcher Einheit Datenraten angezeigt werden (z. B. Byte/s, KB/s, MB/s, ...).</value>
+  </data>
 </root>

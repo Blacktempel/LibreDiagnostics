@@ -317,6 +317,17 @@ namespace LibreDiagnostics.Models.Configuration
                 }
                 else
                 {
+                    var defaultRecord = defaultConfig.SingleOrDefault(hmc => hmc.HardwareMonitorType == hardwareMonitorConfig.HardwareMonitorType, hardwareMonitorConfig);
+
+                    //Add any new default options that are missing in the current config (preserves new keys)
+                    foreach (var defaultOption in defaultRecord.HardwareConfigOptions)
+                    {
+                        if (!hardwareMonitorConfig.HardwareConfigOptions.Any(existing => existing.Key == defaultOption.Key))
+                        {
+                            hardwareMonitorConfig.HardwareConfigOptions.Add(defaultOption.Clone());
+                        }
+                    }
+
                     foreach (var hardwareConfigOption in hardwareMonitorConfig.HardwareConfigOptions)
                     {
                         var hcoRecord = hmcRecord.HardwareConfigOptions.SingleOrDefault(hc => hc.Key == hardwareConfigOption.Key, hardwareConfigOption);
@@ -459,6 +470,7 @@ namespace LibreDiagnostics.Models.Configuration
                         Configuration.HardwareConfigOptions.Defaults.HardwareNames,
                         Configuration.HardwareConfigOptions.Defaults.UseFahrenheit,
                         Configuration.HardwareConfigOptions.Defaults.RoundAll,
+                        Configuration.HardwareConfigOptions.Defaults.DataRateUnit,
                         Configuration.HardwareConfigOptions.Defaults.ThrottleInterval,
                         Configuration.HardwareConfigOptions.Defaults.TempAlert,
                         Configuration.HardwareConfigOptions.Defaults.UsedSpaceAlert,
@@ -481,6 +493,7 @@ namespace LibreDiagnostics.Models.Configuration
                     {
                         Configuration.HardwareConfigOptions.Defaults.HardwareNames,
                         Configuration.HardwareConfigOptions.Defaults.RoundAll,
+                        Configuration.HardwareConfigOptions.Defaults.DataRateUnit,
                         Configuration.HardwareConfigOptions.Defaults.BandwidthInAlert,
                         Configuration.HardwareConfigOptions.Defaults.BandwidthOutAlert,
                     }

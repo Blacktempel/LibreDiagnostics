@@ -7,10 +7,12 @@
 *
 */
 
+using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Interfaces;
 using BlackSharp.Core.Reflection;
 using BlackSharp.MVVM.ComponentModel;
 using LibreDiagnostics.Language.Resources;
+using LibreDiagnostics.Models.Configuration.Json;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Helper;
 using Newtonsoft.Json;
@@ -34,6 +36,7 @@ namespace LibreDiagnostics.Models.Configuration
 
         object _Value;
         [JsonProperty]
+        [JsonConverter(typeof(EnumTypeEnumValueJsonConverter))]
         public object Value
         {
             get { return _Value; }
@@ -93,6 +96,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsRoundAllDecimals;
                 case HardwareConfigOption.TempAlert:
                     return Resources.SettingsTemperatureAlert;
+                case HardwareConfigOption.DataRateUnit:
+                    return Resources.SettingsDataRateUnit;
 
                 case HardwareConfigOption.AllCoreClocks:
                     return Resources.SettingsAllCoreClocks;
@@ -129,6 +134,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsRoundAllDecimalsTooltip;
                 case HardwareConfigOption.TempAlert:
                     return Resources.SettingsTemperatureAlertTooltip;
+                case HardwareConfigOption.DataRateUnit:
+                    return Resources.SettingsDataRateUnitTooltip;
 
                 case HardwareConfigOption.AllCoreClocks:
                     return Resources.SettingsAllCoreClocksTooltip;
@@ -186,24 +193,25 @@ namespace LibreDiagnostics.Models.Configuration
             #region Properties
 
             //General / Shared
-            public static HardwareConfigOptions HardwareNames     { get { return GetDefaultConfig(HardwareConfigOption.HardwareNames    , true ); } }
-            public static HardwareConfigOptions UseFahrenheit     { get { return GetDefaultConfig(HardwareConfigOption.UseFahrenheit    , false); } }
-            public static HardwareConfigOptions RoundAll          { get { return GetDefaultConfig(HardwareConfigOption.RoundAll         , false); } }
-            public static HardwareConfigOptions TempAlert         { get { return GetDefaultConfig(HardwareConfigOption.TempAlert        , 0    ); } }
+            public static HardwareConfigOptions HardwareNames     { get { return GetDefaultConfig(HardwareConfigOption.HardwareNames    , true             ); } }
+            public static HardwareConfigOptions UseFahrenheit     { get { return GetDefaultConfig(HardwareConfigOption.UseFahrenheit    , false            ); } }
+            public static HardwareConfigOptions RoundAll          { get { return GetDefaultConfig(HardwareConfigOption.RoundAll         , false            ); } }
+            public static HardwareConfigOptions TempAlert         { get { return GetDefaultConfig(HardwareConfigOption.TempAlert        , 0                ); } }
+            public static HardwareConfigOptions DataRateUnit      { get { return GetDefaultConfig(HardwareConfigOption.DataRateUnit     , DataUnit.MegaByte); } }
 
             //CPU
-            public static HardwareConfigOptions AllCoreClocks     { get { return GetDefaultConfig(HardwareConfigOption.AllCoreClocks    , false); } }
+            public static HardwareConfigOptions AllCoreClocks     { get { return GetDefaultConfig(HardwareConfigOption.AllCoreClocks    , false            ); } }
 
             //Storage
-            public static HardwareConfigOptions ThrottleInterval  { get { return GetDefaultConfig(HardwareConfigOption.ThrottleInterval , 0    ); } }
-            public static HardwareConfigOptions UsedSpaceAlert    { get { return GetDefaultConfig(HardwareConfigOption.UsedSpaceAlert   , 0    ); } }
+            public static HardwareConfigOptions ThrottleInterval  { get { return GetDefaultConfig(HardwareConfigOption.ThrottleInterval , 0                ); } }
+            public static HardwareConfigOptions UsedSpaceAlert    { get { return GetDefaultConfig(HardwareConfigOption.UsedSpaceAlert   , 0                ); } }
 
             //Network
-            public static HardwareConfigOptions BandwidthInAlert  { get { return GetDefaultConfig(HardwareConfigOption.BandwidthInAlert , 0    ); } }
-            public static HardwareConfigOptions BandwidthOutAlert { get { return GetDefaultConfig(HardwareConfigOption.BandwidthOutAlert, 0    ); } }
+            public static HardwareConfigOptions BandwidthInAlert  { get { return GetDefaultConfig(HardwareConfigOption.BandwidthInAlert , 0                ); } }
+            public static HardwareConfigOptions BandwidthOutAlert { get { return GetDefaultConfig(HardwareConfigOption.BandwidthOutAlert, 0                ); } }
 
             //Fans
-            public static HardwareConfigOptions ShowInactiveFans  { get { return GetDefaultConfig(HardwareConfigOption.ShowInactiveFans , false); } }
+            public static HardwareConfigOptions ShowInactiveFans  { get { return GetDefaultConfig(HardwareConfigOption.ShowInactiveFans , false            ); } }
 
             #endregion
 

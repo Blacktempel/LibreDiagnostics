@@ -31,6 +31,8 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareConfigOption.BandwidthInAlert:
                 case HardwareConfigOption.BandwidthOutAlert:
                     return HardwareConfigOptionValueKind.Int64;
+                case HardwareConfigOption.DataRateUnit:
+                    return HardwareConfigOptionValueKind.DataUnit;
                 default:
                     return HardwareConfigOptionValueKind.None;
             }

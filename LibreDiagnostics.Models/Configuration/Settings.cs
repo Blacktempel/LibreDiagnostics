@@ -8,6 +8,7 @@
 */
 
 using BlackSharp.Core.Collections;
+using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Interfaces;
 using BlackSharp.Core.Reflection;
 using BlackSharp.MVVM.ComponentModel;
@@ -506,6 +507,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Convert.ToSingle(hco.Value);
                 case HardwareConfigOptionValueKind.Decimal:
                     return Convert.ToDecimal(hco.Value);
+                case HardwareConfigOptionValueKind.DataUnit:
+                    return Enum.TryParse<DataUnit>(hco.Value.ToString(), out var result) ? result : DataUnit.MegaByte;
                 case HardwareConfigOptionValueKind.None:
                 case HardwareConfigOptionValueKind.Boolean:
                 case HardwareConfigOptionValueKind.String:
@@ -532,6 +535,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Convert.ToSingle(0);
                 case HardwareConfigOptionValueKind.Decimal:
                     return Convert.ToDecimal(0);
+                case HardwareConfigOptionValueKind.DataUnit:
+                    return DataUnit.MegaByte;
                 case HardwareConfigOptionValueKind.None:
                 case HardwareConfigOptionValueKind.Boolean:
                     return false;

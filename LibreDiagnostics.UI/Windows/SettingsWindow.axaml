@@ -11,6 +11,7 @@
 				  xmlns:cfg="using:LibreDiagnostics.Models.Configuration"
 				  xmlns:dt="using:LibreDiagnostics.UI.Controls.Templates"
 				  xmlns:enums="clr-namespace:LibreDiagnostics.Models.Enums;assembly=LibreDiagnostics.Models"
+				  xmlns:mappings="clr-namespace:LibreDiagnostics.Models.Mappings;assembly=LibreDiagnostics.Models"
 				  xmlns:ctrlLocal="using:LibreDiagnostics.UI.Controls"
                   mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="650"
                   x:Class="LibreDiagnostics.UI.Windows.SettingsWindow"
@@ -372,7 +373,7 @@
                                                 </ComboBox>
                                             </DockPanel>
 
-                                            <ItemsControl ItemsSource="{Binding HardwareConfigOptions}">
+                                            <ItemsControl Grid.IsSharedSizeScope="True" ItemsSource="{Binding HardwareConfigOptions}">
 												<ItemsControl.ItemTemplate>
                                                     <dt:HardwareConfigOptionsTemplateSelector>
                                                         <DataTemplate x:DataType="cfg:HardwareConfigOptions" x:Key="{x:Static enums:HardwareConfigOptionValueKind.Boolean}">
@@ -403,6 +404,23 @@
                                                                 <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0,0,10,0"/>
                                                                 <ctrl:TextBoxNumber Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource FallbackZeroInt64}}"
                                                                                     NumberType="Long" ToolTip.Tip="{Binding Tooltip}"/>
+                                                            </Grid>
+                                                        </DataTemplate>
+
+                                                        <DataTemplate x:DataType="cfg:HardwareConfigOptions" x:Key="{x:Static enums:HardwareConfigOptionValueKind.DataUnit}">
+                                                            <Grid Margin="0,0,0,5">
+																<Grid.ColumnDefinitions>
+																	<ColumnDefinition SharedSizeGroup="iHwCfgOptDtLabel"/>
+																	<ColumnDefinition SharedSizeGroup="iHwCfgOptDtText"/>
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0,0,10,0"/>
+
+                                                                <ComboBox Grid.Column="1"
+                                                                          ItemsSource="{x:Static mappings:DataUnitMapping.Mapping}"
+                                                                          DisplayMemberBinding="{Binding Item2}"
+                                                                          SelectedValueBinding="{Binding Item1}"
+                                                                          SelectedValue="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                                             </Grid>
                                                         </DataTemplate>
                                                     </dt:HardwareConfigOptionsTemplateSelector>

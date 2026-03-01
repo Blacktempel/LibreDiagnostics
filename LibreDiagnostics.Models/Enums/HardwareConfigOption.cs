@@ -17,6 +17,7 @@ namespace LibreDiagnostics.Models.Enums
         UseFahrenheit         ,
         RoundAll              ,
         TempAlert             ,
+        DataRateUnit          ,
 
         //CPU
         AllCoreClocks     = 10,

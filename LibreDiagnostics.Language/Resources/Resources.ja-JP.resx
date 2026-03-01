@@ -870,4 +870,10 @@
   <data name="PowerMonitor" xml:space="preserve">
     <value>電力モニター</value>
   </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>データレート単位</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>データレートの表示に使用する単位を定義します（例: Byte/s、KB/s、MB/s、...）。</value>
+  </data>
 </root>

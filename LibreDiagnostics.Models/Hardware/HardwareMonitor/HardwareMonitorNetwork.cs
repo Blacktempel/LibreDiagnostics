@@ -7,8 +7,8 @@
 *
 */
 
+using BlackSharp.Core.Converters.Enums;
 using LibreDiagnostics.Models.Configuration;
-using LibreDiagnostics.Models.Converter;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Hardware.Metrics;
@@ -63,7 +63,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 var download = Hardware.Sensors.Where(s => s.SensorType == SensorType.Throughput && s.Name.Contains("download", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (download != null)
                 {
-                    DownloadSpeedMetric = new MetricBoardItem(download, HardwareMetricKey.NetworkIn, DataType.MBps) { Converter = ConverterFactory.GetConverterShared<ByteToMegabyteConverter>() };
+                    DownloadSpeedMetric = new MetricBoardItem(download, HardwareMetricKey.NetworkIn, DataType.MegaBytePerSecond);
                     hardwareMetricList.Add(DownloadSpeedMetric);
                 }
             }
@@ -73,7 +73,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 var upload = Hardware.Sensors.Where(s => s.SensorType == SensorType.Throughput && s.Name.Contains("upload", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (upload != null)
                 {
-                    UploadSpeedMetric = new MetricBoardItem(upload, HardwareMetricKey.NetworkOut, DataType.MBps) { Converter = ConverterFactory.GetConverterShared<ByteToMegabyteConverter>() };
+                    UploadSpeedMetric = new MetricBoardItem(upload, HardwareMetricKey.NetworkOut, DataType.MegaBytePerSecond);
                     hardwareMetricList.Add(UploadSpeedMetric);
                 }
             }
@@ -117,6 +117,9 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             DownloadSpeedMetric?.AlertValue = downloadThreshold;
             UploadSpeedMetric  ?.AlertValue = uploadThreshold;
+
+            SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Network, e.NewSettings, DownloadSpeedMetric, DataUnit.Byte);
+            SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Network, e.NewSettings, UploadSpeedMetric  , DataUnit.Byte);
 
             //Set download
             var download = HardwareMetrics.Find(hm => hm.HardwareMetricKey == HardwareMetricKey.NetworkIn);

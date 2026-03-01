@@ -870,4 +870,10 @@
   <data name="PowerMonitor" xml:space="preserve">
     <value>Power Monitor</value>
   </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>Data rate unit</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>Defines which unit is used to display data rates (e.g. Byte/s, KB/s, MB/s, ...).</value>
+  </data>
 </root>

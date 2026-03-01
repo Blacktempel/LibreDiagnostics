@@ -870,4 +870,10 @@
   <data name="PowerMonitor" xml:space="preserve">
     <value>功率监控</value>
   </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>数据速率单位</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>定义用于显示数据速率的单位（例如：Byte/s、KB/s、MB/s、...）。</value>
+  </data>
 </root>
