@@ -2077,6 +2077,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Top/Bottom padding.
+        /// </summary>
+        public static string SettingsVerticalContentMargin {
+            get {
+                return ResourceManager.GetString("SettingsVerticalContentMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increases or decreases the empty space above and below the content..
+        /// </summary>
+        public static string SettingsVerticalContentMarginTooltip {
+            get {
+                return ResourceManager.GetString("SettingsVerticalContentMarginTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vertical offset.
         /// </summary>
         public static string SettingsVerticalOffset {

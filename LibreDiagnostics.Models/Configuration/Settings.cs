@@ -156,6 +156,14 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _VerticalOffset, value); }
         }
 
+        int _VerticalContentMargin = -10;
+        [JsonProperty]
+        public int VerticalContentMargin
+        {
+            get { return _VerticalContentMargin; }
+            set { SetField(ref _VerticalContentMargin, value); }
+        }
+
         int _UpdateInterval = 1000;
         [JsonProperty]
         public int UpdateInterval

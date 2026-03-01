@@ -11,6 +11,7 @@
     <conv:AlertColorConverter              x:Key="AlertColorConverter"/>
     <conv:AnyNotZeroToValueConverter       x:Key="AnyNotZeroToValueConverter"/>
     <conv:FontToSpaceConverter             x:Key="FontToSpaceConverter"/>
+    <conv:IntToTopBottomMarginConverter    x:Key="IntToTopBottomMarginConverter"/>
     <conv:MetricConfigToSelectionConverter x:Key="MetricConfigToSelectionConverter"/>
     <conv:StringToFontFamilyConverter      x:Key="StringToFontFamilyConverter"/>
     <conv:StringToImageConverter           x:Key="StringToImageConverter"/>

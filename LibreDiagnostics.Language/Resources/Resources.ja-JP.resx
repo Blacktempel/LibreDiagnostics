@@ -882,4 +882,10 @@
   <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
     <value>ドライブがスリープ中の場合、SMART データ更新のためにドライブのスリープ解除を強制します。NVMe には効果がありません。</value>
   </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>上下の余白</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>コンテンツの上下の空きスペースを増減します。</value>
+  </data>
 </root>

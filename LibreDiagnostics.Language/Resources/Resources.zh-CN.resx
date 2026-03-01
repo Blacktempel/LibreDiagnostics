@@ -882,4 +882,10 @@
   <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
     <value>当硬盘处于休眠状态时，强制唤醒硬盘以更新 SMART 数据。对 NVMe 无效。</value>
   </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>上下内边距</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>增加或减少内容上方和下方的空白间距。</value>
+  </data>
 </root>

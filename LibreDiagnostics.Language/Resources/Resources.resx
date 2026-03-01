@@ -882,4 +882,10 @@
   <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
     <value>Forces drive to wakeup for SMART data update, if drive is asleep. Does nothing for NVMes.</value>
   </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Top/Bottom padding</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Increases or decreases the empty space above and below the content.</value>
+  </data>
 </root>

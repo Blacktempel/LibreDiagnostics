@@ -216,16 +216,17 @@ namespace LibreDiagnostics.UI.Windows
             if (e.OldSettings != null)
             {
                 //Check if any AppBar relevant settings have changed
-                if (e.OldSettings.IsAppBar         != e.NewSettings.IsAppBar
-                 || e.OldSettings.DockingPosition  != e.NewSettings.DockingPosition
+                if (e.OldSettings.IsAppBar              != e.NewSettings.IsAppBar
+                 || e.OldSettings.DockingPosition       != e.NewSettings.DockingPosition
                  || 
                     (
                         e.OldSettings.ScreenInfo?.Strategy != e.NewSettings.ScreenInfo.Strategy
                      || e.OldSettings.ScreenInfo?.ScreenID != e.NewSettings.ScreenInfo.ScreenID
                     )
-                 || e.OldSettings.AppWidth         != e.NewSettings.AppWidth
-                 || e.OldSettings.HorizontalOffset != e.NewSettings.HorizontalOffset
-                 || e.OldSettings.VerticalOffset   != e.NewSettings.VerticalOffset
+                 || e.OldSettings.AppWidth              != e.NewSettings.AppWidth
+                 || e.OldSettings.HorizontalOffset      != e.NewSettings.HorizontalOffset
+                 || e.OldSettings.VerticalOffset        != e.NewSettings.VerticalOffset
+                 || e.OldSettings.VerticalContentMargin != e.NewSettings.VerticalContentMargin
                     )
                 {
                     //Disable AppBar

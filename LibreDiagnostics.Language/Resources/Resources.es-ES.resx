@@ -882,4 +882,10 @@
   <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
     <value>Fuerza la activación de la unidad para actualizar los datos SMART si la unidad está en reposo. No tiene efecto en unidades NVMe.</value>
   </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Relleno superior/inferior</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Aumenta o reduce el espacio vacío por encima y por debajo del contenido.</value>
+  </data>
 </root>

@@ -882,4 +882,10 @@
   <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
     <value>Erzwingt das Aufwecken der Festplatte für die SMART-Datenaktualisierung, wenn sie im Ruhezustand ist. Hat keine Wirkung bei NVMes.</value>
   </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Abstand Oben/Unten</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Erhöht oder verringert den Abstand ober- und unterhalb des Inhalts.</value>
+  </data>
 </root>

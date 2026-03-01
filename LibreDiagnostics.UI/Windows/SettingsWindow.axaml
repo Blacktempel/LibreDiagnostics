@@ -35,6 +35,7 @@
 			<sys:Int32 x:Key="FontSizeFallback">11</sys:Int32>
 			<sys:Int32 x:Key="HorizontalOffsetFallback">0</sys:Int32>
 			<sys:Int32 x:Key="VerticalOffsetFallback">0</sys:Int32>
+			<sys:Int32 x:Key="VerticalContentMarginFallback">-10</sys:Int32>
 			<sys:Int32 x:Key="UpdateIntervalFallback">1000</sys:Int32>
 			<sys:Double x:Key="BackgroundOpacityFallback">1</sys:Double>
 
@@ -148,7 +149,7 @@
                 </TabItem>
                 <!-- Advanced Tab -->
 				<TabItem Header="{x:Static lang:Resources.SettingsAdvancedTab}">
-                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 						<TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static lang:Resources.SettingsAppWidth}"/>
                         <DockPanel Grid.Column="1" Grid.Row="0">
                             <ctrl:TextBoxNumber NumberType="Double" AllowNegative="False"
@@ -214,8 +215,19 @@
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsVerticalOffsetTooltip}"/>
                         </DockPanel>
 
-						<TextBlock Grid.Column="0" Grid.Row="5" Text="{x:Static lang:Resources.SettingsUpdateInterval}"/>
+						<TextBlock Grid.Column="0" Grid.Row="5" Text="{x:Static lang:Resources.SettingsVerticalContentMargin}"/>
                         <DockPanel Grid.Column="1" Grid.Row="5">
+                            <ctrl:TextBoxNumber NumberType="Int"
+                                                Text="{Binding ElementName=VerticalContentMarginSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource VerticalContentMarginFallback}}"
+                                                ToolTip.Tip="{x:Static lang:Resources.SettingsVerticalContentMarginTooltip}"/>
+							<Slider x:Name="VerticalContentMarginSlider" TickPlacement="BottomRight"
+                                    Value="{Binding Settings.VerticalContentMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    Minimum="-50" Maximum="50" TickFrequency="1" LargeChange="5" IsSnapToTickEnabled="True"
+                                    ToolTip.Tip="{x:Static lang:Resources.SettingsVerticalContentMarginTooltip}"/>
+                        </DockPanel>
+
+						<TextBlock Grid.Column="0" Grid.Row="6" Text="{x:Static lang:Resources.SettingsUpdateInterval}"/>
+                        <DockPanel Grid.Column="1" Grid.Row="6">
                             <ctrl:TextBoxNumber NumberType="Int" AllowNegative="False"
                                                 Text="{Binding ElementName=UpdateIntervalSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource UpdateIntervalFallback}}"
                                                 ToolTip.Tip="{x:Static lang:Resources.SettingsUpdateIntervalTooltip}"/>
@@ -225,28 +237,28 @@
                                     ToolTip.Tip="{x:Static lang:Resources.SettingsUpdateIntervalTooltip}"/>
                         </DockPanel>
 
-						<TextBlock Grid.Column="0" Grid.Row="6" Text="{x:Static lang:Resources.SettingsShowTrayIcon}"/>
-                        <CheckBox Grid.Column="1" Grid.Row="6"
+						<TextBlock Grid.Column="0" Grid.Row="7" Text="{x:Static lang:Resources.SettingsShowTrayIcon}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="7"
                                   IsChecked="{Binding Settings.ShowTrayIcon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsShowTrayIconTooltip}"/>
 
-						<TextBlock Grid.Column="0" Grid.Row="7" Text="{x:Static lang:Resources.SettingsIsInAltTab}"/>
-                        <CheckBox Grid.Column="1" Grid.Row="7"
+						<TextBlock Grid.Column="0" Grid.Row="8" Text="{x:Static lang:Resources.SettingsIsInAltTab}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="8"
                                   IsChecked="{Binding Settings.IsInAltTab, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsIsInAltTabTooltip}"/>
 
-						<TextBlock Grid.Column="0" Grid.Row="8" Text="{x:Static lang:Resources.SettingsClickThrough}"/>
-                        <CheckBox Grid.Column="1" Grid.Row="8"
+						<TextBlock Grid.Column="0" Grid.Row="9" Text="{x:Static lang:Resources.SettingsClickThrough}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="9"
                                   IsChecked="{Binding Settings.ClickThrough, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsClickThroughTooltip}"/>
 
-						<TextBlock Grid.Column="0" Grid.Row="9" Text="{x:Static lang:Resources.SettingsShowMenuBar}"/>
-                        <CheckBox Grid.Column="1" Grid.Row="9"
+						<TextBlock Grid.Column="0" Grid.Row="10" Text="{x:Static lang:Resources.SettingsShowMenuBar}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="10"
                                   IsChecked="{Binding Settings.ShowMenuBar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsShowMenuBarTooltip}"/>
 
-						<TextBlock Grid.Column="0" Grid.Row="10" Text="{x:Static lang:Resources.SettingsShowClock}"/>
-                        <CheckBox Grid.Column="1" Grid.Row="10"
+						<TextBlock Grid.Column="0" Grid.Row="11" Text="{x:Static lang:Resources.SettingsShowClock}"/>
+                        <CheckBox Grid.Column="1" Grid.Row="11"
                                   IsChecked="{Binding Settings.ShowClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsShowClockTooltip}"/>
                     </ctrl:GridEx>
