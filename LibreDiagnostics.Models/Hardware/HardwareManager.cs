@@ -11,6 +11,7 @@ using BlackSharp.Core.Asynchronous;
 using BlackSharp.Core.Collections;
 using BlackSharp.Core.Converters;
 using BlackSharp.Core.Converters.Enums;
+using BlackSharp.Core.Extensions;
 using BlackSharp.Core.Logging;
 using BlackSharp.MVVM.ComponentModel;
 using LibreDiagnostics.Models.Configuration;
@@ -256,7 +257,14 @@ namespace LibreDiagnostics.Models.Hardware
                         case HardwareMonitorType.GPU:
                             if (_Computer.IsGpuEnabled != cfg.Enabled)
                             {
+                                _Computer.HardwareAdded   -= OnGPUAdded;
+                                _Computer.HardwareRemoved -= OnGPURemoved;
+
                                 _Computer.IsGpuEnabled = cfg.Enabled;
+
+                                _Computer.HardwareAdded   += OnGPUAdded;
+                                _Computer.HardwareRemoved += OnGPURemoved;
+
                                 addOrRemoveConfig(cfg);
                             }
                             break;
@@ -407,6 +415,30 @@ namespace LibreDiagnostics.Models.Hardware
             }
         }
 
+        void OnGPUAdded(IHardware hardware)
+        {
+            if (!hardware.HardwareType.AnyOf(HardwareType.GpuNvidia, HardwareType.GpuAmd, HardwareType.GpuIntel))
+            {
+                return;
+            }
+
+            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnGPUAdded)}: '{hardware.Name}'", DateTime.Now);
+
+            OnHardwareChanged(HardwareMonitorType.GPU);
+        }
+
+        void OnGPURemoved(IHardware hardware)
+        {
+            if (!hardware.HardwareType.AnyOf(HardwareType.GpuNvidia, HardwareType.GpuAmd, HardwareType.GpuIntel))
+            {
+                return;
+            }
+
+            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnGPURemoved)}: '{hardware.Name}'", DateTime.Now);
+
+            OnHardwareChanged(HardwareMonitorType.GPU);
+        }
+
         void OnStorageAdded(IHardware hardware)
         {
             if (hardware.HardwareType != HardwareType.Storage)
@@ -416,7 +448,7 @@ namespace LibreDiagnostics.Models.Hardware
 
             Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageAdded)}: '{hardware.Name}'", DateTime.Now);
 
-            OnStoragesChanged();
+            OnHardwareChanged(HardwareMonitorType.Storage);
         }
 
         void OnStorageRemoved(IHardware hardware)
@@ -428,12 +460,12 @@ namespace LibreDiagnostics.Models.Hardware
 
             Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageRemoved)}: '{hardware.Name}'", DateTime.Now);
 
-            OnStoragesChanged();
+            OnHardwareChanged(HardwareMonitorType.Storage);
         }
 
-        void OnStoragesChanged()
+        void OnHardwareChanged(HardwareMonitorType hardwareMonitorType)
         {
-            var cfg = Global.Settings.HardwareMonitorConfigs.Find(hmc => hmc.HardwareMonitorType == HardwareMonitorType.Storage);
+            var cfg = Global.Settings.HardwareMonitorConfigs.Find(hmc => hmc.HardwareMonitorType == hardwareMonitorType);
 
             if (cfg != null && HardwarePanels != null)
             {
