@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:global="clr-namespace:LibreDiagnostics.Models.Globals;assembly=LibreDiagnostics.Models"
+					xmlns:enums="clr-namespace:LibreDiagnostics.Models.Enums;assembly=LibreDiagnostics.Models"
 					xmlns:vms="clr-namespace:LibreDiagnostics.MVVM.ViewModels;assembly=LibreDiagnostics.MVVM">
 
 	<ControlTheme x:Key="MainPanel" TargetType="DockPanel">
@@ -12,6 +13,12 @@
 					<BehaviorCollection>
 						<DataTriggerBehavior x:DataType="vms:MainWindowViewModel" Binding="{Binding IsReady}" ComparisonCondition="Equal" Value="True">
 							<ChangePropertyAction PropertyName="IsVisible" Value="True"/>
+						</DataTriggerBehavior>
+						<DataTriggerBehavior Binding="{Binding DockingPosition, Source={x:Static global:Global.Settings}, Mode=OneWay}" ComparisonCondition="Equal" Value="{x:Static enums:DockingPosition.Left}">
+							<ChangePropertyAction PropertyName="Margin" Value="-10,0"/>
+						</DataTriggerBehavior>
+						<DataTriggerBehavior Binding="{Binding DockingPosition, Source={x:Static global:Global.Settings}, Mode=OneWay}" ComparisonCondition="Equal" Value="{x:Static enums:DockingPosition.Right}">
+							<ChangePropertyAction PropertyName="Margin" Value="-10,0"/>
 						</DataTriggerBehavior>
 					</BehaviorCollection>
 				</BehaviorCollectionTemplate>

@@ -26,14 +26,6 @@
 
 	<Grid Margin="{Binding VerticalContentMargin, Source={x:Static global:Global.Settings}, Mode=OneWay, Converter={StaticResource IntToTopBottomMarginConverter}}">
 		<DockPanel Theme="{StaticResource MainPanel}">
-			<Interaction.Behaviors>
-				<DataTriggerBehavior Binding="{Binding DockingPosition, Source={x:Static global:Global.Settings}, Mode=OneWay}" ComparisonCondition="Equal" Value="{x:Static enums:DockingPosition.Left}">
-					<ChangePropertyAction PropertyName="Margin" Value="-10,0"/>
-				</DataTriggerBehavior>
-				<DataTriggerBehavior Binding="{Binding DockingPosition, Source={x:Static global:Global.Settings}, Mode=OneWay}" ComparisonCondition="Equal" Value="{x:Static enums:DockingPosition.Right}">
-					<ChangePropertyAction PropertyName="Margin" Value="-10,0"/>
-				</DataTriggerBehavior>
-			</Interaction.Behaviors>
 			<StackPanel IsVisible="{Binding ShowMenuBar, Source={x:Static global:Global.Settings}, Mode=OneWay}"
 						Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"
 						Orientation="Horizontal" DockPanel.Dock="Top">
