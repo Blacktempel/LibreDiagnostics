@@ -432,7 +432,8 @@
                                                                           ItemsSource="{x:Static mappings:DataUnitMapping.Mapping}"
                                                                           DisplayMemberBinding="{Binding Item2}"
                                                                           SelectedValueBinding="{Binding Item1}"
-                                                                          SelectedValue="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                                          SelectedValue="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                          ToolTip.Tip="{Binding Tooltip}"/>
                                                             </Grid>
                                                         </DataTemplate>
                                                     </dt:HardwareConfigOptionsTemplateSelector>
