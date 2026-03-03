@@ -52,6 +52,11 @@ namespace LibreDiagnostics.UI.Platform
 
         public static string GetScreenID(Screen screen, ScreenIdentificationStrategy strategy)
         {
+            if (BlackSharp.Core.Platform.OperatingSystem.IsLinux())
+            {
+                return string.Empty; //TODO: Implement Linux screen identification
+            }
+
             switch (strategy)
             {
                 case ScreenIdentificationStrategy.SerialNumber:

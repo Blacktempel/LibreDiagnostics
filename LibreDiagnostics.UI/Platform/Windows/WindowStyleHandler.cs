@@ -22,7 +22,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
         {
             if (!OS.IsWindows())
             {
-                throw new PlatformNotSupportedException();
+                return; //TODO
             }
 
             window.IsHitTestVisible = !set;
@@ -46,7 +46,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
         {
             if (!OS.IsWindows())
             {
-                throw new PlatformNotSupportedException();
+                return; //TODO
             }
 
             if (set)
@@ -63,7 +63,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
         {
             if (!OS.IsWindows())
             {
-                throw new PlatformNotSupportedException();
+                return; //TODO
             }
 
             if (set)
@@ -89,7 +89,7 @@ namespace LibreDiagnostics.UI.Platform.Windows
         {
             if (!OS.IsWindows())
             {
-                throw new PlatformNotSupportedException();
+                return; //TODO
             }
 
             var handle = window.TryGetPlatformHandle()?.Handle;

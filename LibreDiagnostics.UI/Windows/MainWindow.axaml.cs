@@ -213,6 +213,11 @@ namespace LibreDiagnostics.UI.Windows
 
         void ProcessAppBarRelevantChanges(SettingsChangedEventArgs e)
         {
+            if (OS.IsLinux())
+            {
+                return; //AppBar is not supported on Linux, so ignore this setting
+            }
+
             if (e.OldSettings != null)
             {
                 //Check if any AppBar relevant settings have changed
