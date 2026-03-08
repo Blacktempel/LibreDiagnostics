@@ -11,6 +11,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform;
+using BlackSharp.Core.Logging;
 using BlackSharp.UI.Avalonia.Media;
 using BlackSharp.UI.Avalonia.Platform.Interfaces;
 using BlackSharp.UI.Avalonia.Platform.Windows;
@@ -124,7 +125,8 @@ namespace LibreDiagnostics.UI.Windows
             //No screens
             if (screens.Count == 0)
             {
-                throw new InvalidOperationException("No screens were detected.");
+                Logger.Instance.Add(LogLevel.Warn, "No screens were detected.", DateTime.Now);
+                return;
             }
 
             var defaultScreen = screens.FirstOrDefault();
