@@ -94,6 +94,42 @@ namespace LibreDiagnostics.MVVM.ViewModels
             set { SetField(ref _FontFamilySelected, value); Settings.FontFamily = _FontFamilySelected; }
         }
 
+        DateTimeFormat _DateFormatSelected;
+        public DateTimeFormat DateFormatSelected
+        {
+            get { return _DateFormatSelected; }
+            set
+            {
+                SetField(ref _DateFormatSelected, value);
+                Settings.DateFormat = _DateFormatSelected.Format;
+            }
+        }
+
+        List<DateTimeFormat> _DateFormatList;
+        public List<DateTimeFormat> DateFormatList
+        {
+            get { return _DateFormatList; }
+            set { SetField(ref _DateFormatList, value); }
+        }
+
+        DateTimeFormat _TimeFormatSelected;
+        public DateTimeFormat TimeFormatSelected
+        {
+            get { return _TimeFormatSelected; }
+            set
+            {
+                SetField(ref _TimeFormatSelected, value);
+                Settings.TimeFormat = _TimeFormatSelected.Format;
+            }
+        }
+
+        List<DateTimeFormat> _TimeFormatList;
+        public List<DateTimeFormat> TimeFormatList
+        {
+            get { return _TimeFormatList; }
+            set { SetField(ref _TimeFormatList, value); }
+        }
+
         #endregion
 
         Settings _Settings;
@@ -233,6 +269,14 @@ namespace LibreDiagnostics.MVVM.ViewModels
 
             FontFamilyList = Global.FontManager.GetSystemFontFamilies();
             FontFamilySelected = Settings.FontFamily ?? Global.FontManager.GlobalFontFamily;
+
+            var sampleDateTime = new DateTime(2026, 12, 31, 23, 59, 59);
+
+            DateFormatList = MessageBro.DoGetDateFormats(sampleDateTime);
+            DateFormatSelected = DateFormatList.FirstOrDefault(s => s.Format == Settings.DateFormat) ?? DateTimeFormat.GetDefaultDateFormat(sampleDateTime);
+
+            TimeFormatList = MessageBro.DoGetTimeFormats(sampleDateTime);
+            TimeFormatSelected = TimeFormatList.FirstOrDefault(s => s.Format == Settings.TimeFormat) ?? DateTimeFormat.GetDefaultTimeFormat(sampleDateTime);
         }
 
         #endregion

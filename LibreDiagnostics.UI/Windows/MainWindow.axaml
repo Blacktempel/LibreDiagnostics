@@ -68,13 +68,13 @@
 						</StackPanel>
 
 						<!--Time-->
-						<TextBlock Text="{Binding Clock.CurrentDateTime, StringFormat=T}"
+						<TextBlock Text="{Binding Clock.CurrentTime}"
 								   Padding="0" Margin="0,0,0,-0.5" VerticalAlignment="Center"
 								   Foreground="{Binding FontColor, Source={x:Static global:Global.Settings}, Mode=OneWay}"
 								   FontSize="{Binding TitleFontSize, Source={x:Static global:Global.FontManager}, Mode=OneWay}"/>
 
 						<!--Date-->
-						<TextBlock Text="{Binding Clock.CurrentDateTime, StringFormat='{}{0:d. MMMM yyyy}'}"
+						<TextBlock Text="{Binding Clock.CurrentDate}"
 								   Padding="0" Margin="0,0,0,10" VerticalAlignment="Center"
 								   Foreground="{Binding FontColor, Source={x:Static global:Global.Settings}, Mode=OneWay}"
 								   FontSize="{Binding TitleFontSize, Source={x:Static global:Global.FontManager}, Mode=OneWay}"/>

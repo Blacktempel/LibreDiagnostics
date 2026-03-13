@@ -888,4 +888,16 @@
   <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
     <value>增加或減少內容上方與下方的空白間距。</value>
   </data>
+  <data name="SettingsDateFormat" xml:space="preserve">
+    <value>日期格式</value>
+  </data>
+  <data name="SettingsTimeFormat" xml:space="preserve">
+    <value>時間格式</value>
+  </data>
+  <data name="SettingsDateFormatTooltip" xml:space="preserve">
+    <value>用於時鐘的日期格式。</value>
+  </data>
+  <data name="SettingsTimeFormatTooltip" xml:space="preserve">
+    <value>用於時鐘的時間格式。</value>
+  </data>
 </root>

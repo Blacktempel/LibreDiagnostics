@@ -112,6 +112,14 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _AutoUpdate, value); }
         }
 
+        bool _UseHardwareAcceleration = true;
+        [JsonProperty]
+        public bool UseHardwareAcceleration
+        {
+            get { return _UseHardwareAcceleration; }
+            set { SetField(ref _UseHardwareAcceleration, value); }
+        }
+
         #endregion
 
         #region Advanced
@@ -212,12 +220,20 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _ShowClock, value); }
         }
 
-        bool _UseHardwareAcceleration = true;
+        string _DateFormat = "d. MMMM yyyy";
         [JsonProperty]
-        public bool UseHardwareAcceleration
+        public string DateFormat
         {
-            get { return _UseHardwareAcceleration; }
-            set { SetField(ref _UseHardwareAcceleration, value); }
+            get => _DateFormat;
+            set => SetField(ref _DateFormat, value);
+        }
+
+        string _TimeFormat = "T";
+        [JsonProperty]
+        public string TimeFormat
+        {
+            get => _TimeFormat;
+            set => SetField(ref _TimeFormat, value);
         }
 
         #endregion

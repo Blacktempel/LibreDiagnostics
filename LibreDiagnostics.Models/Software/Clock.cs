@@ -8,6 +8,7 @@
 */
 
 using BlackSharp.MVVM.ComponentModel;
+using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Interfaces;
 
 namespace LibreDiagnostics.Models.Software
@@ -19,11 +20,18 @@ namespace LibreDiagnostics.Models.Software
     {
         #region Properties
 
-        DateTime? _CurrentDateTime;
-        public DateTime? CurrentDateTime
+        string _CurrentDate;
+        public string CurrentDate
         {
-            get { return _CurrentDateTime; }
-            set { SetField(ref _CurrentDateTime, value); }
+            get { return _CurrentDate; }
+            set { SetField(ref _CurrentDate, value); }
+        }
+
+        string _CurrentTime;
+        public string CurrentTime
+        {
+            get { return _CurrentTime; }
+            set { SetField(ref _CurrentTime, value); }
         }
 
         string _IconData;
@@ -39,7 +47,10 @@ namespace LibreDiagnostics.Models.Software
 
         public void Update()
         {
-            CurrentDateTime = DateTime.Now;
+            var dt = DateTime.Now;
+
+            CurrentDate = dt.ToString(Global.Settings.DateFormat);
+            CurrentTime = dt.ToString(Global.Settings.TimeFormat);
         }
 
         #endregion

@@ -1375,6 +1375,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date format.
+        /// </summary>
+        public static string SettingsDateFormat {
+            get {
+                return ResourceManager.GetString("SettingsDateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date format to be used for the clock..
+        /// </summary>
+        public static string SettingsDateFormatTooltip {
+            get {
+                return ResourceManager.GetString("SettingsDateFormatTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dock.
         /// </summary>
         public static string SettingsDock {
@@ -1992,6 +2010,24 @@ namespace LibreDiagnostics.Language.Resources {
         public static string SettingsThrottleIntervalTooltip {
             get {
                 return ResourceManager.GetString("SettingsThrottleIntervalTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time format.
+        /// </summary>
+        public static string SettingsTimeFormat {
+            get {
+                return ResourceManager.GetString("SettingsTimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time format to be used for the clock..
+        /// </summary>
+        public static string SettingsTimeFormatTooltip {
+            get {
+                return ResourceManager.GetString("SettingsTimeFormatTooltip", resourceCulture);
             }
         }
         

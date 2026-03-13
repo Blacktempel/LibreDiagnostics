@@ -888,4 +888,16 @@
   <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
     <value>Increases or decreases the empty space above and below the content.</value>
   </data>
+  <data name="SettingsDateFormat" xml:space="preserve">
+    <value>Date format</value>
+  </data>
+  <data name="SettingsTimeFormat" xml:space="preserve">
+    <value>Time format</value>
+  </data>
+  <data name="SettingsDateFormatTooltip" xml:space="preserve">
+    <value>Date format to be used for the clock.</value>
+  </data>
+  <data name="SettingsTimeFormatTooltip" xml:space="preserve">
+    <value>Time format to be used for the clock.</value>
+  </data>
 </root>

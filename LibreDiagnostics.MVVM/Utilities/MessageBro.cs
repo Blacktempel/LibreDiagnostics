@@ -9,6 +9,7 @@
 
 using BlackSharp.MVVM.Dialogs;
 using BlackSharp.MVVM.Dialogs.Enums;
+using LibreDiagnostics.Models.Helper;
 using LibreDiagnostics.Models.Platform;
 
 namespace LibreDiagnostics.MVVM.Utilities
@@ -66,6 +67,41 @@ namespace LibreDiagnostics.MVVM.Utilities
         public static List<ScreenModel> DoGetScreens()
         {
             return GetScreens?.Invoke() ?? new();
+        }
+
+        public static List<DateTimeFormat> DoGetDateFormats(DateTime? dateTimePreview = null)
+        {
+            var dt = dateTimePreview ?? DateTime.Now;
+
+            var list = new List<DateTimeFormat>()
+            {
+                DateTimeFormat.GetDefaultDateFormat(dt),
+                new DateTimeFormat("dd.MM.yyyy"),
+                new DateTimeFormat("yyyy.MM.dd"),
+                new DateTimeFormat("MM.dd.yyyy"),
+            };
+
+            list.ForEach(tvp => tvp.UpdatePreview(dt));
+
+            return list;
+        }
+
+        public static List<DateTimeFormat> DoGetTimeFormats(DateTime? dateTimePreview = null)
+        {
+            var dt = dateTimePreview ?? DateTime.Now;
+
+            var list = new List<DateTimeFormat>()
+            {
+                DateTimeFormat.GetDefaultTimeFormat(dt),
+                new DateTimeFormat("HH:mm:ss"),
+                new DateTimeFormat("hh:mm:ss"),
+                new DateTimeFormat("HH:mm"),
+                new DateTimeFormat("hh:mm"),
+            };
+
+            list.ForEach(tvp => tvp.UpdatePreview(dt));
+
+            return list;
         }
 
         #endregion

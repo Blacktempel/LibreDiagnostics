@@ -149,7 +149,8 @@
                 </TabItem>
                 <!-- Advanced Tab -->
 				<TabItem Header="{x:Static lang:Resources.SettingsAdvancedTab}">
-                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                    <ctrl:GridEx ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                                 Grid.IsSharedSizeScope="True">
 						<TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static lang:Resources.SettingsAppWidth}"/>
                         <DockPanel Grid.Column="1" Grid.Row="0">
                             <ctrl:TextBoxNumber NumberType="Double" AllowNegative="False"
@@ -261,6 +262,50 @@
                         <CheckBox Grid.Column="1" Grid.Row="11"
                                   IsChecked="{Binding Settings.ShowClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   ToolTip.Tip="{x:Static lang:Resources.SettingsShowClockTooltip}"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="12" Text="{x:Static lang:Resources.SettingsDateFormat}"/>
+                        <ComboBox Grid.Column="1" Grid.Row="12"
+                                  ItemsSource="{Binding DateFormatList}"
+                                  SelectedItem="{Binding DateFormatSelected}"
+                                  ToolTip.Tip="{x:Static lang:Resources.SettingsDateFormatTooltip}">
+							<ComboBox.ItemTemplate>
+                                <DataTemplate>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFFormat" Width="*"/>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFSeparator" Width="Auto"/>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFPreview" Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" Text="{Binding Format}"/>
+                                        <TextBlock Grid.Column="1" Text=" - "/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Preview}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <TextBlock Grid.Column="0" Grid.Row="13" Text="{x:Static lang:Resources.SettingsTimeFormat}"/>
+                        <ComboBox Grid.Column="1" Grid.Row="13"
+                                  ItemsSource="{Binding TimeFormatList}"
+                                  SelectedItem="{Binding TimeFormatSelected}"
+                                  ToolTip.Tip="{x:Static lang:Resources.SettingsTimeFormatTooltip}">
+							<ComboBox.ItemTemplate>
+                                <DataTemplate>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFFormat" Width="*"/>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFSeparator" Width="Auto"/>
+											<ColumnDefinition SharedSizeGroup="SetAdvDTFCbDTFPreview" Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" Text="{Binding Format}"/>
+                                        <TextBlock Grid.Column="1" Text=" - "/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Preview}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </ctrl:GridEx>
                 </TabItem>
                 <!-- Customize Tab -->
