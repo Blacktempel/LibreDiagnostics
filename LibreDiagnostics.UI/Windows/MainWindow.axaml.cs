@@ -183,7 +183,7 @@ namespace LibreDiagnostics.UI.Windows
                 }
             }
 
-            double height = Math.Min(desiredHeight, MaxHeight);
+            double height = Math.Max(desiredHeight, MaxHeight);
             Height = height;
 
             Position = new((int)(x * scaling), (int)(y * scaling));
