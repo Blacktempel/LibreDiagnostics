@@ -32,6 +32,12 @@ namespace LibreDiagnostics.UI.Controls
 
         #endregion
 
+        #region Fields
+
+        bool _IgnoreBaseTextChange;
+
+        #endregion
+
         #region XAML Properties
 
         public static readonly new StyledProperty<HotKey> TextProperty =
@@ -69,6 +75,16 @@ namespace LibreDiagnostics.UI.Controls
                 if (change.NewValue is HotKey newHotkey)
                 {
                     newHotkey.PropertyChanged += HotkeyPropertyChanged;
+                }
+            }
+            else if (change.Property == TextBox.TextProperty && !_IgnoreBaseTextChange)
+            {
+                var newText = change.NewValue as string;
+
+                if (string.IsNullOrEmpty(newText) && Text != null && !Text.IsEmpty)
+                {
+                    Text.Key = (int)Key.None;
+                    Text.Modifiers = (int)KeyModifiers.None;
                 }
             }
         }
@@ -133,43 +149,52 @@ namespace LibreDiagnostics.UI.Controls
 
         void UpdateDisplayedText()
         {
-            if (Text == null || Text.IsEmpty)
+            _IgnoreBaseTextChange = true;
+
+            try
             {
-                base.Text = string.Empty;
+                if (Text == null || Text.IsEmpty)
+                {
+                    base.Text = string.Empty;
+                }
+                else
+                {
+                    var keys = new List<string>();
+
+                    var modifiers = (KeyModifiers)Text.Modifiers;
+                    var key = (Key)Text.Key;
+
+                    if (modifiers.HasFlag(KeyModifiers.Control))
+                    {
+                        keys.Add(KeyModifiers.Control.ToString());
+                    }
+
+                    if (modifiers.HasFlag(KeyModifiers.Alt))
+                    {
+                        keys.Add(KeyModifiers.Alt.ToString());
+                    }
+
+                    if (modifiers.HasFlag(KeyModifiers.Meta))
+                    {
+                        keys.Add(KeyModifiers.Meta.ToString());
+                    }
+
+                    if (modifiers.HasFlag(KeyModifiers.Shift))
+                    {
+                        keys.Add(KeyModifiers.Shift.ToString());
+                    }
+
+                    if (key != Key.None)
+                    {
+                        keys.Add(key.ToString());
+                    }
+
+                    base.Text = string.Join(" + ", keys);
+                }
             }
-            else
+            finally
             {
-                var keys = new List<string>();
-
-                var modifiers = (KeyModifiers)Text.Modifiers;
-                var key = (Key)Text.Key;
-
-                if (modifiers.HasFlag(KeyModifiers.Control))
-                {
-                    keys.Add(KeyModifiers.Control.ToString());
-                }
-
-                if (modifiers.HasFlag(KeyModifiers.Alt))
-                {
-                    keys.Add(KeyModifiers.Alt.ToString());
-                }
-
-                if (modifiers.HasFlag(KeyModifiers.Meta))
-                {
-                    keys.Add(KeyModifiers.Meta.ToString());
-                }
-
-                if (modifiers.HasFlag(KeyModifiers.Shift))
-                {
-                    keys.Add(KeyModifiers.Shift.ToString());
-                }
-
-                if (key != Key.None)
-                {
-                    keys.Add(key.ToString());
-                }
-
-                base.Text = string.Join(" + ", keys);
+                _IgnoreBaseTextChange = false;
             }
         }
 
