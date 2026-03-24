@@ -10,6 +10,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
+using BlackSharp.Core.Logging;
 using BlackSharp.MVVM.Dialogs;
 using BlackSharp.MVVM.Dialogs.Enums;
 using BlackSharp.UI.Avalonia.Windows.Dialogs;
@@ -65,7 +66,7 @@ namespace LibreDiagnostics.UI.Utilities
         static void OpenSettings()
         {
             if (Avalonia.Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime wnd
-             && wnd.MainWindow != null)
+             && wnd.MainWindow != null && wnd.MainWindow.IsVisible)
             {
                 new Windows.SettingsWindow().ShowDialog(wnd.MainWindow);
             }
@@ -84,7 +85,7 @@ namespace LibreDiagnostics.UI.Utilities
             }
             else
             {
-                Console.WriteLine("Warning: doing a hard shutdown of application.");
+                Logger.Instance.Add(LogLevel.Warn, "Doing a hard shutdown of application.", DateTime.Now);
                 Environment.Exit(0);
             }
         }
@@ -141,7 +142,7 @@ namespace LibreDiagnostics.UI.Utilities
             if (hardware is StorageDevice sd)
             {
                 if (Avalonia.Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime wnd
-                 && wnd.MainWindow != null)
+                 && wnd.MainWindow != null && wnd.MainWindow.IsVisible)
                 {
                     new Windows.StorageWindow(sd).ShowDialog(wnd.MainWindow);
                 }
@@ -155,7 +156,7 @@ namespace LibreDiagnostics.UI.Utilities
         static void ShowRAMDetails(IHardware hardware)
         {
             if (Avalonia.Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime wnd
-             && wnd.MainWindow != null)
+             && wnd.MainWindow != null && wnd.MainWindow.IsVisible)
             {
                 new Windows.RAMWindow(hardware).ShowDialog(wnd.MainWindow);
             }
