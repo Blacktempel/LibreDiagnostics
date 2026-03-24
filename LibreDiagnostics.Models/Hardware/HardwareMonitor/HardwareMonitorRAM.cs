@@ -50,7 +50,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //Clock
             {
-                ISensor ramClock = Hardware.Sensors.Where(s => s.SensorType == SensorType.Clock).FirstOrDefault();
+                ISensor ramClock = Hardware.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Clock);
 
                 if (ramClock != null)
                 {
@@ -64,12 +64,12 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (board != null)
                 {
-                    voltage = board.Sensors.Where(s => s.SensorType == SensorType.Voltage && s.Name.Contains("RAM")).FirstOrDefault();
+                    voltage = board.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Voltage && s.Name.Contains("RAM"));
                 }
 
                 if (voltage == null)
                 {
-                    voltage = Hardware.Sensors.Where(s => s.SensorType == SensorType.Voltage).FirstOrDefault();
+                    voltage = Hardware.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Voltage);
                 }
 
                 if (voltage != null)
@@ -80,7 +80,10 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //Load
             {
-                ISensor loadSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Load && s.Index == 0).FirstOrDefault();
+                ISensor loadSensor = Hardware.Sensors.FirstOrDefault(s =>
+                    (s.SensorType == SensorType.Load && s.Index == 0) //Total  Memory
+                 || (s.SensorType == SensorType.Load && s.Index == 1) //Virtual Memory
+                );
 
                 if (loadSensor != null)
                 {
@@ -90,7 +93,10 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //Used
             {
-                ISensor usedSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Data && s.Index == 0).FirstOrDefault();
+                ISensor usedSensor = Hardware.Sensors.FirstOrDefault(s =>
+                    (s.SensorType == SensorType.Data && s.Index == 0) //Total  Memory
+                 || (s.SensorType == SensorType.Data && s.Index == 2) //Virtual Memory
+                );
 
                 if (usedSensor != null)
                 {
@@ -100,7 +106,10 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //Free
             {
-                ISensor freeSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Data && s.Index == 1).FirstOrDefault();
+                ISensor freeSensor = Hardware.Sensors.FirstOrDefault(s =>
+                    (s.SensorType == SensorType.Data && s.Index == 1) //Total  Memory
+                 || (s.SensorType == SensorType.Data && s.Index == 3) //Virtual Memory
+                );
 
                 if (freeSensor != null)
                 {
@@ -110,7 +119,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //Temp
             {
-                ISensor tempSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Temperature && s.Name.Contains("DIMM", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                ISensor tempSensor = Hardware.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Temperature && s.Name.Contains("DIMM", StringComparison.OrdinalIgnoreCase));
 
                 if (tempSensor != null)
                 {
