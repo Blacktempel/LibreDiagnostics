@@ -900,4 +900,16 @@
   <data name="SettingsTimeFormatTooltip" xml:space="preserve">
     <value>Formato de hora que se utilizará para el reloj.</value>
   </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>Mostrar ventana</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>Muestra u oculta la ventana principal que contiene todos los paneles de hardware.</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>Alternar visibilidad de la ventana</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>Cambia la visibilidad de la ventana a su estado opuesto (mostrar / ocultar).</value>
+  </data>
 </root>

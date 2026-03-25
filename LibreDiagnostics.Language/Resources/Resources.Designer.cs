@@ -1645,6 +1645,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toggle window visibility.
+        /// </summary>
+        public static string SettingsHotKeyToggleWindowVisibility {
+            get {
+                return ResourceManager.GetString("SettingsHotKeyToggleWindowVisibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes window visibility to its opposite (show / hide)..
+        /// </summary>
+        public static string SettingsHotKeyToggleWindowVisibilityTooltip {
+            get {
+                return ResourceManager.GetString("SettingsHotKeyToggleWindowVisibilityTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Appbar.
         /// </summary>
         public static string SettingsIsAppBar {
@@ -1938,6 +1956,24 @@ namespace LibreDiagnostics.Language.Resources {
         public static string SettingsShowTrayIconTooltip {
             get {
                 return ResourceManager.GetString("SettingsShowTrayIconTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show window.
+        /// </summary>
+        public static string SettingsShowWindow {
+            get {
+                return ResourceManager.GetString("SettingsShowWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shows or hides the main window which contains all hardware panels..
+        /// </summary>
+        public static string SettingsShowWindowTooltip {
+            get {
+                return ResourceManager.GetString("SettingsShowWindowTooltip", resourceCulture);
             }
         }
         

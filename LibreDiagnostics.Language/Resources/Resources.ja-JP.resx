@@ -900,4 +900,16 @@
   <data name="SettingsTimeFormatTooltip" xml:space="preserve">
     <value>時計に使用する時刻形式。</value>
   </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>ウィンドウを表示</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>すべてのハードウェアパネルを含むメインウィンドウを表示または非表示にします。</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>ウィンドウ表示を切り替え</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>ウィンドウの表示状態を反転します（表示 / 非表示）。</value>
+  </data>
 </root>

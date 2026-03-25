@@ -900,4 +900,16 @@
   <data name="SettingsTimeFormatTooltip" xml:space="preserve">
     <value>Zeitformat das für die Uhr verwendet wird.</value>
   </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>Fenster anzeigen</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>Zeigt oder versteckt das Hauptfenster mit allen Hardware-Panels.</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>Fenstersichtbarkeit umschalten</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>Ändert die Sichtbarkeit des Fensters zum Gegenteil (anzeigen / verstecken).</value>
+  </data>
 </root>

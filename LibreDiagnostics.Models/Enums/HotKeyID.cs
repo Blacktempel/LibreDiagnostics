@@ -15,5 +15,6 @@ namespace LibreDiagnostics.Models.Enums
         RestartApp,
         ToggleAppBar,
         OpenSettings,
+        ToggleWindowVisibility,
     }
 }

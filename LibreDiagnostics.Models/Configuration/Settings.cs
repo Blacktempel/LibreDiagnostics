@@ -220,6 +220,14 @@ namespace LibreDiagnostics.Models.Configuration
             set { SetField(ref _ShowClock, value); }
         }
 
+        bool _ShowWindow = true;
+        [JsonProperty]
+        public bool ShowWindow
+        {
+            get { return _ShowWindow; }
+            set { SetField(ref _ShowWindow, value); }
+        }
+
         string _DateFormat = "d. MMMM yyyy";
         [JsonProperty]
         public string DateFormat
@@ -334,6 +342,14 @@ namespace LibreDiagnostics.Models.Configuration
         {
             get { return _HotKeyOpenSettings; }
             set { SetField(ref _HotKeyOpenSettings, value); }
+        }
+
+        HotKey _HotKeyToggleWindowVisibility = new(HotKeyID.ToggleWindowVisibility);
+        [JsonProperty]
+        public HotKey HotKeyToggleWindowVisibility
+        {
+            get { return _HotKeyToggleWindowVisibility; }
+            set { SetField(ref _HotKeyToggleWindowVisibility, value); }
         }
 
         #endregion

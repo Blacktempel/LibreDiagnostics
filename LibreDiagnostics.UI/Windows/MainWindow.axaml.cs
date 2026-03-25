@@ -210,6 +210,8 @@ namespace LibreDiagnostics.UI.Windows
                 SetWindowPosition();
             }
 
+            ChangeWindowVisibility(e);
+
             UpdateHotKeys(settings);
         }
 
@@ -272,6 +274,46 @@ namespace LibreDiagnostics.UI.Windows
             }
         }
 
+        void ChangeWindowVisibility(SettingsChangedEventArgs e)
+        {
+            //First time applying settings
+            if (e.OldSettings == null)
+            {
+                //Nothing to do
+                return;
+            }
+
+            if (e.OldSettings.ShowWindow == e.NewSettings.ShowWindow)
+            {
+                return;
+            }
+
+            if (e.NewSettings.ShowWindow)
+            {
+                Show();
+
+                //Enable Appbar, if enabled
+                if (OS.IsWindows()
+                 && Global.Settings.IsAppBar && _AppBarTask == null)
+                {
+                    _AppBarTask = new AppBarTask(this);
+                    _AppBarTask.EnableAppBar();
+                }
+            }
+            else
+            {
+                Hide();
+
+                //Disable Appbar, if enabled
+                if (OS.IsWindows()
+                 && _AppBarTask != null)
+                {
+                    _AppBarTask.DisableAppBar();
+                    _AppBarTask = null;
+                }
+            }
+        }
+
         void SetAutoColors(Settings settings)
         {
             if (settings.AutoFontColor)
@@ -319,6 +361,17 @@ namespace LibreDiagnostics.UI.Windows
 
             //Open settings
             UpdateHotKey(settings.HotKeyOpenSettings, new RelayCommand(MessageBro.DoOpenSettings));
+
+            //Toggle window visibility
+            UpdateHotKey(settings.HotKeyToggleWindowVisibility, new RelayCommand(() =>
+            {
+                var old = Global.Settings.Clone();
+
+                Global.Settings.ShowWindow = !Global.Settings.ShowWindow;
+                Global.Settings.Save();
+
+                ChangeWindowVisibility(new(old, Global.Settings));
+            }));
         }
 
         void UpdateHotKey(HotKey hotKey, ICommand command)

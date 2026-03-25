@@ -900,4 +900,16 @@
   <data name="SettingsTimeFormatTooltip" xml:space="preserve">
     <value>用於時鐘的時間格式。</value>
   </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>顯示視窗</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>顯示或隱藏包含所有硬體面板的主視窗。</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>切換視窗可見性</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>將視窗可見性切換為相反狀態（顯示 / 隱藏）。</value>
+  </data>
 </root>
