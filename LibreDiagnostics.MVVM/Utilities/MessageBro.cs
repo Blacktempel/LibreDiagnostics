@@ -79,6 +79,7 @@ namespace LibreDiagnostics.MVVM.Utilities
                 new DateTimeFormat("dd.MM.yyyy"),
                 new DateTimeFormat("yyyy.MM.dd"),
                 new DateTimeFormat("MM.dd.yyyy"),
+                new DateTimeFormat("dddd, dd MMMM yyyy"),
             };
 
             list.ForEach(tvp => tvp.UpdatePreview(dt));
@@ -97,6 +98,7 @@ namespace LibreDiagnostics.MVVM.Utilities
                 new DateTimeFormat("hh:mm:ss"),
                 new DateTimeFormat("HH:mm"),
                 new DateTimeFormat("hh:mm"),
+                new DateTimeFormat("hh:mm tt"),
             };
 
             list.ForEach(tvp => tvp.UpdatePreview(dt));
