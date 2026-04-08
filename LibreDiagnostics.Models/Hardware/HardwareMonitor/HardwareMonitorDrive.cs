@@ -12,7 +12,6 @@
 using BlackSharp.Core.Collections;
 using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Extensions;
-using DiskInfoToolkit;
 using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Events;
@@ -20,7 +19,9 @@ using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Hardware.Metrics;
 using LibreDiagnostics.Models.Interfaces;
 using LibreHardwareMonitor.Hardware;
-using LibreHardwareMonitor.Hardware.Storage;
+
+using StorageDeviceDIT = DiskInfoToolkit.StorageDevice;
+using StorageDeviceLHM = LibreHardwareMonitor.Hardware.Storage.StorageDevice;
 
 namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 {
@@ -31,7 +32,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
         public HardwareMonitorDrive(IHardware hardware, HardwareConfig config)
             : base(hardware, config)
         {
-            var sd = Hardware as StorageDevice;
+            var sd = Hardware as StorageDeviceLHM;
             _Storage = sd.Storage;
 
             Initialize();
@@ -46,7 +47,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
         #region Fields
 
-        readonly Storage _Storage;
+        readonly StorageDeviceDIT _Storage;
 
         ISensor _FreeSize;
         ISensor _TotalSize;
@@ -84,7 +85,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
         public override void Update()
         {
-            if (Hardware is StorageDevice sd)
+            if (Hardware is StorageDeviceLHM sd)
             {
                 var driveLettersForStorageDevice = _Storage.Partitions
                     .Where(p => p.DriveLetter is not null)
@@ -123,7 +124,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
         protected override void OnRequestHardwareDetails()
         {
-            EventDistributor.ShowDriveDetails(Hardware as StorageDevice);
+            EventDistributor.ShowDriveDetails(Hardware as StorageDeviceLHM);
         }
 
         #endregion
@@ -258,12 +259,12 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             if (throttleInterval > 0)
             {
                 //Enable
-                StorageDevice.ThrottleInterval = TimeSpan.FromMilliseconds(throttleInterval);
+                StorageDeviceLHM.ThrottleInterval = TimeSpan.FromMilliseconds(throttleInterval);
             }
             else
             {
                 //Disable
-                StorageDevice.ThrottleInterval = TimeSpan.FromMilliseconds(0);
+                StorageDeviceLHM.ThrottleInterval = TimeSpan.FromMilliseconds(0);
             }
 
             short usedSpaceAlert = e.NewSettings.GetHardwareConfigOptionValue<short>(HardwareMonitorType.Storage, HardwareConfigOption.UsedSpaceAlert);
@@ -278,7 +279,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             });
 
             bool forceDriveWakeup = e.NewSettings.GetHardwareConfigOptionValue<bool>(HardwareMonitorType.Storage, HardwareConfigOption.ForceDriveWakeup);
-            (Hardware as StorageDevice).ForceWakeup = forceDriveWakeup;
+            (Hardware as StorageDeviceLHM).ForceWakeup = forceDriveWakeup;
 
             //Set Load Bar layout
             bool loadBarEnabled = e.NewSettings.IsConfigEnabled(HardwareMonitorType.Storage, HardwareMetricKey.DriveLoadBar);

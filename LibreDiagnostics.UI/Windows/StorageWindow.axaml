@@ -48,39 +48,32 @@
 					 ToolTip.Tip="{x:Static lang:Resources.StorageNameTooltip}"/>
 
 			<TextBlock Grid.Row="0" Grid.Column="2" Text="{x:Static lang:Resources.StorageHealth}"/>
-			<TextBox Grid.Row="0" Grid.Column="3" Text="{Binding Storage.Smart.Life, StringFormat='{}{0}%'}" IsReadOnly="True"
+			<TextBox Grid.Row="0" Grid.Column="3" Text="{Binding Storage.Health, StringFormat='{}{0}%'}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StorageHealthTooltip}"/>
 
 			<TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static lang:Resources.StorageTemperatureWarning}"/>
-			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Storage.Smart.TemperatureWarning, StringFormat='{}{0}°C'}" IsReadOnly="True"
+			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Storage.TemperatureWarning, StringFormat='{}{0}°C'}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StorageTemperatureWarningTooltip}"/>
 
 			<TextBlock Grid.Row="1" Grid.Column="2" Text="{x:Static lang:Resources.StorageTemperatureCritical}"/>
-			<TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Storage.Smart.TemperatureCritical, StringFormat='{}{0}°C'}" IsReadOnly="True"
+			<TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Storage.TemperatureCritical, StringFormat='{}{0}°C'}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StorageTemperatureCriticalTooltip}"/>
 
 			<TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static lang:Resources.StorageTotalReads}"/>
-			<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Storage.Smart.HostReads}" IsReadOnly="True"
+			<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Storage.HostReads}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StorageTotalReadsTooltip}"/>
 
 			<TextBlock Grid.Row="2" Grid.Column="2" Text="{x:Static lang:Resources.StorageTotalWrites}"/>
-			<TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Storage.Smart.HostWrites}" IsReadOnly="True"
+			<TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Storage.HostWrites}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StorageTotalWritesTooltip}"/>
 
 			<TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static lang:Resources.StoragePowerOnCount}"/>
-			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Storage.Smart.PowerOnCount}" IsReadOnly="True"
+			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Storage.PowerOnCount}" IsReadOnly="True"
 					 ToolTip.Tip="{x:Static lang:Resources.StoragePowerOnCountTooltip}"/>
 
 			<TextBlock Grid.Row="3" Grid.Column="2" Text="{x:Static lang:Resources.StoragePowerOnHours}"/>
-			<TextBox Grid.Row="3" Grid.Column="3" IsReadOnly="True"
-					 ToolTip.Tip="{x:Static lang:Resources.StoragePowerOnHoursTooltip}">
-				<TextBox.Text>
-					<MultiBinding Converter="{StaticResource AnyNotZeroToValueConverter}" StringFormat="{}{0}">
-						<Binding Path="Storage.Smart.MeasuredPowerOnHours"/>
-						<Binding Path="Storage.Smart.DetectedPowerOnHours"/>
-					</MultiBinding>
-				</TextBox.Text>
-			</TextBox>
+			<TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Storage.PowerOnHours}" IsReadOnly="True"
+					 ToolTip.Tip="{x:Static lang:Resources.StoragePowerOnHoursTooltip}"/>
 		</ctrl:GridEx>
 
 		<TextBlock Grid.Row="1" Text="{x:Static lang:Resources.StorageAttributeHeader}" Margin="0,20,0,10"
@@ -104,7 +97,7 @@
 					</DataGridTemplateColumn.CellTemplate>
 				</DataGridTemplateColumn>
 				<DataGridTextColumn Header="{x:Static lang:Resources.StorageAttributeValueHex}"
-									Binding="{Binding Attribute.Attribute.RawValueULong, StringFormat='{}0x{0:X16}'}"/>
+									Binding="{Binding Attribute.RawValue, StringFormat='{}0x{0:X16}'}"/>
 			</DataGrid.Columns>
 		</DataGrid>
     </Grid>

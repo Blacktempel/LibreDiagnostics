@@ -141,6 +141,12 @@ namespace LibreDiagnostics.UI.Utilities
         {
             if (hardware is StorageDevice sd)
             {
+                //Only show details for smart supported devices, otherwise there is no point in showing the details window
+                if (!sd.Storage.SupportsSmart)
+                {
+                    return;
+                }
+
                 if (Avalonia.Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime wnd
                  && wnd.MainWindow != null && wnd.MainWindow.IsVisible)
                 {

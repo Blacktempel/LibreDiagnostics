@@ -8,8 +8,9 @@
 */
 
 using BlackSharp.MVVM.ComponentModel;
-using DiskInfoToolkit;
-using LibreHardwareMonitor.Hardware.Storage;
+
+using StorageDeviceDIT = DiskInfoToolkit.StorageDevice;
+using StorageDeviceLHM = LibreHardwareMonitor.Hardware.Storage.StorageDevice;
 
 namespace LibreDiagnostics.MVVM.ViewModels
 {
@@ -31,15 +32,15 @@ namespace LibreDiagnostics.MVVM.ViewModels
 
         #region Properties
 
-        StorageDevice _StorageDevice;
-        public StorageDevice StorageDevice
+        StorageDeviceLHM _StorageDevice;
+        public StorageDeviceLHM StorageDevice
         {
             get { return _StorageDevice; }
             set { SetField(ref _StorageDevice, value); Storage = _StorageDevice.Storage; }
         }
 
-        Storage _Storage;
-        public Storage Storage
+        StorageDeviceDIT _Storage;
+        public StorageDeviceDIT Storage
         {
             get { return _Storage; }
             set { SetField(ref _Storage, value); }
