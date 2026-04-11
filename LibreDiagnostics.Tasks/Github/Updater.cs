@@ -188,14 +188,14 @@ namespace LibreDiagnostics.Tasks.Github
                     using var zipFile = File.OpenRead(updateFilePath);
                     using var stream = SharpCompressStream.Create(zipFile);
 
-                    var options = new ReaderOptions()
+                    var options = new ExtractionOptions()
                     {
                         ExtractFullPath = true,
                         PreserveFileTime = true,
                         PreserveAttributes = true,
                     };
 
-                    await using var archive = await ArchiveFactory.OpenAsyncArchive(stream, options);
+                    await using var archive = await ArchiveFactory.OpenAsyncArchive(stream);
 
                     //WriteToDirectoryAsync requires to create the directory before extracting to it
                     if (!Directory.Exists(appPath))
@@ -204,7 +204,7 @@ namespace LibreDiagnostics.Tasks.Github
                     }
 
                     var prog = new Progress<ProgressReport>(pr => progress?.Report(pr.PercentComplete.GetValueOrDefault()));
-                    await archive.WriteToDirectoryAsync(appPath, prog);
+                    await archive.WriteToDirectoryAsync(appPath, options, prog);
 
                     //Check if extraction path contains only one folder (the main folder of the archive)
                     //If yes, move all files from that folder to the extraction path and delete the folder
