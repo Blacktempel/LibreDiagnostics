@@ -7,6 +7,7 @@
 *
 */
 
+using DiskInfoToolkit;
 using LibreDiagnostics.Language;
 using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Hardware;
@@ -112,6 +113,7 @@ namespace LibreDiagnostics.Models.Globals
             }
 
             Culture.SetCurrent(e.NewSettings.Language);
+            Storage.ResourceCulture = Culture.GetCurrent();
 
             //FontManager may have not been initialized yet
             FontManager?.GlobalFontSize   = e.NewSettings.FontSize  ;

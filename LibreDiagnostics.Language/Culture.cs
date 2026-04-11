@@ -62,6 +62,11 @@ namespace LibreDiagnostics.Language
             Thread.CurrentThread.CurrentUICulture = culture;
         }
 
+        public static CultureInfo GetCurrent()
+        {
+            return Resources.Resources.Culture ?? new CultureInfo(DEFAULT);
+        }
+
         public static List<CultureItem> GetAll()
         {
             var cultures = GetCultures()
