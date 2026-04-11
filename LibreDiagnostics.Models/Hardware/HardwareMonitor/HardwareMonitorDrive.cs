@@ -79,14 +79,25 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             set { SetField(ref _DriveLayout, value); }
         }
 
+        bool _IsDevicePowerOn;
+        public bool IsDevicePowerOn
+        {
+            get { return _IsDevicePowerOn; }
+            set { SetField(ref _IsDevicePowerOn, value); }
+        }
+
         #endregion
 
         #region Public
 
         public override void Update()
         {
+            base.Update();
+
             if (Hardware is StorageDeviceLHM sd)
             {
+                IsDevicePowerOn = _Storage.IsDevicePowerOn.GetValueOrDefault();
+
                 var driveLettersForStorageDevice = _Storage.Partitions
                     .Where(p => p.DriveLetter is not null)
                     .OrderBy(p => p.DriveLetter)
@@ -114,8 +125,6 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                     UsedMetric.Update(used);
                 }
             }
-
-            base.Update();
         }
 
         #endregion
