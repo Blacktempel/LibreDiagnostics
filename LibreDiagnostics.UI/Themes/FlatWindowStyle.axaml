@@ -13,8 +13,7 @@
 	</ResourceDictionary.MergedDictionaries>
 
 	<ControlTheme x:Key="FlatWindowStyle" TargetType="wnd:FlatWindow">
-		<Setter Property="SystemDecorations" Value="None"/>
-		<Setter Property="ExtendClientAreaChromeHints" Value="NoChrome"/>
+		<Setter Property="WindowDecorations" Value="None"/>
 		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"/>
 		<Setter Property="ExtendClientAreaToDecorationsHint" Value="False"/>
 		<Setter Property="TransparencyLevelHint" Value="None"/>
