@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>LibreDiagnostics</value>
+  </data>
+  <data name="CPUClock" xml:space="preserve">
+    <value>Suorittimen kellotaajuus</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Sulje</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="ButtonDonate" xml:space="preserve">
+    <value>Lahjoita</value>
+  </data>
+  <data name="Drives" xml:space="preserve">
+    <value>Asemat</value>
+  </data>
+  <data name="CPUFan" xml:space="preserve">
+    <value>Suorittimen tuuletin</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Verkko</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="ButtonRestart" xml:space="preserve">
+    <value>Käynnistä uudelleen</value>
+  </data>
+  <data name="ButtonSettings" xml:space="preserve">
+    <value>Asetukset</value>
+  </data>
+  <data name="CPUTemp" xml:space="preserve">
+    <value>Suorittimen lämpötila</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>Päivitä</value>
+  </data>
+  <data name="CPUVoltage" xml:space="preserve">
+    <value>Suorittimen jännite</value>
+  </data>
+  <data name="ButtonGithub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="CPULoad" xml:space="preserve">
+    <value>Suorittimen kuormitus</value>
+  </data>
+  <data name="CPUClockLabel" xml:space="preserve">
+    <value>Kello #{0}</value>
+  </data>
+  <data name="CPUCoreLoad" xml:space="preserve">
+    <value>Ytimen kuormitus</value>
+  </data>
+  <data name="CPUCoreLoadLabel" xml:space="preserve">
+    <value>Ydin #{0}</value>
+  </data>
+  <data name="CPUFanLabel" xml:space="preserve">
+    <value>Tuuletin</value>
+  </data>
+  <data name="CPULoadLabel" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="CPUTempLabel" xml:space="preserve">
+    <value>Lämpö</value>
+  </data>
+  <data name="CPUVoltageLabel" xml:space="preserve">
+    <value>Jännite</value>
+  </data>
+  <data name="DriveFree" xml:space="preserve">
+    <value>Vapaa tila</value>
+  </data>
+  <data name="DriveFreeLabel" xml:space="preserve">
+    <value>Vapaa</value>
+  </data>
+  <data name="DriveLoad" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="DriveLoadBar" xml:space="preserve">
+    <value>Kuormituspalkki</value>
+  </data>
+  <data name="DriveLoadBarLabel" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="DriveLoadLabel" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="DriveRead" xml:space="preserve">
+    <value>Lukunopeus</value>
+  </data>
+  <data name="DriveReadLabel" xml:space="preserve">
+    <value>Luku</value>
+  </data>
+  <data name="DriveUsed" xml:space="preserve">
+    <value>Käytetty tila</value>
+  </data>
+  <data name="DriveUsedLabel" xml:space="preserve">
+    <value>Käytetty</value>
+  </data>
+  <data name="DriveWrite" xml:space="preserve">
+    <value>Kirjoitusnopeus</value>
+  </data>
+  <data name="DriveWriteLabel" xml:space="preserve">
+    <value>Kirjoitus</value>
+  </data>
+  <data name="GPUCoreClock" xml:space="preserve">
+    <value>Ytimen kellotaajuus</value>
+  </data>
+  <data name="GPUCoreClockLabel" xml:space="preserve">
+    <value>Kellotaajuus</value>
+  </data>
+  <data name="GPUCoreLoad" xml:space="preserve">
+    <value>Ytimen kuormitus</value>
+  </data>
+  <data name="GPUCoreLoadLabel" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="GPUFan" xml:space="preserve">
+    <value>GPU:n tuuletin</value>
+  </data>
+  <data name="GPUFanLabel" xml:space="preserve">
+    <value>Tuuletin</value>
+  </data>
+  <data name="GPUTemp" xml:space="preserve">
+    <value>Lämpötila</value>
+  </data>
+  <data name="GPUTempLabel" xml:space="preserve">
+    <value>Lämpö</value>
+  </data>
+  <data name="GPUVoltage" xml:space="preserve">
+    <value>GPU:n jännite</value>
+  </data>
+  <data name="GPUVoltageLabel" xml:space="preserve">
+    <value>Jännite</value>
+  </data>
+  <data name="GPUVRAMClock" xml:space="preserve">
+    <value>VRAM-kellotaajuus</value>
+  </data>
+  <data name="GPUVRAMClockLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="GPUVRAMLoad" xml:space="preserve">
+    <value>VRAM-kuormitus</value>
+  </data>
+  <data name="GPUVRAMLoadLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="NetworkIn" xml:space="preserve">
+    <value>Saapuva kaistanleveys</value>
+  </data>
+  <data name="NetworkInLabel" xml:space="preserve">
+    <value>Sisään</value>
+  </data>
+  <data name="NetworkOut" xml:space="preserve">
+    <value>Lähtevä kaistanleveys</value>
+  </data>
+  <data name="NetworkOutLabel" xml:space="preserve">
+    <value>Ulos</value>
+  </data>
+  <data name="RAMClock" xml:space="preserve">
+    <value>RAM-muistin kellotaajuus</value>
+  </data>
+  <data name="RAMClockLabel" xml:space="preserve">
+    <value>Kellotaajuus</value>
+  </data>
+  <data name="RAMFree" xml:space="preserve">
+    <value>Vapaa</value>
+  </data>
+  <data name="RAMFreeLabel" xml:space="preserve">
+    <value>Vapaa</value>
+  </data>
+  <data name="RAMLoad" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="RAMLoadLabel" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="RAMUsed" xml:space="preserve">
+    <value>Käytetty</value>
+  </data>
+  <data name="RAMUsedLabel" xml:space="preserve">
+    <value>Käytetty</value>
+  </data>
+  <data name="RAMVoltage" xml:space="preserve">
+    <value>RAM-muistin jännite</value>
+  </data>
+  <data name="RAMVoltageLabel" xml:space="preserve">
+    <value>Jännite</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="LanguageChangedText" xml:space="preserve">
+    <value>Sovellus käynnistyy uudelleen kielen vaihtamiseksi.</value>
+  </data>
+  <data name="LanguageChangedTitle" xml:space="preserve">
+    <value>Kieli vaihdettiin</value>
+  </data>
+  <data name="SettingsAdvancedTab" xml:space="preserve">
+    <value>Lisäasetukset</value>
+  </data>
+  <data name="SettingsAlertFontColor" xml:space="preserve">
+    <value>Hälytyksen tekstiväri</value>
+  </data>
+  <data name="SettingsAlertFontColorTooltip" xml:space="preserve">
+    <value>Aktiivisen hälytyksen kohteen tekstiväri.</value>
+  </data>
+  <data name="SettingsAllCoreClocks" xml:space="preserve">
+    <value>Näytä kaikkien ytimien kellotaajuudet</value>
+  </data>
+  <data name="SettingsAllCoreClocksTooltip" xml:space="preserve">
+    <value>Näyttää kaikkien ytimien kellotaajuudet vain ensimmäisen sijaan.</value>
+  </data>
+  <data name="SettingsIsInAltTab" xml:space="preserve">
+    <value>Näkyy Alt + Tab -vaihtimessa</value>
+  </data>
+  <data name="SettingsIsInAltTabTooltip" xml:space="preserve">
+    <value>Piilottaa sovelluksen Alt + Tab -vaihtimesta.</value>
+  </data>
+  <data name="SettingsAlwaysOnTop" xml:space="preserve">
+    <value>Aina päällimmäisenä</value>
+  </data>
+  <data name="SettingsAlwaysOnTopTooltip" xml:space="preserve">
+    <value>Asettaa sovelluksen aina muiden ikkunoiden päälle.</value>
+  </data>
+  <data name="SettingsAutoBackground" xml:space="preserve">
+    <value>Automaattinen taustaväri</value>
+  </data>
+  <data name="SettingsAutoBackgroundTooltip" xml:space="preserve">
+    <value>Asettaa taustavärin järjestelmän väriasetusten mukaan.</value>
+  </data>
+  <data name="SettingsAutoUpdate" xml:space="preserve">
+    <value>Automaattinen päivitys</value>
+  </data>
+  <data name="SettingsAutoUpdateTooltip" xml:space="preserve">
+    <value>Tarkistaa päivitykset sovelluksen käynnistyessä ja päivittää automaattisesti.</value>
+  </data>
+  <data name="SettingsBackgroundColor" xml:space="preserve">
+    <value>Taustaväri</value>
+  </data>
+  <data name="SettingsBackgroundColorTooltip" xml:space="preserve">
+    <value>Taustan väri.</value>
+  </data>
+  <data name="SettingsBackgroundOpacity" xml:space="preserve">
+    <value>Taustan peittävyys</value>
+  </data>
+  <data name="SettingsBackgroundOpacityTooltip" xml:space="preserve">
+    <value>Taustan peittävyys.</value>
+  </data>
+  <data name="SettingsBandwidthInAlert" xml:space="preserve">
+    <value>Saapuvan kaistan hälytys</value>
+  </data>
+  <data name="SettingsBandwidthInAlertTooltip" xml:space="preserve">
+    <value>MBps-kynnys, jolla vastaanotetun kaistan hälytykset käynnistyvät. Poista käytöstä arvolla 0.</value>
+  </data>
+  <data name="SettingsBandwidthOutAlert" xml:space="preserve">
+    <value>Lähtevän kaistan hälytys</value>
+  </data>
+  <data name="SettingsBandwidthOutAlertTooltip" xml:space="preserve">
+    <value>MBps-kynnys, jolla lähetetyn kaistan hälytykset käynnistyvät. Poista käytöstä arvolla 0.</value>
+  </data>
+  <data name="SettingsClickThrough" xml:space="preserve">
+    <value>Napsautukset läpi</value>
+  </data>
+  <data name="SettingsClickThroughTooltip" xml:space="preserve">
+    <value>Kaikki hiiritapahtumat kulkevat ikkunan läpi. Tämä estää kaiken vuorovaikutuksen sovelluksen kanssa.</value>
+  </data>
+  <data name="SettingsShowMenuBar" xml:space="preserve">
+    <value>Näytä valikkorivi</value>
+  </data>
+  <data name="SettingsShowMenuBarTooltip" xml:space="preserve">
+    <value>Näyttää valikkorivin sovelluksen yläreunassa.</value>
+  </data>
+  <data name="SettingsCoreLoads" xml:space="preserve">
+    <value>Näytä ytimien kuormitukset</value>
+  </data>
+  <data name="SettingsCoreLoadsTooltip" xml:space="preserve">
+    <value>Näyttää kaikkien ytimien kuormituksen prosentteina.</value>
+  </data>
+  <data name="SettingsCustomizeTab" xml:space="preserve">
+    <value>Mukauta</value>
+  </data>
+  <data name="SettingsDock" xml:space="preserve">
+    <value>Kiinnitys</value>
+  </data>
+  <data name="SettingsDockLeft" xml:space="preserve">
+    <value>Vasen</value>
+  </data>
+  <data name="SettingsDockRight" xml:space="preserve">
+    <value>Oikea</value>
+  </data>
+  <data name="SettingsDockTooltip" xml:space="preserve">
+    <value>Määrittää, mihin sovellus kiinnitetään.</value>
+  </data>
+  <data name="SettingsFontColor" xml:space="preserve">
+    <value>Tekstin väri</value>
+  </data>
+  <data name="SettingsFontColorTooltip" xml:space="preserve">
+    <value>Tekstin ja kuvakkeiden väri.</value>
+  </data>
+  <data name="SettingsFontSize" xml:space="preserve">
+    <value>Fonttikoko</value>
+  </data>
+  <data name="SettingsFontSizeTooltip" xml:space="preserve">
+    <value>Tekstin ja kuvakkeiden koko.</value>
+  </data>
+  <data name="SettingsGeneralTab" xml:space="preserve">
+    <value>Yleiset</value>
+  </data>
+  <data name="SettingsHardwareEnabledTooltip" xml:space="preserve">
+    <value>Ottaa tämän laitteiston käyttöön.</value>
+  </data>
+  <data name="SettingsHardwareNameTooltip" xml:space="preserve">
+    <value>Muokkaa tämän laitteiston nimeä.</value>
+  </data>
+  <data name="SettingsHorizontalOffset" xml:space="preserve">
+    <value>Vaakasiirtymä</value>
+  </data>
+  <data name="SettingsHorizontalOffsetTooltip" xml:space="preserve">
+    <value>Sovelluksen vaakasiirtymä.</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>Kieli</value>
+  </data>
+  <data name="SettingsLanguageDefault" xml:space="preserve">
+    <value>Oletus</value>
+  </data>
+  <data name="SettingsLanguageTooltip" xml:space="preserve">
+    <value>Sovelluksen nykyinen kieli.</value>
+  </data>
+  <data name="SettingsMetrics" xml:space="preserve">
+    <value>Mittarit:</value>
+  </data>
+  <data name="SettingsMetricsTooltip" xml:space="preserve">
+    <value>Ota tietyt mittarit käyttöön tai poista ne käytöstä.</value>
+  </data>
+  <data name="SettingsMonitorEnabledTooltip" xml:space="preserve">
+    <value>Ottaa tämän monitorin käyttöön.</value>
+  </data>
+  <data name="SettingsMonitorsTab" xml:space="preserve">
+    <value>Monitorit</value>
+  </data>
+  <data name="SettingsUpdateInterval" xml:space="preserve">
+    <value>Päivitysväli</value>
+  </data>
+  <data name="SettingsUpdateIntervalTooltip" xml:space="preserve">
+    <value>Anturipäivitysten väli millisekunteina.</value>
+  </data>
+  <data name="SettingsIsAppBar" xml:space="preserve">
+    <value>Appbar</value>
+  </data>
+  <data name="SettingsIsAppBarTooltip" xml:space="preserve">
+    <value>Asettaa ikkunan appbariksi ja varaa vastaavan tilan työalueelta.</value>
+  </data>
+  <data name="SettingsRoundAllDecimals" xml:space="preserve">
+    <value>Pyöristä kaikki desimaalit</value>
+  </data>
+  <data name="SettingsRoundAllDecimalsTooltip" xml:space="preserve">
+    <value>Pyöristää kaikki desimaaliarvot lähimpään kokonaislukuun.</value>
+  </data>
+  <data name="SettingsRunAtStartup" xml:space="preserve">
+    <value>Käynnistä kirjautuessa</value>
+  </data>
+  <data name="SettingsRunAtStartupTooltip" xml:space="preserve">
+    <value>Käynnistää sovelluksen järjestelmän mukana ensimmäisen kirjautumisen jälkeen.</value>
+  </data>
+  <data name="SettingsScreen" xml:space="preserve">
+    <value>Näyttö</value>
+  </data>
+  <data name="SettingsScreenTooltip" xml:space="preserve">
+    <value>Määrittää, millä näytöllä sovellus näkyy.</value>
+  </data>
+  <data name="SettingsShowHardwareNames" xml:space="preserve">
+    <value>Näytä laitteiston nimet</value>
+  </data>
+  <data name="SettingsShowHardwareNamesTooltip" xml:space="preserve">
+    <value>Näyttää laitteiston nimet.</value>
+  </data>
+  <data name="SettingsShowTrayIcon" xml:space="preserve">
+    <value>Näytä ilmoitusalueen kuvake</value>
+  </data>
+  <data name="SettingsShowTrayIconTooltip" xml:space="preserve">
+    <value>Näyttää kuvakkeen tehtäväpalkin ilmoitusalueella.</value>
+  </data>
+  <data name="SettingsTemperatureAlert" xml:space="preserve">
+    <value>Lämpötilahälytys</value>
+  </data>
+  <data name="SettingsTemperatureAlertTooltip" xml:space="preserve">
+    <value>Lämpötilakynnys, jolla hälytykset käynnistyvät. Poista käytöstä arvolla 0.</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>LibreDiagnostics-asetukset</value>
+  </data>
+  <data name="SettingsShowInactiveConnections" xml:space="preserve">
+    <value>Näytä passiiviset yhteydet</value>
+  </data>
+  <data name="SettingsShowInactiveConnectionsTooltip" xml:space="preserve">
+    <value>Näyttää verkkoyhteydet, joissa ei siirretä dataa.</value>
+  </data>
+  <data name="SettingsUsedSpaceAlert" xml:space="preserve">
+    <value>Käytetyn tilan hälytys</value>
+  </data>
+  <data name="SettingsUsedSpaceAlertTooltip" xml:space="preserve">
+    <value>Prosenttikynnys, jolla käytetyn tilan hälytykset käynnistyvät. Poista käytöstä arvolla 0.</value>
+  </data>
+  <data name="SettingsUseFahrenheit" xml:space="preserve">
+    <value>Käytä Fahrenheit-asteita</value>
+  </data>
+  <data name="SettingsUseFahrenheitTooltip" xml:space="preserve">
+    <value>Anturien ja hälytysten lämpötilat näytetään Fahrenheit-asteina Celsiuksen sijaan.</value>
+  </data>
+  <data name="SettingsVerticalOffset" xml:space="preserve">
+    <value>Pystysiirtymä</value>
+  </data>
+  <data name="SettingsVerticalOffsetTooltip" xml:space="preserve">
+    <value>Sovelluksen pystysiirtymä.</value>
+  </data>
+  <data name="NetworkIP" xml:space="preserve">
+    <value>IP-osoite</value>
+  </data>
+  <data name="NetworkIPLabel" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="NetworkExtIP" xml:space="preserve">
+    <value>Ulkoinen IP-osoite</value>
+  </data>
+  <data name="NetworkExtIPLabel" xml:space="preserve">
+    <value>Ulk.</value>
+  </data>
+  <data name="DriveTemperature" xml:space="preserve">
+    <value>Lämpötila</value>
+  </data>
+  <data name="DriveTemperatureLabel" xml:space="preserve">
+    <value>Lämpö</value>
+  </data>
+  <data name="RAMTempLabel" xml:space="preserve">
+    <value>Lämpö</value>
+  </data>
+  <data name="RAMTemp" xml:space="preserve">
+    <value>Lämpötila</value>
+  </data>
+  <data name="Fan" xml:space="preserve">
+    <value>Tuulettimet</value>
+  </data>
+  <data name="FanSpeed" xml:space="preserve">
+    <value>Tuulettimen nopeus</value>
+  </data>
+  <data name="FanSpeedLabel" xml:space="preserve">
+    <value>Nopeus</value>
+  </data>
+  <data name="SettingsAutoFontColor" xml:space="preserve">
+    <value>Automaattinen tekstiväri</value>
+  </data>
+  <data name="SettingsAutoFontColorTooltip" xml:space="preserve">
+    <value>Asettaa tekstivärin järjestelmän väriasetusten mukaan.</value>
+  </data>
+  <data name="SettingsShowInactiveFans" xml:space="preserve">
+    <value>Näytä pysähtyneet tuulettimet</value>
+  </data>
+  <data name="SettingsShowInactiveFansTooltip" xml:space="preserve">
+    <value>Näyttää tuulettimet, joiden kierrosluku on nolla. Tämä tarkistaa tuulettimen kierrosluvun uudelleen jokaisella päivityskierroksella.</value>
+  </data>
+  <data name="SettingsHardwareEnabled" xml:space="preserve">
+    <value>Käytössä</value>
+  </data>
+  <data name="SettingsHardwareName" xml:space="preserve">
+    <value>Laitteisto</value>
+  </data>
+  <data name="SettingsMonitorsEnabled" xml:space="preserve">
+    <value>Käytössä</value>
+  </data>
+  <data name="SettingsMonitorsMonitor" xml:space="preserve">
+    <value>Näyttö</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle1" xml:space="preserve">
+    <value>Muokkaa rivin asetuksia napsauttamalla riviä.</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle2" xml:space="preserve">
+    <value>Muuta rivin järjestystä vetämällä sitä.</value>
+  </data>
+  <data name="SettingsAppWidth" xml:space="preserve">
+    <value>Sovelluksen leveys</value>
+  </data>
+  <data name="SettingsAppWidthTooltip" xml:space="preserve">
+    <value>Sovelluksen leveys.</value>
+  </data>
+  <data name="SettingsTextAlignment" xml:space="preserve">
+    <value>Tekstin tasaus</value>
+  </data>
+  <data name="SettingsTextAlignmentLeft" xml:space="preserve">
+    <value>Vasen</value>
+  </data>
+  <data name="SettingsTextAlignmentRight" xml:space="preserve">
+    <value>Oikea</value>
+  </data>
+  <data name="SettingsTextAlignmentTooltip" xml:space="preserve">
+    <value>Tekstin tasaus.</value>
+  </data>
+  <data name="StorageTitle" xml:space="preserve">
+    <value>Tallennuslaitteen tiedot</value>
+  </data>
+  <data name="StorageHealth" xml:space="preserve">
+    <value>Kunto</value>
+  </data>
+  <data name="StorageHealthTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen kunto.</value>
+  </data>
+  <data name="StorageAttributeHeader" xml:space="preserve">
+    <value>S.M.A.R.T.-attribuutit</value>
+  </data>
+  <data name="StorageAttributeHeaderTooltip" xml:space="preserve">
+    <value>Self-Monitoring, Analysis and Reporting Technology (SMART / S.M.A.R.T.)</value>
+  </data>
+  <data name="StorageAttributeID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="StorageAttributeName" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="StorageAttributeValue" xml:space="preserve">
+    <value>Arvo</value>
+  </data>
+  <data name="StorageAttributeValueHex" xml:space="preserve">
+    <value>Arvo (heksa)</value>
+  </data>
+  <data name="StorageName" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="StorageNameTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen nimi.</value>
+  </data>
+  <data name="UpdateAvailableTitle" xml:space="preserve">
+    <value>Uusi versio saatavilla</value>
+  </data>
+  <data name="UpdateAvailableMessage" xml:space="preserve">
+    <value>Uusi versio on ladattavissa.\nHaluatko jatkaa päivitystä?\n\nJulkaisutiedot:\n{0}</value>
+  </data>
+  <data name="ButtonApply" xml:space="preserve">
+    <value>Käytä</value>
+  </data>
+  <data name="SettingsThrottleInterval" xml:space="preserve">
+    <value>Päivitysten rajoitus</value>
+  </data>
+  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
+    <value>Rajoittaa tallennuslaitteiden anturipäivityksiä annetulla millisekuntimäärällä. Poista rajoitus käytöstä arvolla 0.</value>
+  </data>
+  <data name="NoSensorValue" xml:space="preserve">
+    <value>Ei arvoa</value>
+  </data>
+  <data name="SettingsFontFamily" xml:space="preserve">
+    <value>Fonttiperhe</value>
+  </data>
+  <data name="SettingsFontFamilyTooltip" xml:space="preserve">
+    <value>Tekstien fonttiperhe.</value>
+  </data>
+  <data name="StorageTotalReads" xml:space="preserve">
+    <value>Luettu yhteensä GB</value>
+  </data>
+  <data name="StorageTotalReadsTooltip" xml:space="preserve">
+    <value>Tallennuslaitteelta yhteensä luettu määrä gigatavuina.</value>
+  </data>
+  <data name="StorageTotalWrites" xml:space="preserve">
+    <value>Kirjoitettu yhteensä GB</value>
+  </data>
+  <data name="StorageTotalWritesTooltip" xml:space="preserve">
+    <value>Tallennuslaitteelle yhteensä kirjoitettu määrä gigatavuina.</value>
+  </data>
+  <data name="StoragePowerOnCount" xml:space="preserve">
+    <value>Käynnistyskerrat</value>
+  </data>
+  <data name="StoragePowerOnCountTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen käynnistyskertojen määrä.</value>
+  </data>
+  <data name="StoragePowerOnHours" xml:space="preserve">
+    <value>Käyttötunnit</value>
+  </data>
+  <data name="StoragePowerOnHoursTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen käyttötunnit.</value>
+  </data>
+  <data name="RAMWindowTitle" xml:space="preserve">
+    <value>RAM-tiedot</value>
+  </data>
+  <data name="RAMTimingsHeader" xml:space="preserve">
+    <value>RAM-ajoitukset</value>
+  </data>
+  <data name="RAMTimingsHeaderTooltip" xml:space="preserve">
+    <value>Tämän RAM-moduulin ajoitukset.</value>
+  </data>
+  <data name="RAMTimingsName" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="RAMTimingsValue" xml:space="preserve">
+    <value>Arvo nanosekunteina</value>
+  </data>
+  <data name="RAMCapacity" xml:space="preserve">
+    <value>Kapasiteetti GB:ssä</value>
+  </data>
+  <data name="RAMCapacityTooltip" xml:space="preserve">
+    <value>RAM-moduulin kapasiteetti GB:ssä.</value>
+  </data>
+  <data name="SettingsHotkeysTab" xml:space="preserve">
+    <value>Pikanäppäimet</value>
+  </data>
+  <data name="SettingsHotKeyCloseApp" xml:space="preserve">
+    <value>Sulje sovellus</value>
+  </data>
+  <data name="SettingsHotKeyRestartApp" xml:space="preserve">
+    <value>Käynnistä sovellus uudelleen</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBar" xml:space="preserve">
+    <value>Vaihda App Barin tila</value>
+  </data>
+  <data name="SettingsHotKeyCloseAppTooltip" xml:space="preserve">
+    <value>Sulkee sovelluksen.</value>
+  </data>
+  <data name="SettingsHotKeyRestartAppTooltip" xml:space="preserve">
+    <value>Käynnistää sovelluksen uudelleen.</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBarTooltip" xml:space="preserve">
+    <value>Vaihtaa App Barin tilan vastakkaiseksi (käytössä / poissa käytöstä).</value>
+  </data>
+  <data name="RAMName" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="RAMNameTooltip" xml:space="preserve">
+    <value>RAM-moduulin nimi.</value>
+  </data>
+  <data name="StorageTemperatureWarning" xml:space="preserve">
+    <value>Lämpötilavaroitus</value>
+  </data>
+  <data name="StorageTemperatureWarningTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen lämpötilan varoitusraja.</value>
+  </data>
+  <data name="StorageTemperatureCritical" xml:space="preserve">
+    <value>Kriittinen lämpötila</value>
+  </data>
+  <data name="StorageTemperatureCriticalTooltip" xml:space="preserve">
+    <value>Tallennuslaitteen kriittinen lämpötilaraja.</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>Aika</value>
+  </data>
+  <data name="SettingsShowClock" xml:space="preserve">
+    <value>Näytä kello</value>
+  </data>
+  <data name="SettingsShowClockTooltip" xml:space="preserve">
+    <value>Näyttää päivämäärän ja ajan.</value>
+  </data>
+  <data name="CPUPower" xml:space="preserve">
+    <value>Suorittimen tehonkulutus</value>
+  </data>
+  <data name="CPUPowerLabel" xml:space="preserve">
+    <value>Teho</value>
+  </data>
+  <data name="GPUPower" xml:space="preserve">
+    <value>GPU:n tehonkulutus</value>
+  </data>
+  <data name="GPUPowerLabel" xml:space="preserve">
+    <value>Teho</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettings" xml:space="preserve">
+    <value>Avaa asetukset</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettingsTooltip" xml:space="preserve">
+    <value>Avaa asetusikkunan.</value>
+  </data>
+  <data name="ButtonUpdateAvailable" xml:space="preserve">
+    <value>Päivitys saatavilla</value>
+  </data>
+  <data name="UpdateFailedTitle" xml:space="preserve">
+    <value>Päivitys epäonnistui</value>
+  </data>
+  <data name="UpdateFailedMessage" xml:space="preserve">
+    <value>Päivitys epäonnistui.\nOletko yhteydessä internetiin?\n\n{0}</value>
+  </data>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>Vie raportti</value>
+  </data>
+  <data name="SaveFileTitle" xml:space="preserve">
+    <value>Tallenna tiedosto</value>
+  </data>
+  <data name="ButtonReminderOneWeek" xml:space="preserve">
+    <value>Muistuta 1 viikon kuluttua</value>
+  </data>
+  <data name="ButtonReminderOneMonth" xml:space="preserve">
+    <value>Muistuta 1 kuukauden kuluttua</value>
+  </data>
+  <data name="RAMHighLimit" xml:space="preserve">
+    <value>Korkea lämpötilaraja</value>
+  </data>
+  <data name="RAMHighLimitTooltip" xml:space="preserve">
+    <value>Tämän RAM-moduulin korkea lämpötilaraja.</value>
+  </data>
+  <data name="RAMCriticalLimit" xml:space="preserve">
+    <value>Kriittinen lämpötilaraja</value>
+  </data>
+  <data name="RAMCriticalLimitTooltip" xml:space="preserve">
+    <value>Tämän RAM-moduulin kriittinen lämpötilaraja.</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>Jo ajan tasalla</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>Käytössäsi on jo uusin versio.</value>
+  </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>GPU-kiihdytys</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>GPU-kiihdytys käyttää näytönohjainta laskelmien nopeuttamiseen ja sovelluksen suorituskyvyn parantamiseen.</value>
+  </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Lämpötila</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Nastan jännite</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Kokonaisvirta</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Nastan virta</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Teho</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Virtamittarin tuuletin</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Lämpö</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Jännite</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Virta</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Virta</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Teho</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Tuuletin</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Tehomonitori</value>
+  </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>Tiedonsiirtonopeuden yksikkö</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>Määrittää, mitä yksikköä käytetään tiedonsiirtonopeuksien näyttämiseen (esim. Byte/s, KB/s, MB/s, ...).</value>
+  </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Herätä asema</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Pakottaa aseman heräämään SMART-tietojen päivitystä varten, jos asema nukkuu. Ei vaikuta NVMe-laitteisiin.</value>
+  </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Ylä-/alatäyte</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Lisää tai vähentää tyhjää tilaa sisällön ylä- ja alapuolella.</value>
+  </data>
+  <data name="SettingsDateFormat" xml:space="preserve">
+    <value>Päivämäärämuoto</value>
+  </data>
+  <data name="SettingsTimeFormat" xml:space="preserve">
+    <value>Aikamuoto</value>
+  </data>
+  <data name="SettingsDateFormatTooltip" xml:space="preserve">
+    <value>Kellossa käytettävä päivämäärämuoto.</value>
+  </data>
+  <data name="SettingsTimeFormatTooltip" xml:space="preserve">
+    <value>Kellossa käytettävä aikamuoto.</value>
+  </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>Näytä ikkuna</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>Näyttää tai piilottaa pääikkunan, joka sisältää kaikki laitteistopaneelit.</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>Vaihda ikkunan näkyvyys</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>Vaihtaa ikkunan näkyvyyden vastakkaiseksi (näytä / piilota).</value>
+  </data>
+</root>

@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>LibreDiagnostics</value>
+  </data>
+  <data name="CPUClock" xml:space="preserve">
+    <value>Takt CPU</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="ButtonDonate" xml:space="preserve">
+    <value>Přispět</value>
+  </data>
+  <data name="Drives" xml:space="preserve">
+    <value>Disky</value>
+  </data>
+  <data name="CPUFan" xml:space="preserve">
+    <value>Ventilátor CPU</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Síť</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="ButtonRestart" xml:space="preserve">
+    <value>Restartovat</value>
+  </data>
+  <data name="ButtonSettings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="CPUTemp" xml:space="preserve">
+    <value>Teplota CPU</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>Aktualizovat</value>
+  </data>
+  <data name="CPUVoltage" xml:space="preserve">
+    <value>Napětí CPU</value>
+  </data>
+  <data name="ButtonGithub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="CPULoad" xml:space="preserve">
+    <value>Vytížení CPU</value>
+  </data>
+  <data name="CPUClockLabel" xml:space="preserve">
+    <value>Takt č. {0}</value>
+  </data>
+  <data name="CPUCoreLoad" xml:space="preserve">
+    <value>Vytížení jádra</value>
+  </data>
+  <data name="CPUCoreLoadLabel" xml:space="preserve">
+    <value>Jádro č. {0}</value>
+  </data>
+  <data name="CPUFanLabel" xml:space="preserve">
+    <value>Ventilátor</value>
+  </data>
+  <data name="CPULoadLabel" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="CPUTempLabel" xml:space="preserve">
+    <value>Tepl.</value>
+  </data>
+  <data name="CPUVoltageLabel" xml:space="preserve">
+    <value>Napětí</value>
+  </data>
+  <data name="DriveFree" xml:space="preserve">
+    <value>Volné místo</value>
+  </data>
+  <data name="DriveFreeLabel" xml:space="preserve">
+    <value>Volné</value>
+  </data>
+  <data name="DriveLoad" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="DriveLoadBar" xml:space="preserve">
+    <value>Indikátor vytížení</value>
+  </data>
+  <data name="DriveLoadBarLabel" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="DriveLoadLabel" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="DriveRead" xml:space="preserve">
+    <value>Rychlost čtení</value>
+  </data>
+  <data name="DriveReadLabel" xml:space="preserve">
+    <value>Čtení</value>
+  </data>
+  <data name="DriveUsed" xml:space="preserve">
+    <value>Využité místo</value>
+  </data>
+  <data name="DriveUsedLabel" xml:space="preserve">
+    <value>Využito</value>
+  </data>
+  <data name="DriveWrite" xml:space="preserve">
+    <value>Rychlost zápisu</value>
+  </data>
+  <data name="DriveWriteLabel" xml:space="preserve">
+    <value>Zápis</value>
+  </data>
+  <data name="GPUCoreClock" xml:space="preserve">
+    <value>Takt jádra</value>
+  </data>
+  <data name="GPUCoreClockLabel" xml:space="preserve">
+    <value>Takt</value>
+  </data>
+  <data name="GPUCoreLoad" xml:space="preserve">
+    <value>Vytížení jádra</value>
+  </data>
+  <data name="GPUCoreLoadLabel" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="GPUFan" xml:space="preserve">
+    <value>Ventilátor GPU</value>
+  </data>
+  <data name="GPUFanLabel" xml:space="preserve">
+    <value>Ventilátor</value>
+  </data>
+  <data name="GPUTemp" xml:space="preserve">
+    <value>Teplota</value>
+  </data>
+  <data name="GPUTempLabel" xml:space="preserve">
+    <value>Tepl.</value>
+  </data>
+  <data name="GPUVoltage" xml:space="preserve">
+    <value>Napětí GPU</value>
+  </data>
+  <data name="GPUVoltageLabel" xml:space="preserve">
+    <value>Napětí</value>
+  </data>
+  <data name="GPUVRAMClock" xml:space="preserve">
+    <value>Takt VRAM</value>
+  </data>
+  <data name="GPUVRAMClockLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="GPUVRAMLoad" xml:space="preserve">
+    <value>Vytížení VRAM</value>
+  </data>
+  <data name="GPUVRAMLoadLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="NetworkIn" xml:space="preserve">
+    <value>Příchozí šířka pásma</value>
+  </data>
+  <data name="NetworkInLabel" xml:space="preserve">
+    <value>Příchozí</value>
+  </data>
+  <data name="NetworkOut" xml:space="preserve">
+    <value>Odchozí šířka pásma</value>
+  </data>
+  <data name="NetworkOutLabel" xml:space="preserve">
+    <value>Odchozí</value>
+  </data>
+  <data name="RAMClock" xml:space="preserve">
+    <value>Takt RAM</value>
+  </data>
+  <data name="RAMClockLabel" xml:space="preserve">
+    <value>Takt</value>
+  </data>
+  <data name="RAMFree" xml:space="preserve">
+    <value>Volné</value>
+  </data>
+  <data name="RAMFreeLabel" xml:space="preserve">
+    <value>Volné</value>
+  </data>
+  <data name="RAMLoad" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="RAMLoadLabel" xml:space="preserve">
+    <value>Vytížení</value>
+  </data>
+  <data name="RAMUsed" xml:space="preserve">
+    <value>Využito</value>
+  </data>
+  <data name="RAMUsedLabel" xml:space="preserve">
+    <value>Využito</value>
+  </data>
+  <data name="RAMVoltage" xml:space="preserve">
+    <value>Napětí RAM</value>
+  </data>
+  <data name="RAMVoltageLabel" xml:space="preserve">
+    <value>Napětí</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="LanguageChangedText" xml:space="preserve">
+    <value>Aplikace se kvůli změně jazyka restartuje.</value>
+  </data>
+  <data name="LanguageChangedTitle" xml:space="preserve">
+    <value>Jazyk byl změněn</value>
+  </data>
+  <data name="SettingsAdvancedTab" xml:space="preserve">
+    <value>Pokročilé</value>
+  </data>
+  <data name="SettingsAlertFontColor" xml:space="preserve">
+    <value>Barva písma výstrahy</value>
+  </data>
+  <data name="SettingsAlertFontColorTooltip" xml:space="preserve">
+    <value>Barva textu položky s aktivní výstrahou.</value>
+  </data>
+  <data name="SettingsAllCoreClocks" xml:space="preserve">
+    <value>Zobrazit takty všech jader</value>
+  </data>
+  <data name="SettingsAllCoreClocksTooltip" xml:space="preserve">
+    <value>Zobrazuje takty všech jader místo pouze prvního.</value>
+  </data>
+  <data name="SettingsIsInAltTab" xml:space="preserve">
+    <value>Je v Alt + Tab</value>
+  </data>
+  <data name="SettingsIsInAltTabTooltip" xml:space="preserve">
+    <value>Skryje aplikaci v Alt + Tab.</value>
+  </data>
+  <data name="SettingsAlwaysOnTop" xml:space="preserve">
+    <value>Vždy navrchu</value>
+  </data>
+  <data name="SettingsAlwaysOnTopTooltip" xml:space="preserve">
+    <value>Nastaví aplikaci tak, aby byla vždy nad ostatními okny.</value>
+  </data>
+  <data name="SettingsAutoBackground" xml:space="preserve">
+    <value>Automatická barva pozadí</value>
+  </data>
+  <data name="SettingsAutoBackgroundTooltip" xml:space="preserve">
+    <value>Nastaví barvu pozadí podle barevného nastavení systému.</value>
+  </data>
+  <data name="SettingsAutoUpdate" xml:space="preserve">
+    <value>Automatická aktualizace</value>
+  </data>
+  <data name="SettingsAutoUpdateTooltip" xml:space="preserve">
+    <value>Při spuštění aplikace zkontroluje aktualizace a automaticky je nainstaluje.</value>
+  </data>
+  <data name="SettingsBackgroundColor" xml:space="preserve">
+    <value>Barva pozadí</value>
+  </data>
+  <data name="SettingsBackgroundColorTooltip" xml:space="preserve">
+    <value>Barva pozadí.</value>
+  </data>
+  <data name="SettingsBackgroundOpacity" xml:space="preserve">
+    <value>Neprůhlednost pozadí</value>
+  </data>
+  <data name="SettingsBackgroundOpacityTooltip" xml:space="preserve">
+    <value>Neprůhlednost pozadí.</value>
+  </data>
+  <data name="SettingsBandwidthInAlert" xml:space="preserve">
+    <value>Výstraha příchozí šířky pásma</value>
+  </data>
+  <data name="SettingsBandwidthInAlertTooltip" xml:space="preserve">
+    <value>Prahová hodnota v MBps, při které se aktivují výstrahy pro přijatou šířku pásma. Pro vypnutí použijte 0.</value>
+  </data>
+  <data name="SettingsBandwidthOutAlert" xml:space="preserve">
+    <value>Výstraha odchozí šířky pásma</value>
+  </data>
+  <data name="SettingsBandwidthOutAlertTooltip" xml:space="preserve">
+    <value>Prahová hodnota v MBps, při které se aktivují výstrahy pro odeslanou šířku pásma. Pro vypnutí použijte 0.</value>
+  </data>
+  <data name="SettingsClickThrough" xml:space="preserve">
+    <value>Proklikávání</value>
+  </data>
+  <data name="SettingsClickThroughTooltip" xml:space="preserve">
+    <value>Všechny události myši projdou skrz okno. Tím se zabrání jakékoli interakci s aplikací.</value>
+  </data>
+  <data name="SettingsShowMenuBar" xml:space="preserve">
+    <value>Zobrazit panel nabídky</value>
+  </data>
+  <data name="SettingsShowMenuBarTooltip" xml:space="preserve">
+    <value>Zobrazí panel nabídky v horní části aplikace.</value>
+  </data>
+  <data name="SettingsCoreLoads" xml:space="preserve">
+    <value>Zobrazit vytížení jader</value>
+  </data>
+  <data name="SettingsCoreLoadsTooltip" xml:space="preserve">
+    <value>Zobrazuje procentuální vytížení všech jader.</value>
+  </data>
+  <data name="SettingsCustomizeTab" xml:space="preserve">
+    <value>Přizpůsobit</value>
+  </data>
+  <data name="SettingsDock" xml:space="preserve">
+    <value>Dokování</value>
+  </data>
+  <data name="SettingsDockLeft" xml:space="preserve">
+    <value>Vlevo</value>
+  </data>
+  <data name="SettingsDockRight" xml:space="preserve">
+    <value>Vpravo</value>
+  </data>
+  <data name="SettingsDockTooltip" xml:space="preserve">
+    <value>Určuje, kam se aplikace dokuje.</value>
+  </data>
+  <data name="SettingsFontColor" xml:space="preserve">
+    <value>Barva písma</value>
+  </data>
+  <data name="SettingsFontColorTooltip" xml:space="preserve">
+    <value>Barva textu a ikon.</value>
+  </data>
+  <data name="SettingsFontSize" xml:space="preserve">
+    <value>Velikost písma</value>
+  </data>
+  <data name="SettingsFontSizeTooltip" xml:space="preserve">
+    <value>Velikost textu a ikon.</value>
+  </data>
+  <data name="SettingsGeneralTab" xml:space="preserve">
+    <value>Obecné</value>
+  </data>
+  <data name="SettingsHardwareEnabledTooltip" xml:space="preserve">
+    <value>Povolí tento hardware.</value>
+  </data>
+  <data name="SettingsHardwareNameTooltip" xml:space="preserve">
+    <value>Upraví název tohoto hardwaru.</value>
+  </data>
+  <data name="SettingsHorizontalOffset" xml:space="preserve">
+    <value>Vodorovný posun</value>
+  </data>
+  <data name="SettingsHorizontalOffsetTooltip" xml:space="preserve">
+    <value>Vodorovný posun aplikace.</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="SettingsLanguageDefault" xml:space="preserve">
+    <value>Výchozí</value>
+  </data>
+  <data name="SettingsLanguageTooltip" xml:space="preserve">
+    <value>Aktuální jazyk aplikace.</value>
+  </data>
+  <data name="SettingsMetrics" xml:space="preserve">
+    <value>Metriky:</value>
+  </data>
+  <data name="SettingsMetricsTooltip" xml:space="preserve">
+    <value>Povolí nebo zakáže konkrétní metriky.</value>
+  </data>
+  <data name="SettingsMonitorEnabledTooltip" xml:space="preserve">
+    <value>Povolí tento monitor.</value>
+  </data>
+  <data name="SettingsMonitorsTab" xml:space="preserve">
+    <value>Monitory</value>
+  </data>
+  <data name="SettingsUpdateInterval" xml:space="preserve">
+    <value>Interval aktualizace</value>
+  </data>
+  <data name="SettingsUpdateIntervalTooltip" xml:space="preserve">
+    <value>Čas mezi aktualizacemi senzorů v milisekundách.</value>
+  </data>
+  <data name="SettingsIsAppBar" xml:space="preserve">
+    <value>Appbar</value>
+  </data>
+  <data name="SettingsIsAppBarTooltip" xml:space="preserve">
+    <value>Nastaví okno jako appbar a odpovídajícím způsobem vyhradí místo v pracovní oblasti.</value>
+  </data>
+  <data name="SettingsRoundAllDecimals" xml:space="preserve">
+    <value>Zaokrouhlit všechna desetinná čísla</value>
+  </data>
+  <data name="SettingsRoundAllDecimalsTooltip" xml:space="preserve">
+    <value>Zaokrouhlí všechny desetinné hodnoty na nejbližší celé číslo.</value>
+  </data>
+  <data name="SettingsRunAtStartup" xml:space="preserve">
+    <value>Spustit při startu</value>
+  </data>
+  <data name="SettingsRunAtStartupTooltip" xml:space="preserve">
+    <value>Spustí aplikaci se systémem po prvním přihlášení.</value>
+  </data>
+  <data name="SettingsScreen" xml:space="preserve">
+    <value>Obrazovka</value>
+  </data>
+  <data name="SettingsScreenTooltip" xml:space="preserve">
+    <value>Určuje, na které obrazovce bude aplikace.</value>
+  </data>
+  <data name="SettingsShowHardwareNames" xml:space="preserve">
+    <value>Zobrazit názvy hardwaru</value>
+  </data>
+  <data name="SettingsShowHardwareNamesTooltip" xml:space="preserve">
+    <value>Zobrazí názvy hardwaru.</value>
+  </data>
+  <data name="SettingsShowTrayIcon" xml:space="preserve">
+    <value>Zobrazit ikonu v oznamovací oblasti</value>
+  </data>
+  <data name="SettingsShowTrayIconTooltip" xml:space="preserve">
+    <value>Zobrazí ikonu v oznamovací oblasti hlavního panelu.</value>
+  </data>
+  <data name="SettingsTemperatureAlert" xml:space="preserve">
+    <value>Teplotní výstraha</value>
+  </data>
+  <data name="SettingsTemperatureAlertTooltip" xml:space="preserve">
+    <value>Teplotní práh, při kterém se aktivují výstrahy. Pro vypnutí použijte 0.</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Nastavení LibreDiagnostics</value>
+  </data>
+  <data name="SettingsShowInactiveConnections" xml:space="preserve">
+    <value>Zobrazit neaktivní připojení</value>
+  </data>
+  <data name="SettingsShowInactiveConnectionsTooltip" xml:space="preserve">
+    <value>Zobrazí síťová připojení bez přenesených dat.</value>
+  </data>
+  <data name="SettingsUsedSpaceAlert" xml:space="preserve">
+    <value>Výstraha využitého místa</value>
+  </data>
+  <data name="SettingsUsedSpaceAlertTooltip" xml:space="preserve">
+    <value>Procentní práh, při kterém se aktivují výstrahy využitého místa. Pro vypnutí použijte 0.</value>
+  </data>
+  <data name="SettingsUseFahrenheit" xml:space="preserve">
+    <value>Použít Fahrenheita</value>
+  </data>
+  <data name="SettingsUseFahrenheitTooltip" xml:space="preserve">
+    <value>Teploty senzorů a výstrah budou ve stupních Fahrenheita místo Celsia.</value>
+  </data>
+  <data name="SettingsVerticalOffset" xml:space="preserve">
+    <value>Svislý posun</value>
+  </data>
+  <data name="SettingsVerticalOffsetTooltip" xml:space="preserve">
+    <value>Svislý posun aplikace.</value>
+  </data>
+  <data name="NetworkIP" xml:space="preserve">
+    <value>IP adresa</value>
+  </data>
+  <data name="NetworkIPLabel" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="NetworkExtIP" xml:space="preserve">
+    <value>Externí IP adresa</value>
+  </data>
+  <data name="NetworkExtIPLabel" xml:space="preserve">
+    <value>Ext.</value>
+  </data>
+  <data name="DriveTemperature" xml:space="preserve">
+    <value>Teplota</value>
+  </data>
+  <data name="DriveTemperatureLabel" xml:space="preserve">
+    <value>Tepl.</value>
+  </data>
+  <data name="RAMTempLabel" xml:space="preserve">
+    <value>Tepl.</value>
+  </data>
+  <data name="RAMTemp" xml:space="preserve">
+    <value>Teplota</value>
+  </data>
+  <data name="Fan" xml:space="preserve">
+    <value>Ventilátory</value>
+  </data>
+  <data name="FanSpeed" xml:space="preserve">
+    <value>Rychlost ventilátoru</value>
+  </data>
+  <data name="FanSpeedLabel" xml:space="preserve">
+    <value>Rychlost</value>
+  </data>
+  <data name="SettingsAutoFontColor" xml:space="preserve">
+    <value>Automatická barva písma</value>
+  </data>
+  <data name="SettingsAutoFontColorTooltip" xml:space="preserve">
+    <value>Nastaví barvu písma podle barevného nastavení systému.</value>
+  </data>
+  <data name="SettingsShowInactiveFans" xml:space="preserve">
+    <value>Zobrazit neaktivní ventilátory</value>
+  </data>
+  <data name="SettingsShowInactiveFansTooltip" xml:space="preserve">
+    <value>Zobrazí ventilátory s 0 RPM. V každém cyklu aktualizace se RPM ventilátoru znovu zkontroluje.</value>
+  </data>
+  <data name="SettingsHardwareEnabled" xml:space="preserve">
+    <value>Povoleno</value>
+  </data>
+  <data name="SettingsHardwareName" xml:space="preserve">
+    <value>Hardware</value>
+  </data>
+  <data name="SettingsMonitorsEnabled" xml:space="preserve">
+    <value>Povoleno</value>
+  </data>
+  <data name="SettingsMonitorsMonitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle1" xml:space="preserve">
+    <value>Kliknutím na řádek upravíte jeho nastavení.</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle2" xml:space="preserve">
+    <value>Přetažením řádku změníte jeho pořadí.</value>
+  </data>
+  <data name="SettingsAppWidth" xml:space="preserve">
+    <value>Šířka aplikace</value>
+  </data>
+  <data name="SettingsAppWidthTooltip" xml:space="preserve">
+    <value>Šířka aplikace.</value>
+  </data>
+  <data name="SettingsTextAlignment" xml:space="preserve">
+    <value>Zarovnání textu</value>
+  </data>
+  <data name="SettingsTextAlignmentLeft" xml:space="preserve">
+    <value>Vlevo</value>
+  </data>
+  <data name="SettingsTextAlignmentRight" xml:space="preserve">
+    <value>Vpravo</value>
+  </data>
+  <data name="SettingsTextAlignmentTooltip" xml:space="preserve">
+    <value>Zarovnání textu.</value>
+  </data>
+  <data name="StorageTitle" xml:space="preserve">
+    <value>Podrobnosti úložiště</value>
+  </data>
+  <data name="StorageHealth" xml:space="preserve">
+    <value>Zdraví</value>
+  </data>
+  <data name="StorageHealthTooltip" xml:space="preserve">
+    <value>Zdraví úložného zařízení.</value>
+  </data>
+  <data name="StorageAttributeHeader" xml:space="preserve">
+    <value>Atributy S.M.A.R.T.</value>
+  </data>
+  <data name="StorageAttributeHeaderTooltip" xml:space="preserve">
+    <value>Self-Monitoring, Analysis and Reporting Technology (SMART / S.M.A.R.T.)</value>
+  </data>
+  <data name="StorageAttributeID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="StorageAttributeName" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="StorageAttributeValue" xml:space="preserve">
+    <value>Hodnota</value>
+  </data>
+  <data name="StorageAttributeValueHex" xml:space="preserve">
+    <value>Hodnota (hex)</value>
+  </data>
+  <data name="StorageName" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="StorageNameTooltip" xml:space="preserve">
+    <value>Název úložného zařízení.</value>
+  </data>
+  <data name="UpdateAvailableTitle" xml:space="preserve">
+    <value>Je dostupná nová verze</value>
+  </data>
+  <data name="UpdateAvailableMessage" xml:space="preserve">
+    <value>Ke stažení je dostupná nová verze.\nChcete pokračovat v aktualizaci?\n\nPoznámky k vydání:\n{0}</value>
+  </data>
+  <data name="ButtonApply" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="SettingsThrottleInterval" xml:space="preserve">
+    <value>Omezení aktualizací</value>
+  </data>
+  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
+    <value>Omezuje aktualizace senzorů úložných zařízení o zadaný počet milisekund. Pro vypnutí omezení použijte 0.</value>
+  </data>
+  <data name="NoSensorValue" xml:space="preserve">
+    <value>Žádná hodnota</value>
+  </data>
+  <data name="SettingsFontFamily" xml:space="preserve">
+    <value>Rodina písma</value>
+  </data>
+  <data name="SettingsFontFamilyTooltip" xml:space="preserve">
+    <value>Rodina písma textů.</value>
+  </data>
+  <data name="StorageTotalReads" xml:space="preserve">
+    <value>Celkové čtení v GB</value>
+  </data>
+  <data name="StorageTotalReadsTooltip" xml:space="preserve">
+    <value>Celkové čtení úložného zařízení v gigabajtech.</value>
+  </data>
+  <data name="StorageTotalWrites" xml:space="preserve">
+    <value>Celkový zápis v GB</value>
+  </data>
+  <data name="StorageTotalWritesTooltip" xml:space="preserve">
+    <value>Celkový zápis úložného zařízení v gigabajtech.</value>
+  </data>
+  <data name="StoragePowerOnCount" xml:space="preserve">
+    <value>Počet zapnutí</value>
+  </data>
+  <data name="StoragePowerOnCountTooltip" xml:space="preserve">
+    <value>Počet zapnutí úložného zařízení.</value>
+  </data>
+  <data name="StoragePowerOnHours" xml:space="preserve">
+    <value>Hodiny provozu</value>
+  </data>
+  <data name="StoragePowerOnHoursTooltip" xml:space="preserve">
+    <value>Hodiny provozu úložného zařízení.</value>
+  </data>
+  <data name="RAMWindowTitle" xml:space="preserve">
+    <value>Podrobnosti RAM</value>
+  </data>
+  <data name="RAMTimingsHeader" xml:space="preserve">
+    <value>Časování RAM</value>
+  </data>
+  <data name="RAMTimingsHeaderTooltip" xml:space="preserve">
+    <value>Časování tohoto modulu RAM.</value>
+  </data>
+  <data name="RAMTimingsName" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="RAMTimingsValue" xml:space="preserve">
+    <value>Hodnota v nanosekundách</value>
+  </data>
+  <data name="RAMCapacity" xml:space="preserve">
+    <value>Kapacita v GB</value>
+  </data>
+  <data name="RAMCapacityTooltip" xml:space="preserve">
+    <value>Kapacita modulu RAM v GB.</value>
+  </data>
+  <data name="SettingsHotkeysTab" xml:space="preserve">
+    <value>Klávesové zkratky</value>
+  </data>
+  <data name="SettingsHotKeyCloseApp" xml:space="preserve">
+    <value>Zavřít aplikaci</value>
+  </data>
+  <data name="SettingsHotKeyRestartApp" xml:space="preserve">
+    <value>Restartovat aplikaci</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBar" xml:space="preserve">
+    <value>Přepnout App Bar</value>
+  </data>
+  <data name="SettingsHotKeyCloseAppTooltip" xml:space="preserve">
+    <value>Zavře aplikaci.</value>
+  </data>
+  <data name="SettingsHotKeyRestartAppTooltip" xml:space="preserve">
+    <value>Restartuje aplikaci.</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBarTooltip" xml:space="preserve">
+    <value>Změní stav App Bar na opačný (povolit / zakázat).</value>
+  </data>
+  <data name="RAMName" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="RAMNameTooltip" xml:space="preserve">
+    <value>Název modulu RAM.</value>
+  </data>
+  <data name="StorageTemperatureWarning" xml:space="preserve">
+    <value>Varování teploty</value>
+  </data>
+  <data name="StorageTemperatureWarningTooltip" xml:space="preserve">
+    <value>Varovný teplotní práh úložného zařízení.</value>
+  </data>
+  <data name="StorageTemperatureCritical" xml:space="preserve">
+    <value>Kritická teplota</value>
+  </data>
+  <data name="StorageTemperatureCriticalTooltip" xml:space="preserve">
+    <value>Kritický teplotní práh úložného zařízení.</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>Čas</value>
+  </data>
+  <data name="SettingsShowClock" xml:space="preserve">
+    <value>Zobrazit hodiny</value>
+  </data>
+  <data name="SettingsShowClockTooltip" xml:space="preserve">
+    <value>Zobrazí datum a čas.</value>
+  </data>
+  <data name="CPUPower" xml:space="preserve">
+    <value>Příkon CPU</value>
+  </data>
+  <data name="CPUPowerLabel" xml:space="preserve">
+    <value>Výkon</value>
+  </data>
+  <data name="GPUPower" xml:space="preserve">
+    <value>Příkon GPU</value>
+  </data>
+  <data name="GPUPowerLabel" xml:space="preserve">
+    <value>Výkon</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettings" xml:space="preserve">
+    <value>Otevřít nastavení</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettingsTooltip" xml:space="preserve">
+    <value>Otevře okno nastavení.</value>
+  </data>
+  <data name="ButtonUpdateAvailable" xml:space="preserve">
+    <value>Aktualizace dostupná</value>
+  </data>
+  <data name="UpdateFailedTitle" xml:space="preserve">
+    <value>Aktualizace selhala</value>
+  </data>
+  <data name="UpdateFailedMessage" xml:space="preserve">
+    <value>Aktualizace selhala.\nJste připojeni k internetu?\n\n{0}</value>
+  </data>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>Exportovat zprávu</value>
+  </data>
+  <data name="SaveFileTitle" xml:space="preserve">
+    <value>Uložit soubor</value>
+  </data>
+  <data name="ButtonReminderOneWeek" xml:space="preserve">
+    <value>Připomenout za 1 týden</value>
+  </data>
+  <data name="ButtonReminderOneMonth" xml:space="preserve">
+    <value>Připomenout za 1 měsíc</value>
+  </data>
+  <data name="RAMHighLimit" xml:space="preserve">
+    <value>Vysoký teplotní limit</value>
+  </data>
+  <data name="RAMHighLimitTooltip" xml:space="preserve">
+    <value>Vysoký teplotní limit tohoto modulu RAM.</value>
+  </data>
+  <data name="RAMCriticalLimit" xml:space="preserve">
+    <value>Kritický teplotní limit</value>
+  </data>
+  <data name="RAMCriticalLimitTooltip" xml:space="preserve">
+    <value>Kritický teplotní limit tohoto modulu RAM.</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>Již aktuální</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>Již používáte nejnovější verzi.</value>
+  </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>Akcelerace GPU</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>Akcelerace GPU používá grafickou kartu k rychlejším výpočtům a zlepšení výkonu aplikace.</value>
+  </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Teplota</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Napětí pinu</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Celkový proud</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Proud pinu</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Výkon</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Ventilátor monitoru napájení</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Tepl.</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Napětí</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Proud</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Proud</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Výkon</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Ventilátor</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Monitor napájení</value>
+  </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>Jednotka datového toku</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>Určuje, jaká jednotka se používá pro zobrazení datových toků (např. Byte/s, KB/s, MB/s, ...).</value>
+  </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Probudit disk</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Vynutí probuzení disku pro aktualizaci dat SMART, pokud disk spí. Pro NVMe nic nedělá.</value>
+  </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Horní/dolní odsazení</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Zvětší nebo zmenší prázdné místo nad a pod obsahem.</value>
+  </data>
+  <data name="SettingsDateFormat" xml:space="preserve">
+    <value>Formát data</value>
+  </data>
+  <data name="SettingsTimeFormat" xml:space="preserve">
+    <value>Formát času</value>
+  </data>
+  <data name="SettingsDateFormatTooltip" xml:space="preserve">
+    <value>Formát data použitý pro hodiny.</value>
+  </data>
+  <data name="SettingsTimeFormatTooltip" xml:space="preserve">
+    <value>Formát času použitý pro hodiny.</value>
+  </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>Zobrazit okno</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>Zobrazí nebo skryje hlavní okno, které obsahuje všechny hardwarové panely.</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>Přepnout viditelnost okna</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>Změní viditelnost okna na opačnou (zobrazit / skrýt).</value>
+  </data>
+</root>

@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>LibreDiagnostics</value>
+  </data>
+  <data name="CPUClock" xml:space="preserve">
+    <value>Frecvență CPU</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Închide</value>
+  </data>
+  <data name="CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="ButtonDonate" xml:space="preserve">
+    <value>Donează</value>
+  </data>
+  <data name="Drives" xml:space="preserve">
+    <value>Unități</value>
+  </data>
+  <data name="CPUFan" xml:space="preserve">
+    <value>Ventilator CPU</value>
+  </data>
+  <data name="GPU" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Rețea</value>
+  </data>
+  <data name="RAM" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="ButtonRestart" xml:space="preserve">
+    <value>Repornește</value>
+  </data>
+  <data name="ButtonSettings" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="CPUTemp" xml:space="preserve">
+    <value>Temperatură CPU</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>Actualizează</value>
+  </data>
+  <data name="CPUVoltage" xml:space="preserve">
+    <value>Tensiune CPU</value>
+  </data>
+  <data name="ButtonGithub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="CPULoad" xml:space="preserve">
+    <value>Încărcare CPU</value>
+  </data>
+  <data name="CPUClockLabel" xml:space="preserve">
+    <value>Frecvență #{0}</value>
+  </data>
+  <data name="CPUCoreLoad" xml:space="preserve">
+    <value>Încărcare nucleu</value>
+  </data>
+  <data name="CPUCoreLoadLabel" xml:space="preserve">
+    <value>Nucleu #{0}</value>
+  </data>
+  <data name="CPUFanLabel" xml:space="preserve">
+    <value>Ventilator</value>
+  </data>
+  <data name="CPULoadLabel" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="CPUTempLabel" xml:space="preserve">
+    <value>Temp.</value>
+  </data>
+  <data name="CPUVoltageLabel" xml:space="preserve">
+    <value>Tensiune</value>
+  </data>
+  <data name="DriveFree" xml:space="preserve">
+    <value>Spațiu liber</value>
+  </data>
+  <data name="DriveFreeLabel" xml:space="preserve">
+    <value>Liber</value>
+  </data>
+  <data name="DriveLoad" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="DriveLoadBar" xml:space="preserve">
+    <value>Bară de încărcare</value>
+  </data>
+  <data name="DriveLoadBarLabel" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="DriveLoadLabel" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="DriveRead" xml:space="preserve">
+    <value>Rată de citire</value>
+  </data>
+  <data name="DriveReadLabel" xml:space="preserve">
+    <value>Citire</value>
+  </data>
+  <data name="DriveUsed" xml:space="preserve">
+    <value>Spațiu utilizat</value>
+  </data>
+  <data name="DriveUsedLabel" xml:space="preserve">
+    <value>Utilizat</value>
+  </data>
+  <data name="DriveWrite" xml:space="preserve">
+    <value>Rată de scriere</value>
+  </data>
+  <data name="DriveWriteLabel" xml:space="preserve">
+    <value>Scriere</value>
+  </data>
+  <data name="GPUCoreClock" xml:space="preserve">
+    <value>Frecvență nucleu</value>
+  </data>
+  <data name="GPUCoreClockLabel" xml:space="preserve">
+    <value>Frecvență</value>
+  </data>
+  <data name="GPUCoreLoad" xml:space="preserve">
+    <value>Încărcare nucleu</value>
+  </data>
+  <data name="GPUCoreLoadLabel" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="GPUFan" xml:space="preserve">
+    <value>Ventilator GPU</value>
+  </data>
+  <data name="GPUFanLabel" xml:space="preserve">
+    <value>Ventilator</value>
+  </data>
+  <data name="GPUTemp" xml:space="preserve">
+    <value>Temperatură</value>
+  </data>
+  <data name="GPUTempLabel" xml:space="preserve">
+    <value>Temp.</value>
+  </data>
+  <data name="GPUVoltage" xml:space="preserve">
+    <value>Tensiune GPU</value>
+  </data>
+  <data name="GPUVoltageLabel" xml:space="preserve">
+    <value>Tensiune</value>
+  </data>
+  <data name="GPUVRAMClock" xml:space="preserve">
+    <value>Frecvență VRAM</value>
+  </data>
+  <data name="GPUVRAMClockLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="GPUVRAMLoad" xml:space="preserve">
+    <value>Încărcare VRAM</value>
+  </data>
+  <data name="GPUVRAMLoadLabel" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="NetworkIn" xml:space="preserve">
+    <value>Lățime de bandă primită</value>
+  </data>
+  <data name="NetworkInLabel" xml:space="preserve">
+    <value>Intrare</value>
+  </data>
+  <data name="NetworkOut" xml:space="preserve">
+    <value>Lățime de bandă trimisă</value>
+  </data>
+  <data name="NetworkOutLabel" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="RAMClock" xml:space="preserve">
+    <value>Frecvență RAM</value>
+  </data>
+  <data name="RAMClockLabel" xml:space="preserve">
+    <value>Frecvență</value>
+  </data>
+  <data name="RAMFree" xml:space="preserve">
+    <value>Liber</value>
+  </data>
+  <data name="RAMFreeLabel" xml:space="preserve">
+    <value>Liber</value>
+  </data>
+  <data name="RAMLoad" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="RAMLoadLabel" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="RAMUsed" xml:space="preserve">
+    <value>Utilizat</value>
+  </data>
+  <data name="RAMUsedLabel" xml:space="preserve">
+    <value>Utilizat</value>
+  </data>
+  <data name="RAMVoltage" xml:space="preserve">
+    <value>Tensiune RAM</value>
+  </data>
+  <data name="RAMVoltageLabel" xml:space="preserve">
+    <value>Tensiune</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Salvează</value>
+  </data>
+  <data name="LanguageChangedText" xml:space="preserve">
+    <value>Aplicația va reporni pentru a schimba limba.</value>
+  </data>
+  <data name="LanguageChangedTitle" xml:space="preserve">
+    <value>Limba a fost schimbată</value>
+  </data>
+  <data name="SettingsAdvancedTab" xml:space="preserve">
+    <value>Avansat</value>
+  </data>
+  <data name="SettingsAlertFontColor" xml:space="preserve">
+    <value>Culoarea textului pentru alertă</value>
+  </data>
+  <data name="SettingsAlertFontColorTooltip" xml:space="preserve">
+    <value>Culoarea textului unui element cu alertă activă.</value>
+  </data>
+  <data name="SettingsAllCoreClocks" xml:space="preserve">
+    <value>Afișează frecvențele tuturor nucleelor</value>
+  </data>
+  <data name="SettingsAllCoreClocksTooltip" xml:space="preserve">
+    <value>Afișează frecvențele tuturor nucleelor în loc de doar primul.</value>
+  </data>
+  <data name="SettingsIsInAltTab" xml:space="preserve">
+    <value>Este în Alt + Tab</value>
+  </data>
+  <data name="SettingsIsInAltTabTooltip" xml:space="preserve">
+    <value>Ascunde aplicația din Alt + Tab.</value>
+  </data>
+  <data name="SettingsAlwaysOnTop" xml:space="preserve">
+    <value>Întotdeauna deasupra</value>
+  </data>
+  <data name="SettingsAlwaysOnTopTooltip" xml:space="preserve">
+    <value>Setează aplicația să fie mereu deasupra altor ferestre.</value>
+  </data>
+  <data name="SettingsAutoBackground" xml:space="preserve">
+    <value>Culoare de fundal automată</value>
+  </data>
+  <data name="SettingsAutoBackgroundTooltip" xml:space="preserve">
+    <value>Setează culoarea de fundal conform setărilor de culoare ale sistemului.</value>
+  </data>
+  <data name="SettingsAutoUpdate" xml:space="preserve">
+    <value>Actualizare automată</value>
+  </data>
+  <data name="SettingsAutoUpdateTooltip" xml:space="preserve">
+    <value>Verifică actualizările la pornirea aplicației și actualizează automat.</value>
+  </data>
+  <data name="SettingsBackgroundColor" xml:space="preserve">
+    <value>Culoare de fundal</value>
+  </data>
+  <data name="SettingsBackgroundColorTooltip" xml:space="preserve">
+    <value>Culoarea fundalului.</value>
+  </data>
+  <data name="SettingsBackgroundOpacity" xml:space="preserve">
+    <value>Opacitatea fundalului</value>
+  </data>
+  <data name="SettingsBackgroundOpacityTooltip" xml:space="preserve">
+    <value>Opacitatea fundalului.</value>
+  </data>
+  <data name="SettingsBandwidthInAlert" xml:space="preserve">
+    <value>Alertă lățime de bandă primită</value>
+  </data>
+  <data name="SettingsBandwidthInAlertTooltip" xml:space="preserve">
+    <value>Pragul în MBps la care apar alertele pentru lățimea de bandă primită. Folosește 0 pentru dezactivare.</value>
+  </data>
+  <data name="SettingsBandwidthOutAlert" xml:space="preserve">
+    <value>Alertă lățime de bandă trimisă</value>
+  </data>
+  <data name="SettingsBandwidthOutAlertTooltip" xml:space="preserve">
+    <value>Pragul în MBps la care apar alertele pentru lățimea de bandă trimisă. Folosește 0 pentru dezactivare.</value>
+  </data>
+  <data name="SettingsClickThrough" xml:space="preserve">
+    <value>Click-through</value>
+  </data>
+  <data name="SettingsClickThroughTooltip" xml:space="preserve">
+    <value>Toate evenimentele mouse-ului vor trece prin fereastră. Acest lucru va împiedica orice interacțiune cu aplicația.</value>
+  </data>
+  <data name="SettingsShowMenuBar" xml:space="preserve">
+    <value>Afișează bara de meniu</value>
+  </data>
+  <data name="SettingsShowMenuBarTooltip" xml:space="preserve">
+    <value>Afișează bara de meniu în partea de sus a aplicației.</value>
+  </data>
+  <data name="SettingsCoreLoads" xml:space="preserve">
+    <value>Afișează încărcările nucleelor</value>
+  </data>
+  <data name="SettingsCoreLoadsTooltip" xml:space="preserve">
+    <value>Afișează încărcarea procentuală a tuturor nucleelor.</value>
+  </data>
+  <data name="SettingsCustomizeTab" xml:space="preserve">
+    <value>Personalizare</value>
+  </data>
+  <data name="SettingsDock" xml:space="preserve">
+    <value>Andocare</value>
+  </data>
+  <data name="SettingsDockLeft" xml:space="preserve">
+    <value>Stânga</value>
+  </data>
+  <data name="SettingsDockRight" xml:space="preserve">
+    <value>Dreapta</value>
+  </data>
+  <data name="SettingsDockTooltip" xml:space="preserve">
+    <value>Determină unde va fi andocată aplicația.</value>
+  </data>
+  <data name="SettingsFontColor" xml:space="preserve">
+    <value>Culoare text</value>
+  </data>
+  <data name="SettingsFontColorTooltip" xml:space="preserve">
+    <value>Culoarea textului și a pictogramelor.</value>
+  </data>
+  <data name="SettingsFontSize" xml:space="preserve">
+    <value>Dimensiune text</value>
+  </data>
+  <data name="SettingsFontSizeTooltip" xml:space="preserve">
+    <value>Dimensiunea textului și a pictogramelor.</value>
+  </data>
+  <data name="SettingsGeneralTab" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="SettingsHardwareEnabledTooltip" xml:space="preserve">
+    <value>Activează acest hardware.</value>
+  </data>
+  <data name="SettingsHardwareNameTooltip" xml:space="preserve">
+    <value>Editează numele acestui hardware.</value>
+  </data>
+  <data name="SettingsHorizontalOffset" xml:space="preserve">
+    <value>Decalaj orizontal</value>
+  </data>
+  <data name="SettingsHorizontalOffsetTooltip" xml:space="preserve">
+    <value>Decalajul orizontal al aplicației.</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>Limbă</value>
+  </data>
+  <data name="SettingsLanguageDefault" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="SettingsLanguageTooltip" xml:space="preserve">
+    <value>Limba curentă a aplicației.</value>
+  </data>
+  <data name="SettingsMetrics" xml:space="preserve">
+    <value>Metrici:</value>
+  </data>
+  <data name="SettingsMetricsTooltip" xml:space="preserve">
+    <value>Activează sau dezactivează metrici specifice.</value>
+  </data>
+  <data name="SettingsMonitorEnabledTooltip" xml:space="preserve">
+    <value>Activează acest monitor.</value>
+  </data>
+  <data name="SettingsMonitorsTab" xml:space="preserve">
+    <value>Monitoare</value>
+  </data>
+  <data name="SettingsUpdateInterval" xml:space="preserve">
+    <value>Interval de actualizare</value>
+  </data>
+  <data name="SettingsUpdateIntervalTooltip" xml:space="preserve">
+    <value>Timpul dintre actualizările senzorilor în milisecunde.</value>
+  </data>
+  <data name="SettingsIsAppBar" xml:space="preserve">
+    <value>Appbar</value>
+  </data>
+  <data name="SettingsIsAppBarTooltip" xml:space="preserve">
+    <value>Setează fereastra ca appbar și rezervă spațiu în zona de lucru în mod corespunzător.</value>
+  </data>
+  <data name="SettingsRoundAllDecimals" xml:space="preserve">
+    <value>Rotunjește toate zecimalele</value>
+  </data>
+  <data name="SettingsRoundAllDecimalsTooltip" xml:space="preserve">
+    <value>Rotunjește toate valorile zecimale la cel mai apropiat număr întreg.</value>
+  </data>
+  <data name="SettingsRunAtStartup" xml:space="preserve">
+    <value>Rulează la pornire</value>
+  </data>
+  <data name="SettingsRunAtStartupTooltip" xml:space="preserve">
+    <value>Pornește aplicația odată cu sistemul după autentificarea inițială.</value>
+  </data>
+  <data name="SettingsScreen" xml:space="preserve">
+    <value>Ecran</value>
+  </data>
+  <data name="SettingsScreenTooltip" xml:space="preserve">
+    <value>Determină pe ce ecran va fi aplicația.</value>
+  </data>
+  <data name="SettingsShowHardwareNames" xml:space="preserve">
+    <value>Afișează numele hardware</value>
+  </data>
+  <data name="SettingsShowHardwareNamesTooltip" xml:space="preserve">
+    <value>Afișează numele hardware.</value>
+  </data>
+  <data name="SettingsShowTrayIcon" xml:space="preserve">
+    <value>Afișează pictograma din zona de notificare</value>
+  </data>
+  <data name="SettingsShowTrayIconTooltip" xml:space="preserve">
+    <value>Afișează pictograma în zona de notificare a barei de activități.</value>
+  </data>
+  <data name="SettingsTemperatureAlert" xml:space="preserve">
+    <value>Alertă temperatură</value>
+  </data>
+  <data name="SettingsTemperatureAlertTooltip" xml:space="preserve">
+    <value>Pragul de temperatură la care apar alertele. Folosește 0 pentru dezactivare.</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Setări LibreDiagnostics</value>
+  </data>
+  <data name="SettingsShowInactiveConnections" xml:space="preserve">
+    <value>Afișează conexiunile inactive</value>
+  </data>
+  <data name="SettingsShowInactiveConnectionsTooltip" xml:space="preserve">
+    <value>Afișează conexiunile de rețea fără date transferate.</value>
+  </data>
+  <data name="SettingsUsedSpaceAlert" xml:space="preserve">
+    <value>Alertă spațiu utilizat</value>
+  </data>
+  <data name="SettingsUsedSpaceAlertTooltip" xml:space="preserve">
+    <value>Pragul procentual la care apar alertele pentru spațiul utilizat. Folosește 0 pentru dezactivare.</value>
+  </data>
+  <data name="SettingsUseFahrenheit" xml:space="preserve">
+    <value>Folosește Fahrenheit</value>
+  </data>
+  <data name="SettingsUseFahrenheitTooltip" xml:space="preserve">
+    <value>Temperaturile pentru senzori și alerte vor fi în Fahrenheit în loc de Celsius.</value>
+  </data>
+  <data name="SettingsVerticalOffset" xml:space="preserve">
+    <value>Decalaj vertical</value>
+  </data>
+  <data name="SettingsVerticalOffsetTooltip" xml:space="preserve">
+    <value>Decalajul vertical al aplicației.</value>
+  </data>
+  <data name="NetworkIP" xml:space="preserve">
+    <value>Adresă IP</value>
+  </data>
+  <data name="NetworkIPLabel" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="NetworkExtIP" xml:space="preserve">
+    <value>Adresă IP externă</value>
+  </data>
+  <data name="NetworkExtIPLabel" xml:space="preserve">
+    <value>Ext.</value>
+  </data>
+  <data name="DriveTemperature" xml:space="preserve">
+    <value>Temperatură</value>
+  </data>
+  <data name="DriveTemperatureLabel" xml:space="preserve">
+    <value>Temp.</value>
+  </data>
+  <data name="RAMTempLabel" xml:space="preserve">
+    <value>Temp.</value>
+  </data>
+  <data name="RAMTemp" xml:space="preserve">
+    <value>Temperatură</value>
+  </data>
+  <data name="Fan" xml:space="preserve">
+    <value>Ventilatoare</value>
+  </data>
+  <data name="FanSpeed" xml:space="preserve">
+    <value>Viteză ventilator</value>
+  </data>
+  <data name="FanSpeedLabel" xml:space="preserve">
+    <value>Viteză</value>
+  </data>
+  <data name="SettingsAutoFontColor" xml:space="preserve">
+    <value>Culoare text automată</value>
+  </data>
+  <data name="SettingsAutoFontColorTooltip" xml:space="preserve">
+    <value>Setează culoarea textului conform setărilor de culoare ale sistemului.</value>
+  </data>
+  <data name="SettingsShowInactiveFans" xml:space="preserve">
+    <value>Afișează ventilatoarele inactive</value>
+  </data>
+  <data name="SettingsShowInactiveFansTooltip" xml:space="preserve">
+    <value>Afișează ventilatoarele cu RPM zero. RPM-ul ventilatorului este reverificat la fiecare ciclu de actualizare.</value>
+  </data>
+  <data name="SettingsHardwareEnabled" xml:space="preserve">
+    <value>Activat</value>
+  </data>
+  <data name="SettingsHardwareName" xml:space="preserve">
+    <value>Hardware</value>
+  </data>
+  <data name="SettingsMonitorsEnabled" xml:space="preserve">
+    <value>Activat</value>
+  </data>
+  <data name="SettingsMonitorsMonitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle1" xml:space="preserve">
+    <value>Fă clic pe un rând pentru a-i edita setările.</value>
+  </data>
+  <data name="SettingsMonitorsDragDropTitle2" xml:space="preserve">
+    <value>Trage un rând pentru a-i schimba ordinea.</value>
+  </data>
+  <data name="SettingsAppWidth" xml:space="preserve">
+    <value>Lățime aplicație</value>
+  </data>
+  <data name="SettingsAppWidthTooltip" xml:space="preserve">
+    <value>Lățimea aplicației.</value>
+  </data>
+  <data name="SettingsTextAlignment" xml:space="preserve">
+    <value>Aliniere text</value>
+  </data>
+  <data name="SettingsTextAlignmentLeft" xml:space="preserve">
+    <value>Stânga</value>
+  </data>
+  <data name="SettingsTextAlignmentRight" xml:space="preserve">
+    <value>Dreapta</value>
+  </data>
+  <data name="SettingsTextAlignmentTooltip" xml:space="preserve">
+    <value>Alinierea textului.</value>
+  </data>
+  <data name="StorageTitle" xml:space="preserve">
+    <value>Detalii stocare</value>
+  </data>
+  <data name="StorageHealth" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="StorageHealthTooltip" xml:space="preserve">
+    <value>Starea dispozitivului de stocare.</value>
+  </data>
+  <data name="StorageAttributeHeader" xml:space="preserve">
+    <value>Atribute S.M.A.R.T.</value>
+  </data>
+  <data name="StorageAttributeHeaderTooltip" xml:space="preserve">
+    <value>Self-Monitoring, Analysis and Reporting Technology (SMART / S.M.A.R.T.)</value>
+  </data>
+  <data name="StorageAttributeID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="StorageAttributeName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="StorageAttributeValue" xml:space="preserve">
+    <value>Valoare</value>
+  </data>
+  <data name="StorageAttributeValueHex" xml:space="preserve">
+    <value>Valoare (hex)</value>
+  </data>
+  <data name="StorageName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="StorageNameTooltip" xml:space="preserve">
+    <value>Numele dispozitivului de stocare.</value>
+  </data>
+  <data name="UpdateAvailableTitle" xml:space="preserve">
+    <value>Versiune nouă disponibilă</value>
+  </data>
+  <data name="UpdateAvailableMessage" xml:space="preserve">
+    <value>O versiune nouă este disponibilă pentru descărcare.\nDorești să continui actualizarea?\n\nNote de lansare:\n{0}</value>
+  </data>
+  <data name="ButtonApply" xml:space="preserve">
+    <value>Aplică</value>
+  </data>
+  <data name="SettingsThrottleInterval" xml:space="preserve">
+    <value>Limitare actualizări</value>
+  </data>
+  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
+    <value>Limitează actualizările senzorilor pentru dispozitivele de stocare cu numărul introdus de milisecunde. Folosește 0 pentru dezactivare.</value>
+  </data>
+  <data name="NoSensorValue" xml:space="preserve">
+    <value>Fără valoare</value>
+  </data>
+  <data name="SettingsFontFamily" xml:space="preserve">
+    <value>Familie font</value>
+  </data>
+  <data name="SettingsFontFamilyTooltip" xml:space="preserve">
+    <value>Familia fontului pentru texte.</value>
+  </data>
+  <data name="StorageTotalReads" xml:space="preserve">
+    <value>Citiri totale în GB</value>
+  </data>
+  <data name="StorageTotalReadsTooltip" xml:space="preserve">
+    <value>Citiri totale ale dispozitivului de stocare în gigaocteți.</value>
+  </data>
+  <data name="StorageTotalWrites" xml:space="preserve">
+    <value>Scrieri totale în GB</value>
+  </data>
+  <data name="StorageTotalWritesTooltip" xml:space="preserve">
+    <value>Scrieri totale ale dispozitivului de stocare în gigaocteți.</value>
+  </data>
+  <data name="StoragePowerOnCount" xml:space="preserve">
+    <value>Număr porniri</value>
+  </data>
+  <data name="StoragePowerOnCountTooltip" xml:space="preserve">
+    <value>Numărul de porniri ale dispozitivului de stocare.</value>
+  </data>
+  <data name="StoragePowerOnHours" xml:space="preserve">
+    <value>Ore de funcționare</value>
+  </data>
+  <data name="StoragePowerOnHoursTooltip" xml:space="preserve">
+    <value>Orele de funcționare ale dispozitivului de stocare.</value>
+  </data>
+  <data name="RAMWindowTitle" xml:space="preserve">
+    <value>Detalii RAM</value>
+  </data>
+  <data name="RAMTimingsHeader" xml:space="preserve">
+    <value>Timpi RAM</value>
+  </data>
+  <data name="RAMTimingsHeaderTooltip" xml:space="preserve">
+    <value>Timpii acestui modul RAM.</value>
+  </data>
+  <data name="RAMTimingsName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="RAMTimingsValue" xml:space="preserve">
+    <value>Valoare în nanosecunde</value>
+  </data>
+  <data name="RAMCapacity" xml:space="preserve">
+    <value>Capacitate în GB</value>
+  </data>
+  <data name="RAMCapacityTooltip" xml:space="preserve">
+    <value>Capacitatea modulului RAM în GB.</value>
+  </data>
+  <data name="SettingsHotkeysTab" xml:space="preserve">
+    <value>Taste rapide</value>
+  </data>
+  <data name="SettingsHotKeyCloseApp" xml:space="preserve">
+    <value>Închide aplicația</value>
+  </data>
+  <data name="SettingsHotKeyRestartApp" xml:space="preserve">
+    <value>Repornește aplicația</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBar" xml:space="preserve">
+    <value>Comută App Bar</value>
+  </data>
+  <data name="SettingsHotKeyCloseAppTooltip" xml:space="preserve">
+    <value>Închide aplicația.</value>
+  </data>
+  <data name="SettingsHotKeyRestartAppTooltip" xml:space="preserve">
+    <value>Repornește aplicația.</value>
+  </data>
+  <data name="SettingsHotKeyToggleAppBarTooltip" xml:space="preserve">
+    <value>Schimbă starea App Bar în opusul ei (activare / dezactivare).</value>
+  </data>
+  <data name="RAMName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="RAMNameTooltip" xml:space="preserve">
+    <value>Numele modulului RAM.</value>
+  </data>
+  <data name="StorageTemperatureWarning" xml:space="preserve">
+    <value>Avertizare temperatură</value>
+  </data>
+  <data name="StorageTemperatureWarningTooltip" xml:space="preserve">
+    <value>Prag de avertizare pentru temperatura dispozitivului de stocare.</value>
+  </data>
+  <data name="StorageTemperatureCritical" xml:space="preserve">
+    <value>Temperatură critică</value>
+  </data>
+  <data name="StorageTemperatureCriticalTooltip" xml:space="preserve">
+    <value>Prag critic de temperatură pentru dispozitivul de stocare.</value>
+  </data>
+  <data name="Clock" xml:space="preserve">
+    <value>Oră</value>
+  </data>
+  <data name="SettingsShowClock" xml:space="preserve">
+    <value>Afișează ceasul</value>
+  </data>
+  <data name="SettingsShowClockTooltip" xml:space="preserve">
+    <value>Afișează data și ora.</value>
+  </data>
+  <data name="CPUPower" xml:space="preserve">
+    <value>Consum CPU</value>
+  </data>
+  <data name="CPUPowerLabel" xml:space="preserve">
+    <value>Putere</value>
+  </data>
+  <data name="GPUPower" xml:space="preserve">
+    <value>Consum GPU</value>
+  </data>
+  <data name="GPUPowerLabel" xml:space="preserve">
+    <value>Putere</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettings" xml:space="preserve">
+    <value>Deschide setările</value>
+  </data>
+  <data name="SettingsHotKeyOpenSettingsTooltip" xml:space="preserve">
+    <value>Deschide fereastra de setări.</value>
+  </data>
+  <data name="ButtonUpdateAvailable" xml:space="preserve">
+    <value>Actualizare disponibilă</value>
+  </data>
+  <data name="UpdateFailedTitle" xml:space="preserve">
+    <value>Actualizarea a eșuat</value>
+  </data>
+  <data name="UpdateFailedMessage" xml:space="preserve">
+    <value>Actualizarea a eșuat.\nEști conectat la internet?\n\n{0}</value>
+  </data>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>Exportă raportul</value>
+  </data>
+  <data name="SaveFileTitle" xml:space="preserve">
+    <value>Salvează fișierul</value>
+  </data>
+  <data name="ButtonReminderOneWeek" xml:space="preserve">
+    <value>Amintește-mi peste 1 săptămână</value>
+  </data>
+  <data name="ButtonReminderOneMonth" xml:space="preserve">
+    <value>Amintește-mi peste 1 lună</value>
+  </data>
+  <data name="RAMHighLimit" xml:space="preserve">
+    <value>Limit temperatură ridicată</value>
+  </data>
+  <data name="RAMHighLimitTooltip" xml:space="preserve">
+    <value>Limita de temperatură ridicată a acestui modul RAM.</value>
+  </data>
+  <data name="RAMCriticalLimit" xml:space="preserve">
+    <value>Limit temperatură critică</value>
+  </data>
+  <data name="RAMCriticalLimitTooltip" xml:space="preserve">
+    <value>Limita de temperatură critică a acestui modul RAM.</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateTitle" xml:space="preserve">
+    <value>Deja actualizat</value>
+  </data>
+  <data name="UpdateAlreadyUpToDateMessage" xml:space="preserve">
+    <value>Folosești deja cea mai recentă versiune.</value>
+  </data>
+  <data name="SettingsUseHardwareAcceleration" xml:space="preserve">
+    <value>Accelerare GPU</value>
+  </data>
+  <data name="SettingsUseHardwareAccelerationTooltip" xml:space="preserve">
+    <value>Accelerarea GPU folosește placa grafică pentru a efectua calcule mai rapid și a îmbunătăți performanța aplicației.</value>
+  </data>
+  <data name="PowerMonitorTemp" xml:space="preserve">
+    <value>Temperatură</value>
+  </data>
+  <data name="PowerMonitorPinVoltage" xml:space="preserve">
+    <value>Tensiune pin</value>
+  </data>
+  <data name="PowerMonitorTotalCurrent" xml:space="preserve">
+    <value>Curent total</value>
+  </data>
+  <data name="PowerMonitorPinCurrent" xml:space="preserve">
+    <value>Curent pin</value>
+  </data>
+  <data name="PowerMonitorPower" xml:space="preserve">
+    <value>Putere</value>
+  </data>
+  <data name="PowerMonitorFan" xml:space="preserve">
+    <value>Ventilator monitor alimentare</value>
+  </data>
+  <data name="PowerMonitorTempLabel" xml:space="preserve">
+    <value>Temp.</value>
+  </data>
+  <data name="PowerMonitorPinVoltageLabel" xml:space="preserve">
+    <value>Tensiune</value>
+  </data>
+  <data name="PowerMonitorTotalCurrentLabel" xml:space="preserve">
+    <value>Curent</value>
+  </data>
+  <data name="PowerMonitorPinCurrentLabel" xml:space="preserve">
+    <value>Curent</value>
+  </data>
+  <data name="PowerMonitorPowerLabel" xml:space="preserve">
+    <value>Putere</value>
+  </data>
+  <data name="PowerMonitorFanLabel" xml:space="preserve">
+    <value>Ventilator</value>
+  </data>
+  <data name="PowerMonitor" xml:space="preserve">
+    <value>Monitor alimentare</value>
+  </data>
+  <data name="SettingsDataRateUnit" xml:space="preserve">
+    <value>Unitate rată de date</value>
+  </data>
+  <data name="SettingsDataRateUnitTooltip" xml:space="preserve">
+    <value>Definește unitatea folosită pentru afișarea ratelor de date (de ex. Byte/s, KB/s, MB/s, ...).</value>
+  </data>
+  <data name="SettingsForceDriveWakeup" xml:space="preserve">
+    <value>Trezește unitatea</value>
+  </data>
+  <data name="SettingsForceDriveWakeupTooltip" xml:space="preserve">
+    <value>Forțează trezirea unității pentru actualizarea datelor SMART, dacă unitatea este în repaus. Nu face nimic pentru NVMe.</value>
+  </data>
+  <data name="SettingsVerticalContentMargin" xml:space="preserve">
+    <value>Spațiere sus/jos</value>
+  </data>
+  <data name="SettingsVerticalContentMarginTooltip" xml:space="preserve">
+    <value>Mărește sau micșorează spațiul gol deasupra și dedesubtul conținutului.</value>
+  </data>
+  <data name="SettingsDateFormat" xml:space="preserve">
+    <value>Format dată</value>
+  </data>
+  <data name="SettingsTimeFormat" xml:space="preserve">
+    <value>Format oră</value>
+  </data>
+  <data name="SettingsDateFormatTooltip" xml:space="preserve">
+    <value>Formatul datei folosit pentru ceas.</value>
+  </data>
+  <data name="SettingsTimeFormatTooltip" xml:space="preserve">
+    <value>Formatul orei folosit pentru ceas.</value>
+  </data>
+  <data name="SettingsShowWindow" xml:space="preserve">
+    <value>Afișează fereastra</value>
+  </data>
+  <data name="SettingsShowWindowTooltip" xml:space="preserve">
+    <value>Afișează sau ascunde fereastra principală care conține toate panourile hardware.</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibility" xml:space="preserve">
+    <value>Comută vizibilitatea ferestrei</value>
+  </data>
+  <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
+    <value>Schimbă vizibilitatea ferestrei în opusul ei (afișare / ascundere).</value>
+  </data>
+</root>
