@@ -90,9 +90,11 @@ namespace LibreDiagnostics.UI.Platform
 
             foreach (var screen in screens)
             {
+                var displayName = string.IsNullOrEmpty(screen.DisplayName) ? screen.GetDisplayName() : screen.DisplayName;
+
                 list.Add(new()
                 {
-                    Name = screen.DisplayName,
+                    Name = displayName,
                     Strategy = strategy,
                     ScreenID = GetScreenID(screen, strategy)
                 });

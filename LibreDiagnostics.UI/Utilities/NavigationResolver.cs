@@ -124,8 +124,6 @@ namespace LibreDiagnostics.UI.Utilities
             if (Avalonia.Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime wnd
              && wnd.MainWindow != null)
             {
-                var ok = wnd.MainWindow.Screens.RequestScreenDetails().Result;
-
                 var screens = wnd.MainWindow.Screens.All.ToList();
 
                 return ScreenManager.GetScreens(screens);
