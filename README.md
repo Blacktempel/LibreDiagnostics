@@ -83,12 +83,25 @@ So far only Windows has been tested, so Linux support is experimental.<br/>
 Not all settings and features may be available on other operating systems.
 
 ## Supported languages
-- English
-- German / Deutsch
-- Japanese
-- Spanish
-- Simplified Chinese (China)
-- Traditional Chinese (Taiwan)
+| Language | Native name |
+|---|---|
+| Czech | Čeština |
+| Danish | Dansk |
+| English | English |
+| Finnish | Suomi |
+| French | Français |
+| German | Deutsch |
+| Italian | Italiano |
+| Japanese | 日本語 |
+| Korean | 한국어 |
+| Norwegian | Norsk bokmål |
+| Polish | Polski |
+| Romanian | Română |
+| Russian | Русский |
+| Simplified Chinese (China) | 简体中文（中国） |
+| Spanish | Español |
+| Swedish | Svenska |
+| Traditional Chinese (Taiwan) | 繁體中文（台灣） |
 
 Feel free to contribute translations for other languages !
 
