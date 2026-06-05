@@ -20,7 +20,6 @@
                   Icon="avares://LibreDiagnostics.UI/Assets/Icon.ico"
                   TitleIcon="avares://LibreDiagnostics.UI/Assets/Icon.ico"
 				  Foreground="{Binding FontColor, Source={x:Static global:Global.Settings}, Mode=OneWay}"
-                  Background="{Binding BackgroundColor, Source={x:Static global:Global.Settings}, Converter={StaticResource StringToColorConverter}, Mode=OneWay}"
                   ShowTitleBar="True" ShowTitle="True" ShowIcon="True" ShowClose="True" CanResize="True">
 
     <Design.DataContext>
