@@ -6,8 +6,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ImplicitUsings>enable</ImplicitUsings>
 	<Copyright>Florian K.</Copyright>
-    <AssemblyVersion>1.1.8</AssemblyVersion>
-    <FileVersion>1.1.8</FileVersion>
+    <AssemblyVersion>1.1.9</AssemblyVersion>
+    <FileVersion>1.1.9</FileVersion>
     <Version>$(AssemblyVersion)</Version>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
