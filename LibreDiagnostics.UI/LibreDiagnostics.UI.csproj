@@ -9,15 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="12.0.3" />
-    <PackageReference Include="Avalonia.Controls.ColorPicker" Version="12.0.3" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="12.0.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="12.0.3" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.0.3" />
-    <PackageReference Include="BlackSharp.Core" Version="1.1.1" />
-    <PackageReference Include="BlackSharp.UI.Avalonia" Version="1.1.1" />
-    <PackageReference Include="Xaml.Behaviors" Version="12.0.0.1" />
+    <PackageReference Include="Avalonia" Version="12.1.0" />
+    <PackageReference Include="Avalonia.Controls.ColorPicker" Version="12.1.0" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="12.1.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.0" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.1.0" />
+    <PackageReference Include="BlackSharp.Core" Version="1.1.3" />
+    <PackageReference Include="BlackSharp.UI.Avalonia" Version="1.1.3" />
+    <PackageReference Include="Xaml.Behaviors" Version="12.0.5" />
   </ItemGroup>
 
   <ItemGroup>
