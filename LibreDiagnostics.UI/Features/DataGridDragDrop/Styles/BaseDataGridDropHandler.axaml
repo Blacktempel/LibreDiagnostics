@@ -1,0 +1,78 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="using:LibreDiagnostics.UI.Features.DataGridDragDrop.Behaviors">
+
+    <Style Selector="DataGrid.DragAndDrop">
+        <Style.Resources>
+            <behaviors:ItemsDataGridDropHandler x:Key="ItemsDataGridDropHandler"/>
+        </Style.Resources>
+        <Setter Property="RowHeaderWidth" Value="24"/>
+        <Setter Property="Interaction.Behaviors">
+            <BehaviorCollectionTemplate>
+                <BehaviorCollection>
+                    <ContextDropBehavior Handler="{StaticResource ItemsDataGridDropHandler}"/>
+                </BehaviorCollection>
+            </BehaviorCollectionTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="DataGrid.DragAndDrop DataGridRow.DraggingUp">
+        <Setter Property="AdornerLayer.Adorner">
+            <Template>
+                <Border BorderThickness="0 2 0 0" BorderBrush="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="DataGrid.DragAndDrop DataGridRow.DraggingDown">
+        <Setter Property="AdornerLayer.Adorner">
+            <Template>
+                <Border BorderThickness="0 0 0 2" BorderBrush="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+            </Template>
+        </Setter>
+    </Style>
+
+    <!-- This makes only the DataGridRowHeader available for dragging, instead of making the entire row draggable -->
+    <!-- Which prevents a conflict between text selection in a cell and drag-and-drop -->
+    <Style Selector="DataGrid.DragAndDrop DataGridRowHeader">
+            <Style.Resources>
+                    <PathGeometry x:Key="IconGrabberGeometry">M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z</PathGeometry>
+                    <GeometryDrawing x:Key="IconGrabber" Brush="{DynamicResource SystemControlForegroundBaseHighBrush}" Geometry="{StaticResource IconGrabberGeometry}"/>
+            </Style.Resources>
+        <Setter Property="(Interaction.Behaviors)">
+            <BehaviorCollectionTemplate>
+                <BehaviorCollection>
+                    <ContextDragWithDirectionBehavior HorizontalDragThreshold="3" VerticalDragThreshold="3"/>
+                </BehaviorCollection>
+            </BehaviorCollectionTemplate>
+        </Setter>
+        <Setter Property="Content">
+            <Template>
+                <Image
+                    Margin="12,0,12,0"
+                    Width="12"
+                    Height="12"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                    <Image.Source>
+                        <DrawingImage Drawing="{StaticResource IconGrabber}"/>
+                    </Image.Source>
+                </Image>
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="DataGrid.ItemsDragAndDrop">
+        <Style.Resources>
+            <behaviors:ItemsDataGridDropHandler x:Key="ItemsDataGridDropHandler"/>
+        </Style.Resources>
+        <Setter Property="(Interaction.Behaviors)">
+            <BehaviorCollectionTemplate>
+                <BehaviorCollection>
+                    <ContextDropBehavior Handler="{StaticResource ItemsDataGridDropHandler}"/>
+                </BehaviorCollection>
+            </BehaviorCollectionTemplate>
+        </Setter>
+    </Style>
+
+</Styles>
