@@ -2,13 +2,14 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-	<LangVersion>latest</LangVersion>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkPortableRuntimeIdentifier)</RuntimeIdentifier>
+    <LangVersion>latest</LangVersion>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-	<Copyright>Florian K.</Copyright>
-	<ApplicationIcon>../LibreDiagnostics.UI/Assets/Icon.ico</ApplicationIcon>
-    <AssemblyVersion>1.1.9</AssemblyVersion>
-    <FileVersion>1.1.9</FileVersion>
+    <Copyright>Florian K.</Copyright>
+    <ApplicationIcon>../LibreDiagnostics.UI/Assets/Icon.ico</ApplicationIcon>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
     <Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
