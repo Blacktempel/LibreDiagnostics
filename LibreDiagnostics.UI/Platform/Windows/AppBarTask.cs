@@ -85,8 +85,8 @@ namespace LibreDiagnostics.UI.Platform.Windows
                 return;
             }
 
-            var screen = _Window.Screens.ScreenFromWindow(_Window);
-            var renderScaling = _Window.RenderScaling;
+            var screen = ScreenManager.GetScreen(_Window.Screens.All, settings.ScreenInfo) ?? _Window.Screens.ScreenFromWindow(_Window);
+            var renderScaling = screen.Scaling;
             var workArea = screen.Bounds;
 
             var desiredWidthPx = Math.Round(_Window.Width * renderScaling);

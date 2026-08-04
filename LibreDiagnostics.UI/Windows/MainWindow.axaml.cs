@@ -10,7 +10,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Platform;
 using BlackSharp.Core.Logging;
 using BlackSharp.UI.Avalonia.Media;
 using BlackSharp.UI.Avalonia.Platform.Interfaces;
@@ -120,8 +119,6 @@ namespace LibreDiagnostics.UI.Windows
             var settings = Global.Settings;
             var screens = Screens.All;
 
-            Screen active = null;
-
             //No screens
             if (screens.Count == 0)
             {
@@ -129,20 +126,10 @@ namespace LibreDiagnostics.UI.Windows
                 return;
             }
 
-            var defaultScreen = screens.FirstOrDefault();
-
-            //Screen invalid
-            if (settings.ScreenInfo == null)
-            {
-                active = defaultScreen;
-            }
-            else
-            {
-                active = screens.FirstOrDefault(s => ScreenManager.GetScreenID(s, settings.ScreenInfo.Strategy) == settings.ScreenInfo.ScreenID, defaultScreen);
-            }
+            var active = ScreenManager.GetScreen(screens, settings.ScreenInfo);
 
             var bounds = active.WorkingArea;
-            var scaling = RenderScaling;
+            var scaling = active.Scaling;
 
             double screenX      = bounds.X      == 0 ? 0 : bounds.X      / scaling;
             double screenY      = bounds.Y      == 0 ? 0 : bounds.Y      / scaling;

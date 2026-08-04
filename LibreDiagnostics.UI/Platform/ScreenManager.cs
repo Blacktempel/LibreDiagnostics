@@ -50,6 +50,20 @@ namespace LibreDiagnostics.UI.Platform
             return list;
         }
 
+        public static Screen GetScreen(IReadOnlyList<Screen> screens, ScreenModel screenInfo)
+        {
+            var defaultScreen = screens.FirstOrDefault();
+
+            if (screenInfo == null)
+            {
+                return defaultScreen;
+            }
+
+            return screens.FirstOrDefault(
+                       screen => GetScreenID(screen, screenInfo.Strategy) == screenInfo.ScreenID,
+                       defaultScreen);
+        }
+
         public static string GetScreenID(Screen screen, ScreenIdentificationStrategy strategy)
         {
             if (BlackSharp.Core.Platform.OperatingSystem.IsLinux())
