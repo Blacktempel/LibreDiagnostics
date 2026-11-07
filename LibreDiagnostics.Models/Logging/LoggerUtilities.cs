@@ -20,6 +20,15 @@ namespace LibreDiagnostics.Models.Logging
 
         #endregion
 
+        #region Properties
+
+        /// <summary>
+        /// Gets the in-memory logger shared by the application and its hardware models.
+        /// </summary>
+        public static Logger ApplicationLogger { get; } = new();
+
+        #endregion
+
         #region Public
 
         public static void SetLogFilePath(DateTime dateTime)
@@ -34,7 +43,7 @@ namespace LibreDiagnostics.Models.Logging
 
         public static void SaveLogFile()
         {
-            Logger.Instance.SaveToFile(LogFile, false);
+            ApplicationLogger.SaveToFile(LogFile, false);
         }
 
         #endregion

@@ -77,6 +77,11 @@ namespace LibreDiagnostics.Updater.ViewModels
 
         static Thread _LogThread;
 
+        /// <summary>
+        /// Collects optional diagnostics for this updater process.
+        /// </summary>
+        private static readonly Logger _Logger = new() { LogLevel = LogLevel.Trace };
+
         #endregion
 
         #region Properties
@@ -101,16 +106,16 @@ namespace LibreDiagnostics.Updater.ViewModels
 
         static void LogTrace(string message = "")
         {
-            if (Logger.Instance.IsEnabled)
+            if (_Logger.IsEnabled)
             {
-                Logger.Instance.Add(LogLevel.Trace, message, DateTime.Now);
+                _Logger.Add(LogLevel.Trace, message, DateTime.Now);
                 SaveLogFile();
             }
         }
 
         static void SaveLogFile()
         {
-            Logger.Instance.SaveToFile(@$"C:\LDT\UpdaterLog_{FileNameDateTime:yyyyMMdd_HHmmss}.txt", false);
+            _Logger.SaveToFile(@$"C:\LDT\UpdaterLog_{FileNameDateTime:yyyyMMdd_HHmmss}.txt", false);
         }
 
         async Task DoUpdate()
@@ -118,10 +123,9 @@ namespace LibreDiagnostics.Updater.ViewModels
             var args = Client.Args;
 
             //Enable this for logging output (and verify directory of log file exists)
-            //Logger.Instance.LogLevel = LogLevel.Trace;
-            //Logger.Instance.IsEnabled = true;
+            //_Logger.IsEnabled = true;
 
-            if (Logger.Instance.IsEnabled)
+            if (_Logger.IsEnabled)
             {
                 _LogThread = new Thread(() =>
                 {
@@ -178,7 +182,7 @@ namespace LibreDiagnostics.Updater.ViewModels
                 var callingApplication = args[0].Split('=')[1].Trim('"');
                 LogTrace($"{nameof(callingApplication)} = '{callingApplication}'");
 
-                var updater = new Tasks.Github.Updater(Constants.Owner, Constants.Repository);
+                var updater = new Tasks.Github.Updater(Constants.Owner, Constants.Repository, _Logger);
 
                 var updateCheckResult = await updater.IsUpdateAvailable(versionOfMyself);
 
@@ -257,7 +261,7 @@ namespace LibreDiagnostics.Updater.ViewModels
                 //Get source (target for update) directory
                 var sourceDirectory = args[2].Split('=')[1].Trim('"');
 
-                var updater = new Tasks.Github.Updater(Constants.Owner, Constants.Repository);
+                var updater = new Tasks.Github.Updater(Constants.Owner, Constants.Repository, _Logger);
 
                 try
                 {

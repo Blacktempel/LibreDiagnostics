@@ -23,10 +23,17 @@ namespace LibreDiagnostics.Tasks.Github
     {
         #region Constructor
 
-        public Updater(string owner, string repository)
+        /// <summary>
+        /// Creates an updater for the specified GitHub repository.
+        /// </summary>
+        /// <param name="owner">The owner of the repository.</param>
+        /// <param name="repository">The repository name.</param>
+        /// <param name="logger">An optional logger for update diagnostics.</param>
+        public Updater(string owner, string repository, ILogger logger = null)
         {
             Owner = owner;
             Repository = repository;
+            _Logger = logger;
         }
 
         #endregion
@@ -37,6 +44,11 @@ namespace LibreDiagnostics.Tasks.Github
         public const string StartUpdateArg        = "--start-update";
         public const string StartSelfUpdateArg    = "--start-self-update";
         public const string SourceDirectoryArg    = "--source-directory";
+
+        /// <summary>
+        /// Receives update diagnostics when supplied by the caller.
+        /// </summary>
+        private readonly ILogger _Logger;
 
         #endregion
 
@@ -182,7 +194,7 @@ namespace LibreDiagnostics.Tasks.Github
                         Directory.Delete(appPath, true);
                     }
 
-                    Logger.Instance.Add(LogLevel.Trace, $"Removed directory '{appPath}'.", DateTime.Now);
+                    _Logger?.Log(LogLevel.Trace, nameof(Updater), $"Removed directory '{appPath}'.");
 
                     //Extract update
                     using var zipFile = File.OpenRead(updateFilePath);
@@ -221,7 +233,7 @@ namespace LibreDiagnostics.Tasks.Github
                         foreach (var file in extractedData)
                         {
                             var destFile = Path.Combine(appPath, Path.GetFileName(file));
-                            Logger.Instance.Add(LogLevel.Trace, $"Moving '{file}' -> '{destFile}'.", DateTime.Now);
+                            _Logger?.Log(LogLevel.Trace, nameof(Updater), $"Moving '{file}' -> '{destFile}'.");
 
                             if (Directory.Exists(file))
                             {
@@ -237,13 +249,13 @@ namespace LibreDiagnostics.Tasks.Github
                         Directory.Delete(entry, true);
                     }
 
-                    Logger.Instance.Add(LogLevel.Trace, $"Extracted files from '{updateFilePath}' to directory '{appPath}'.", DateTime.Now);
+                    _Logger?.Log(LogLevel.Trace, nameof(Updater), $"Extracted files from '{updateFilePath}' to directory '{appPath}'.");
 
                     success = true;
                 }
                 catch (Exception e)
                 {
-                    Logger.Instance.Add(LogLevel.Trace, $"Retrying clear of original files and extraction (counter = {i}).", DateTime.Now);
+                    _Logger?.Log(LogLevel.Trace, nameof(Updater), $"Retrying clear of original files and extraction (counter = {i}).");
                     lastException = e;
 
                     //Wait a bit and retry
@@ -261,7 +273,7 @@ namespace LibreDiagnostics.Tasks.Github
 
             if (removeUpdateFile)
             {
-                Logger.Instance.Add(LogLevel.Trace, $"Removing update file '{updateFilePath}'.", DateTime.Now);
+                _Logger?.Log(LogLevel.Trace, nameof(Updater), $"Removing update file '{updateFilePath}'.");
 
                 //Remove update file
                 File.Delete(updateFilePath);

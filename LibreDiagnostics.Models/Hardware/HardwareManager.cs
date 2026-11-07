@@ -422,7 +422,7 @@ namespace LibreDiagnostics.Models.Hardware
                 return;
             }
 
-            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnGPUAdded)}: '{hardware.Name}'", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Trace, $"{nameof(OnGPUAdded)}: '{hardware.Name}'", DateTime.Now);
 
             OnHardwareChanged(HardwareMonitorType.GPU);
         }
@@ -434,7 +434,7 @@ namespace LibreDiagnostics.Models.Hardware
                 return;
             }
 
-            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnGPURemoved)}: '{hardware.Name}'", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Trace, $"{nameof(OnGPURemoved)}: '{hardware.Name}'", DateTime.Now);
 
             OnHardwareChanged(HardwareMonitorType.GPU);
         }
@@ -446,7 +446,7 @@ namespace LibreDiagnostics.Models.Hardware
                 return;
             }
 
-            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageAdded)}: '{hardware.Name}'", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Trace, $"{nameof(OnStorageAdded)}: '{hardware.Name}'", DateTime.Now);
 
             OnHardwareChanged(HardwareMonitorType.Storage);
         }
@@ -458,7 +458,7 @@ namespace LibreDiagnostics.Models.Hardware
                 return;
             }
 
-            Logger.Instance.Add(LogLevel.Trace, $"{nameof(OnStorageRemoved)}: '{hardware.Name}'", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Trace, $"{nameof(OnStorageRemoved)}: '{hardware.Name}'", DateTime.Now);
 
             OnHardwareChanged(HardwareMonitorType.Storage);
         }

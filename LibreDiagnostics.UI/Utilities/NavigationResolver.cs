@@ -17,6 +17,7 @@ using BlackSharp.UI.Avalonia.Windows.Dialogs;
 using BlackSharp.UI.Avalonia.Windows.Dialogs.Enums;
 using LibreDiagnostics.Language.Resources;
 using LibreDiagnostics.Models.Events;
+using LibreDiagnostics.Models.Logging;
 using LibreDiagnostics.Models.Platform;
 using LibreDiagnostics.MVVM.Utilities;
 using LibreDiagnostics.UI.Platform;
@@ -85,7 +86,7 @@ namespace LibreDiagnostics.UI.Utilities
             }
             else
             {
-                Logger.Instance.Add(LogLevel.Warn, "Doing a hard shutdown of application.", DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Warn, "Doing a hard shutdown of application.", DateTime.Now);
                 Environment.Exit(0);
             }
         }

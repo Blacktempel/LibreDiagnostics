@@ -18,6 +18,7 @@ using CommunityToolkit.Mvvm.Input;
 using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
+using LibreDiagnostics.Models.Logging;
 using LibreDiagnostics.MVVM.Utilities;
 using LibreDiagnostics.MVVM.ViewModels;
 using LibreDiagnostics.UI.Platform;
@@ -122,7 +123,7 @@ namespace LibreDiagnostics.UI.Windows
             //No screens
             if (screens.Count == 0)
             {
-                Logger.Instance.Add(LogLevel.Warn, "No screens were detected.", DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Warn, "No screens were detected.", DateTime.Now);
                 return;
             }
 

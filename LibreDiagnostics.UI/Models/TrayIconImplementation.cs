@@ -20,6 +20,7 @@ using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Interfaces;
+using LibreDiagnostics.Models.Logging;
 using LibreDiagnostics.MVVM.Utilities;
 using LibreDiagnostics.UI.Platform.Windows.Interop;
 using System.Diagnostics;
@@ -315,7 +316,7 @@ namespace LibreDiagnostics.UI.Models
                 {
                     var fullExceptionString = e.FullExceptionString();
 
-                    Logger.Instance.Add(LogLevel.Error, fullExceptionString, DateTime.Now);
+                    LoggerUtilities.ApplicationLogger.Add(LogLevel.Error, fullExceptionString, DateTime.Now);
 
                     //Format message to include exception string
                     var message = string.Format(Resources.UpdateFailedMessage.Replace(@"\n", Environment.NewLine), fullExceptionString);

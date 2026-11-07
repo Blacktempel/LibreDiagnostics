@@ -11,6 +11,7 @@ using Avalonia.Platform;
 using BlackSharp.Core.Logging;
 using BlackSharp.UI.Avalonia.Extensions;
 using LibreDiagnostics.Models.Enums;
+using LibreDiagnostics.Models.Logging;
 using LibreDiagnostics.Models.Platform;
 using System.Text.RegularExpressions;
 
@@ -44,7 +45,7 @@ namespace LibreDiagnostics.UI.Platform
 
             if (HasDuplicateID(list))
             {
-                Logger.Instance.Add(LogLevel.Warn, $"{nameof(GetScreens)}: {nameof(ScreenIdentificationStrategy)} failed for all options.", DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Warn, $"{nameof(GetScreens)}: {nameof(ScreenIdentificationStrategy)} failed for all options.", DateTime.Now);
             }
 
             return list;

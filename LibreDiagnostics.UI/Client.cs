@@ -55,8 +55,8 @@ namespace LibreDiagnostics.UI
             }
 
             //Enable logging
-            Logger.Instance.IsEnabled = true;
-            Logger.Instance.LogLevel = LogLevel.Info;
+            LoggerUtilities.ApplicationLogger.IsEnabled = true;
+            LoggerUtilities.ApplicationLogger.LogLevel = LogLevel.Info;
             LoggerUtilities.SetLogFilePath(DateTime.Now);
 
             //Construct version information
@@ -72,7 +72,7 @@ namespace LibreDiagnostics.UI
             }
 
             //Log version
-            Logger.Instance.Add(LogLevel.Info, $"Starting {Resources.AppName} {detailedVersion}", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Info, $"Starting {Resources.AppName} {detailedVersion}", DateTime.Now);
 
             //Reload settings
             Global.Settings = Settings.Reload();
@@ -84,8 +84,8 @@ namespace LibreDiagnostics.UI
             StartApp(args);
 
             //Save log on exit
-            Logger.Instance.Add(LogLevel.Info, $"Exiting {Resources.AppName} {detailedVersion}", DateTime.Now);
-            Logger.Instance.Add(LogLevel.Info, string.Empty, DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Info, $"Exiting {Resources.AppName} {detailedVersion}", DateTime.Now);
+            LoggerUtilities.ApplicationLogger.Add(LogLevel.Info, string.Empty, DateTime.Now);
             LoggerUtilities.SaveLogFile();
         }
 
@@ -255,7 +255,7 @@ namespace LibreDiagnostics.UI
                 }
                 else
                 {
-                    Logger.Instance.Add(LogLevel.Warn, $"{nameof(TryUpdate)}: OS unsupported", DateTime.Now);
+                    LoggerUtilities.ApplicationLogger.Add(LogLevel.Warn, $"{nameof(TryUpdate)}: OS unsupported", DateTime.Now);
                 }
 
                 Environment.Exit(666);
@@ -263,7 +263,7 @@ namespace LibreDiagnostics.UI
             catch (Exception e)
             {
                 //Log any errors
-                Logger.Instance.Add(LogLevel.Error, $"Update failed: {e.FullExceptionString()}", DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Error, $"Update failed: {e.FullExceptionString()}", DateTime.Now);
             }
         }
 
@@ -332,11 +332,11 @@ namespace LibreDiagnostics.UI
         {
             if (e.ExceptionObject is Exception ex)
             {
-                Logger.Instance.Add(LogLevel.Fatal, ex.FullExceptionString(), DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Fatal, ex.FullExceptionString(), DateTime.Now);
             }
             else
             {
-                Logger.Instance.Add(LogLevel.Fatal, $"{(e.IsTerminating ? "Fatal error: " : "Error: ")} The application will terminate now.", DateTime.Now);
+                LoggerUtilities.ApplicationLogger.Add(LogLevel.Fatal, $"{(e.IsTerminating ? "Fatal error: " : "Error: ")} The application will terminate now.", DateTime.Now);
             }
 
             LoggerUtilities.SaveLogFile();
