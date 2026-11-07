@@ -9,7 +9,7 @@
 
 using BlackSharp.MVVM.ComponentModel;
 
-using StorageDeviceDIT = DiskInfoToolkit.StorageDevice;
+using StorageDeviceDIT = DiskInfoToolkit.Devices.StorageDevice;
 using StorageDeviceLHM = LibreHardwareMonitor.Hardware.Storage.StorageDevice;
 
 namespace LibreDiagnostics.MVVM.ViewModels

@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Anwenden</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Update Drosselung</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART-Aktualisierungsintervall (Zyklen)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Drosselt Sensor Updates für Festplatten um die, in Millisekunden, angegebene Zeit. Zum Deaktivieren der Update-Drosselung 0 eintragen.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>SMART-Daten werden nach der angegebenen Anzahl von Hardware-Aktualisierungen neu gelesen. Bei 0 oder 1 geschieht das bei jeder Aktualisierung.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Kein Wert</value>

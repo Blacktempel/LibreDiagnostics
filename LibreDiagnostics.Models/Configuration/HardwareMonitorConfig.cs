@@ -17,6 +17,7 @@ using LibreDiagnostics.Models.Helper;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace LibreDiagnostics.Models.Configuration
 {
@@ -311,13 +312,15 @@ namespace LibreDiagnostics.Models.Configuration
                     }
                 }
 
+                var optionDefaults = defaultConfig.SingleOrDefault(hmc => hmc.HardwareMonitorType == hardwareMonitorConfig.HardwareMonitorType);
+
                 if (hardwareMonitorConfig.HardwareConfigOptions == null)
                 {
-                    hardwareMonitorConfig.HardwareConfigOptions = hmcRecord.HardwareConfigOptions;
+                    hardwareMonitorConfig.HardwareConfigOptions = optionDefaults?.HardwareConfigOptions ?? new();
                 }
                 else
                 {
-                    var defaultRecord = defaultConfig.SingleOrDefault(hmc => hmc.HardwareMonitorType == hardwareMonitorConfig.HardwareMonitorType, hardwareMonitorConfig);
+                    var defaultRecord = optionDefaults ?? hardwareMonitorConfig;
 
                     //Add any new default options that are missing in the current config (preserves new keys)
                     foreach (var defaultOption in defaultRecord.HardwareConfigOptions)
@@ -471,7 +474,7 @@ namespace LibreDiagnostics.Models.Configuration
                         Configuration.HardwareConfigOptions.Defaults.UseFahrenheit,
                         Configuration.HardwareConfigOptions.Defaults.RoundAll,
                         Configuration.HardwareConfigOptions.Defaults.DataRateUnit,
-                        Configuration.HardwareConfigOptions.Defaults.ThrottleInterval,
+                        Configuration.HardwareConfigOptions.Defaults.SmartUpdateCycleCount,
                         Configuration.HardwareConfigOptions.Defaults.TempAlert,
                         Configuration.HardwareConfigOptions.Defaults.UsedSpaceAlert,
                         Configuration.HardwareConfigOptions.Defaults.ForceDriveWakeup,
@@ -544,6 +547,16 @@ namespace LibreDiagnostics.Models.Configuration
         #endregion
 
         #region Private
+
+        /// <summary>
+        /// Discards retired options before the settings can be used or saved again.
+        /// </summary>
+        /// <param name="context">The context supplied by the JSON serializer.</param>
+        [OnDeserialized]
+        private void RemoveRetiredOptions(StreamingContext context)
+        {
+            HardwareConfigOptions?.Remove(option => option.Key == HardwareConfigOption.ThrottleInterval);
+        }
 
         /// <summary>
         /// Workaround for notifying that a property inside of MetricConfig has changed, in order to re-trigger converter in UI upon selection changes

@@ -12,7 +12,9 @@
 using BlackSharp.Core.Collections;
 using BlackSharp.Core.Converters.Enums;
 using BlackSharp.Core.Extensions;
+using LibreDiagnostics.Language.Resources;
 using LibreDiagnostics.Models.Configuration;
+using LibreDiagnostics.Models.Converter;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Events;
 using LibreDiagnostics.Models.Globals;
@@ -20,7 +22,7 @@ using LibreDiagnostics.Models.Hardware.Metrics;
 using LibreDiagnostics.Models.Interfaces;
 using LibreHardwareMonitor.Hardware;
 
-using StorageDeviceDIT = DiskInfoToolkit.StorageDevice;
+using StorageDeviceDIT = DiskInfoToolkit.Devices.StorageDevice;
 using StorageDeviceLHM = LibreHardwareMonitor.Hardware.Storage.StorageDevice;
 
 namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
@@ -117,12 +119,17 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 TrySetFreeSizeSensor(HardwareMetrics);
                 TrySetUsageSensor(HardwareMetrics);
 
-                if (UsedMetric != null && _FreeSize != null)
+                if (UsedMetric != null)
                 {
-                    var used = _TotalSize.Value.GetValueOrDefault() - _FreeSize.Value.GetValueOrDefault();
-
-                    //UsedMetric.Update((double)DataStorageSizeConverter.ByteToGigabyte((ulong)usedBytes));
-                    UsedMetric.Update(used);
+                    if (_TotalSize?.Value is { } totalBytes && _FreeSize?.Value is { } freeBytes
+                     && freeBytes >= 0 && totalBytes >= freeBytes)
+                    {
+                        UsedMetric.Update((double)totalBytes - freeBytes);
+                    }
+                    else
+                    {
+                        UsedMetric.Text = Resources.NoSensorValue;
+                    }
                 }
             }
         }
@@ -215,9 +222,11 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             if (_FreeSize == null && freeSizeSensor != null)
             {
                 _FreeSize = freeSizeSensor;
-                hardwareMetricList.Add(new MetricBoardItem(_FreeSize, HardwareMetricKey.DriveFree, DataType.Gigabyte) /*{ Converter = ConverterFactory.GetConverterShared<ByteToGigabyteConverter>() }*/);
 
-                UsedMetric = new MetricBase(HardwareMetricKey.DriveUsed, DataType.Gigabyte);
+                var sizeConverter = ConverterFactory.GetConverterShared<ByteToGigabyteConverter>();
+                hardwareMetricList.Add(new MetricBoardItem(_FreeSize, HardwareMetricKey.DriveFree, DataType.Gigabyte) { Converter = sizeConverter });
+
+                UsedMetric = new MetricBase(HardwareMetricKey.DriveUsed, DataType.Gigabyte) { Converter = sizeConverter };
                 hardwareMetricList.Add(UsedMetric);
             }
         }
@@ -263,18 +272,6 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Storage, e.NewSettings, HardwareMetrics.FirstOrDefault(m => m.HardwareMetricKey == HardwareMetricKey.DriveRead ) as MetricBase, DataUnit.Byte);
             SharedMethods.SetDataRateUnit(this, HardwareMonitorType.Storage, e.NewSettings, HardwareMetrics.FirstOrDefault(m => m.HardwareMetricKey == HardwareMetricKey.DriveWrite) as MetricBase, DataUnit.Byte);
-
-            long throttleInterval = e.NewSettings.GetHardwareConfigOptionValue<long>(HardwareMonitorType.Storage, HardwareConfigOption.ThrottleInterval);
-            if (throttleInterval > 0)
-            {
-                //Enable
-                StorageDeviceLHM.ThrottleInterval = TimeSpan.FromMilliseconds(throttleInterval);
-            }
-            else
-            {
-                //Disable
-                StorageDeviceLHM.ThrottleInterval = TimeSpan.FromMilliseconds(0);
-            }
 
             short usedSpaceAlert = e.NewSettings.GetHardwareConfigOptionValue<short>(HardwareMonitorType.Storage, HardwareConfigOption.UsedSpaceAlert);
 

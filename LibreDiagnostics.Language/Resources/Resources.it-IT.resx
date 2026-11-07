@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Applica</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Limitazione aggiornamenti</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>Intervallo di aggiornamento SMART (cicli)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Limita gli aggiornamenti dei sensori dei dispositivi di archiviazione del numero di millisecondi inserito. Usa 0 per disattivare il limite.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Aggiorna i dati SMART dopo il numero indicato di aggiornamenti dell’hardware. Con 0 o 1, i dati vengono aggiornati a ogni ciclo.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Nessun valore</value>

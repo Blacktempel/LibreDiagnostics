@@ -503,12 +503,7 @@ namespace LibreDiagnostics.Models.Configuration
         {
             var cfg = HardwareMonitorConfigs.Find(hmc => hmc.HardwareMonitorType == hardwareMonitorType);
 
-            if (cfg == null)
-            {
-                return default;
-            }
-
-            var found = cfg.HardwareConfigOptions.Find(hco => hco.Key == hardwareConfigOption);
+            var found = cfg?.HardwareConfigOptions?.Find(hco => hco.Key == hardwareConfigOption);
 
             if (found != null)
             {
@@ -541,6 +536,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Convert.ToInt32(hco.Value);
                 case HardwareConfigOptionValueKind.Int64:
                     return Convert.ToInt64(hco.Value);
+                case HardwareConfigOptionValueKind.UInt32:
+                    return Convert.ToUInt32(hco.Value);
                 case HardwareConfigOptionValueKind.Double:
                     return Convert.ToDouble(hco.Value);
                 case HardwareConfigOptionValueKind.Float:
@@ -569,6 +566,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Convert.ToInt32(0);
                 case HardwareConfigOptionValueKind.Int64:
                     return Convert.ToInt64(0);
+                case HardwareConfigOptionValueKind.UInt32:
+                    return Convert.ToUInt32(0);
                 case HardwareConfigOptionValueKind.Double:
                     return Convert.ToDouble(0);
                 case HardwareConfigOptionValueKind.Float:

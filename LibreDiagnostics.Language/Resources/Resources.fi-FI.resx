@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Käytä</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Päivitysten rajoitus</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART-päivitysväli (päivityskierrosta)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Rajoittaa tallennuslaitteiden anturipäivityksiä annetulla millisekuntimäärällä. Poista rajoitus käytöstä arvolla 0.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Päivittää SMART-tiedot määritetyn laitteistopäivitysten määrän jälkeen. Arvolla 0 tai 1 tiedot päivitetään joka kierroksella.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Ei arvoa</value>

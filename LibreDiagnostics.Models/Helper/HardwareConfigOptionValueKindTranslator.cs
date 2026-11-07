@@ -28,7 +28,8 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareConfigOption.TempAlert:
                 case HardwareConfigOption.UsedSpaceAlert:
                     return HardwareConfigOptionValueKind.Int16;
-                case HardwareConfigOption.ThrottleInterval:
+                case HardwareConfigOption.SmartUpdateCycleCount:
+                    return HardwareConfigOptionValueKind.UInt32;
                 case HardwareConfigOption.BandwidthInAlert:
                 case HardwareConfigOption.BandwidthOutAlert:
                     return HardwareConfigOptionValueKind.Int64;

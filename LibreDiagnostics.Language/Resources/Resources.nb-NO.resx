@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Bruk</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Oppdateringsbegrensning</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART-oppdateringsintervall (sykluser)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Begrenser sensoroppdateringer for lagringsenheter med angitt antall millisekunder. Bruk 0 for å deaktivere begrensningen.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Oppdaterer SMART-data etter det angitte antallet maskinvareoppdateringer. Med 0 eller 1 oppdateres dataene hver gang.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Ingen verdi</value>

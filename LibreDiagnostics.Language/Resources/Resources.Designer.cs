@@ -1978,6 +1978,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SMART update interval (cycles).
+        /// </summary>
+        public static string SettingsSmartUpdateCycleCount {
+            get {
+                return ResourceManager.GetString("SettingsSmartUpdateCycleCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refreshes SMART data after this many hardware updates. A value of 0 or 1 refreshes it on every update..
+        /// </summary>
+        public static string SettingsSmartUpdateCycleCountTooltip {
+            get {
+                return ResourceManager.GetString("SettingsSmartUpdateCycleCountTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temperature alert.
         /// </summary>
         public static string SettingsTemperatureAlert {
@@ -2028,24 +2046,6 @@ namespace LibreDiagnostics.Language.Resources {
         public static string SettingsTextAlignmentTooltip {
             get {
                 return ResourceManager.GetString("SettingsTextAlignmentTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update throttle.
-        /// </summary>
-        public static string SettingsThrottleInterval {
-            get {
-                return ResourceManager.GetString("SettingsThrottleInterval", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Throttles sensor updates for storage devices by entered number in milliseconds. Use 0 to disable the update throttle..
-        /// </summary>
-        public static string SettingsThrottleIntervalTooltip {
-            get {
-                return ResourceManager.GetString("SettingsThrottleIntervalTooltip", resourceCulture);
             }
         }
         

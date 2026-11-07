@@ -40,6 +40,7 @@
 			<sys:Double x:Key="BackgroundOpacityFallback">1</sys:Double>
 
             <sys:Int16 x:Key="FallbackZeroInt16">0</sys:Int16>
+            <sys:UInt32 x:Key="FallbackZeroUInt32">0</sys:UInt32>
             <sys:Int64 x:Key="FallbackZeroInt64">0</sys:Int64>
         </ResourceDictionary>
     </Window.Resources>
@@ -454,6 +455,19 @@
                                                                 <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0,0,10,0"/>
                                                                 <ctrl:TextBoxNumber Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource FallbackZeroInt16}}"
                                                                                     NumberType="Short" ToolTip.Tip="{Binding Tooltip}"/>
+                                                            </Grid>
+                                                        </DataTemplate>
+
+                                                        <DataTemplate x:DataType="cfg:HardwareConfigOptions" x:Key="{x:Static enums:HardwareConfigOptionValueKind.UInt32}">
+                                                            <Grid Margin="0,0,0,5">
+																<Grid.ColumnDefinitions>
+																	<ColumnDefinition SharedSizeGroup="iHwCfgOptDtLabel"/>
+																	<ColumnDefinition SharedSizeGroup="iHwCfgOptDtText"/>
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0,0,10,0"/>
+                                                                <ctrl:TextBoxNumber Grid.Column="1" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource FallbackZeroUInt32}}"
+                                                                                    NumberType="UInt" AllowNegative="False" ToolTip.Tip="{Binding Tooltip}"/>
                                                             </Grid>
                                                         </DataTemplate>
 

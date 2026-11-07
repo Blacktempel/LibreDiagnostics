@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Zastosuj</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Ograniczenie aktualizacji</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>Interwał aktualizacji SMART (cykle)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Ogranicza aktualizacje czujników urządzeń pamięci masowej o podaną liczbę milisekund. Użyj 0, aby wyłączyć ograniczenie.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Odświeża dane SMART po określonej liczbie aktualizacji sprzętu. Przy wartości 0 lub 1 dane są odświeżane za każdym razem.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Brak wartości</value>

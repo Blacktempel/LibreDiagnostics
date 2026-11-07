@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>套用</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>更新節流</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART 更新間隔（週期）</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>按輸入的毫秒數對儲存裝置的感測器更新進行節流。 使用 0 停用更新節流。</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>每經過指定次數的硬體更新後重新整理 SMART 資料。設為 0 或 1 時，每次硬體更新都會重新整理。</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>無資料</value>

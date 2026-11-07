@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Применить</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Ограничение частоты обновления</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>Интервал обновления SMART (циклы)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Ограничивает обновления датчиков накопителей на указанное число миллисекунд. Укажите 0, чтобы отключить ограничение.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Данные SMART обновляются через указанное число циклов обновления оборудования. При значении 0 или 1 они обновляются в каждом цикле.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Нет значения</value>

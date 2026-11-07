@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Apply</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Update throttle</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART update interval (cycles)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Throttles sensor updates for storage devices by entered number in milliseconds. Use 0 to disable the update throttle.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Refreshes SMART data after this many hardware updates. A value of 0 or 1 refreshes it on every update.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>No value</value>

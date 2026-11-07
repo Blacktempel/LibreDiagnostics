@@ -8,6 +8,7 @@
 */
 
 using LibreDiagnostics.Models.Configuration;
+using LibreDiagnostics.Models.Converter;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Events;
 using LibreDiagnostics.Models.Globals;
@@ -47,6 +48,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
         void Initialize(IHardware board)
         {
             var sensorList = new List<MetricRAM>();
+            var sizeConverter = ConverterFactory.GetConverterShared<ByteToGigabyteConverter>();
 
             //Clock
             {
@@ -100,7 +102,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (usedSensor != null)
                 {
-                    sensorList.Add(new MetricRAM(usedSensor, HardwareMetricKey.RAMUsed, DataType.Gigabyte));
+                    sensorList.Add(new MetricRAM(usedSensor, HardwareMetricKey.RAMUsed, DataType.Gigabyte) { Converter = sizeConverter });
                 }
             }
 
@@ -113,7 +115,7 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
                 if (freeSensor != null)
                 {
-                    sensorList.Add(new MetricRAM(freeSensor, HardwareMetricKey.RAMFree, DataType.Gigabyte));
+                    sensorList.Add(new MetricRAM(freeSensor, HardwareMetricKey.RAMFree, DataType.Gigabyte) { Converter = sizeConverter });
                 }
             }
 

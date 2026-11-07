@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>적용</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>업데이트 제한</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART 갱신 간격(주기 수)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>입력한 밀리초 값만큼 저장 장치의 센서 업데이트를 제한합니다. 업데이트 제한을 비활성화하려면 0을 사용하세요.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>지정한 횟수만큼 하드웨어가 갱신된 후 SMART 데이터를 갱신합니다. 0 또는 1이면 매번 갱신합니다.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>값 없음</value>

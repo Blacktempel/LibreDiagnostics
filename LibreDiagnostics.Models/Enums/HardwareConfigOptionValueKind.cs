@@ -22,5 +22,6 @@ namespace LibreDiagnostics.Models.Enums
         Float,
         Decimal,
         DataUnit,
+        UInt32,
     }
 }

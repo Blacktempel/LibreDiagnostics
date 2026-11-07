@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>適用</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>更新スロットル</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>SMART の更新間隔（サイクル数）</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>入力したミリ秒でストレージデバイスのセンサー更新を間引きます。0 で無効。</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>指定した回数のハードウェア更新ごとに SMART データを更新します。0 または 1 の場合は毎回更新します。</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>値なし</value>

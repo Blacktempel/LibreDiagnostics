@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Aplică</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Limitare actualizări</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>Interval de actualizare SMART (cicluri)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Limitează actualizările senzorilor pentru dispozitivele de stocare cu numărul introdus de milisecunde. Folosește 0 pentru dezactivare.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Actualizează datele SMART după numărul specificat de actualizări ale componentelor hardware. La 0 sau 1, datele sunt actualizate la fiecare ciclu.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Fără valoare</value>

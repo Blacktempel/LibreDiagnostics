@@ -660,11 +660,11 @@
   <data name="ButtonApply" xml:space="preserve">
     <value>Použít</value>
   </data>
-  <data name="SettingsThrottleInterval" xml:space="preserve">
-    <value>Omezení aktualizací</value>
+  <data name="SettingsSmartUpdateCycleCount" xml:space="preserve">
+    <value>Interval aktualizace SMART (cykly)</value>
   </data>
-  <data name="SettingsThrottleIntervalTooltip" xml:space="preserve">
-    <value>Omezuje aktualizace senzorů úložných zařízení o zadaný počet milisekund. Pro vypnutí omezení použijte 0.</value>
+  <data name="SettingsSmartUpdateCycleCountTooltip" xml:space="preserve">
+    <value>Data SMART se obnoví po zadaném počtu aktualizací hardwaru. Při hodnotě 0 nebo 1 se obnoví při každé aktualizaci.</value>
   </data>
   <data name="NoSensorValue" xml:space="preserve">
     <value>Žádná hodnota</value>

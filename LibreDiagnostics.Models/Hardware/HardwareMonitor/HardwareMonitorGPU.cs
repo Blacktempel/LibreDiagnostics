@@ -77,8 +77,8 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
 
             //VRAM Load
             {
-                ISensor memoryUsed = Hardware.Sensors.Where(s => (s.SensorType == SensorType.Data || s.SensorType == SensorType.SmallData) && s.Name.Contains("Memory Used", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
-                ISensor memoryTotal = Hardware.Sensors.Where(s => (s.SensorType == SensorType.Data || s.SensorType == SensorType.SmallData) && s.Name.Contains("Memory Total", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                ISensor memoryUsed  = Hardware.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Data && s.Name.Contains("Memory Used", StringComparison.OrdinalIgnoreCase));
+                ISensor memoryTotal = Hardware.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Data && s.Name.Contains("Memory Total", StringComparison.OrdinalIgnoreCase));
 
                 if (memoryUsed != null && memoryTotal != null)
                 {

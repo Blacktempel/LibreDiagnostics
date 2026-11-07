@@ -21,6 +21,7 @@ using LibreDiagnostics.Models.Hardware.HardwareMonitor;
 using LibreDiagnostics.Models.Helper;
 using LibreDiagnostics.Models.Logging;
 using LibreHardwareMonitor.Hardware;
+using LibreHardwareMonitor.Hardware.Storage;
 
 namespace LibreDiagnostics.Models.Hardware
 {
@@ -193,6 +194,13 @@ namespace LibreDiagnostics.Models.Hardware
 
         void OnSettingsChanged(object sender, SettingsChangedEventArgs e)
         {
+            if (e.NewSettings != null)
+            {
+                //LHM applies this setting to every drive, including drives added later.
+                StorageDevice.SmartUpdateCycleCount = e.NewSettings.GetHardwareConfigOptionValue<uint>(
+                    HardwareMonitorType.Storage, HardwareConfigOption.SmartUpdateCycleCount);
+            }
+
             //Already running - compare if anything has changed and apply differences
             if (e.NewSettings != null && _Computer != null)
             {
