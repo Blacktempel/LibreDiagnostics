@@ -8,9 +8,6 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Copyright>Florian K.</Copyright>
     <ApplicationIcon>../LibreDiagnostics.UI/Assets/Icon.ico</ApplicationIcon>
-    <AssemblyVersion>1.2.1</AssemblyVersion>
-    <FileVersion>1.2.1</FileVersion>
-    <Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>

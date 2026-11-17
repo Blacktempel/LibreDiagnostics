@@ -1,0 +1,217 @@
+﻿name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_name:
+        description: Optional release title
+        type: string
+      release_notes:
+        description: Optional release notes (defaults to generated notes)
+        type: string
+      prerelease:
+        description: Mark the release as a prerelease
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+env:
+  DOTNET_NOLOGO: 'true'
+  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+  PACKAGE_NAME: LibreDiagnostics-windows-x64.7z
+
+jobs:
+  build:
+    name: Build Windows release package
+    runs-on: windows-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Read and validate release version
+        id: version
+        shell: pwsh
+        run: |
+          $versionFile = 'Versions/LIBRE_DIAGNOSTICS.VERSION'
+
+          if (-not (Test-Path -LiteralPath $versionFile -PathType Leaf)) {
+            throw "The version file '$versionFile' does not exist."
+          }
+
+          $version = (Get-Content -LiteralPath $versionFile -Raw).Trim()
+          if ($version -notmatch '^[0-9]+\.[0-9]+\.[0-9]+$') {
+            throw "The version '$version' in '$versionFile' must have three numeric parts."
+          }
+
+          "version=$version" | Add-Content -LiteralPath $env:GITHUB_OUTPUT -Encoding utf8
+
+      - name: Publish application and single-file updater
+        shell: pwsh
+        env:
+          RELEASE_DIRECTORY: ${{ runner.temp }}/LibreDiagnostics-release
+        run: |
+          $applicationDirectory = Join-Path $env:RELEASE_DIRECTORY 'app'
+          $updaterDirectory = Join-Path $env:RELEASE_DIRECTORY 'updater'
+          $publishArguments = @(
+            '--configuration', 'Release'
+            '--runtime', 'win-x64'
+            '--self-contained', 'false'
+            '-p:DebugType=None'
+            '-p:DebugSymbols=false'
+          )
+
+          dotnet publish LibreDiagnostics/LibreDiagnostics.csproj @publishArguments --output $applicationDirectory
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Application publish failed.'
+          }
+
+          dotnet publish LibreDiagnostics.Updater/LibreDiagnostics.Updater.csproj @publishArguments --output $updaterDirectory
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Updater publish failed.'
+          }
+
+          if (-not (Test-Path -LiteralPath (Join-Path $applicationDirectory 'LibreDiagnostics.exe') -PathType Leaf)) {
+            throw 'The application executable is missing from the publish output.'
+          }
+
+          $updaterPath = Join-Path $updaterDirectory 'LibreDiagnostics.Updater.exe'
+          $updaterFiles = @(Get-ChildItem -LiteralPath $updaterDirectory -File -Recurse -Force |
+            Where-Object Extension -ne '.pdb')
+          if ($updaterFiles.Count -ne 1 -or -not (Test-Path -LiteralPath $updaterPath -PathType Leaf)) {
+            throw 'Expected the updater publish to contain only LibreDiagnostics.Updater.exe.'
+          }
+
+          # Native NuGet packages can supply debug symbols even in a Release publish.
+          Get-ChildItem -LiteralPath $applicationDirectory -File -Recurse -Filter '*.pdb' |
+            ForEach-Object { Remove-Item -LiteralPath $_.FullName }
+
+          Copy-Item -LiteralPath $updaterPath, 'LICENSE', 'NOTICE' -Destination $applicationDirectory
+
+      - name: Create and test 7-Zip archive
+        shell: pwsh
+        env:
+          RELEASE_DIRECTORY: ${{ runner.temp }}/LibreDiagnostics-release
+        run: |
+          $archivePath = Join-Path $env:RELEASE_DIRECTORY $env:PACKAGE_NAME
+          $sevenZip = Join-Path $env:ProgramFiles '7-Zip/7z.exe'
+
+          Push-Location (Join-Path $env:RELEASE_DIRECTORY 'app')
+          try {
+            # Keep the LZMA2 dictionary within the updater's SharpCompress limit.
+            & $sevenZip a -t7z -mx=9 '-m0=LZMA2:d=32m' $archivePath '*'
+            if ($LASTEXITCODE -ne 0) {
+              throw 'Creating the release archive failed.'
+            }
+          }
+          finally {
+            Pop-Location
+          }
+
+          & $sevenZip t $archivePath
+          if ($LASTEXITCODE -ne 0) {
+            throw 'The release archive failed its integrity check.'
+          }
+
+      - name: Upload release archive
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: ${{ runner.temp }}/LibreDiagnostics-release/${{ env.PACKAGE_NAME }}
+          if-no-files-found: error
+          archive: false
+
+  publish:
+    name: Create draft release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+
+    steps:
+      - name: Download release archive
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: ${{ env.PACKAGE_NAME }}
+          path: dist
+          skip-decompress: true
+
+      - name: Create draft release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ needs.build.outputs.version }}
+          RELEASE_NAME: ${{ inputs.release_name }}
+          RELEASE_NOTES: ${{ inputs.release_notes }}
+          PRERELEASE: ${{ inputs.prerelease }}
+        run: |
+          $archivePath = Join-Path 'dist' $env:PACKAGE_NAME
+          if (-not (Test-Path -LiteralPath $archivePath -PathType Leaf)) {
+            throw "The release archive is missing: '$archivePath'."
+          }
+
+          $releaseTags = @(gh api --paginate "repos/$env:GH_REPO/releases?per_page=100" --jq '.[].tag_name')
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Existing GitHub releases could not be checked.'
+          }
+
+          if ($releaseTags -contains $env:RELEASE_TAG) {
+            throw "The release already exists: $env:RELEASE_TAG."
+          }
+
+          $tagRefs = @(gh api "repos/$env:GH_REPO/git/matching-refs/tags/$env:RELEASE_TAG" --jq '.[].ref')
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Existing Git tags could not be checked.'
+          }
+
+          if ($tagRefs -contains "refs/tags/$env:RELEASE_TAG") {
+            throw "The Git tag already exists: $env:RELEASE_TAG."
+          }
+
+          $title = $env:RELEASE_NAME
+          if ([string]::IsNullOrWhiteSpace($title)) {
+            $title = "LibreDiagnostics $env:RELEASE_TAG"
+          }
+
+          $releaseArguments = @(
+            'release', 'create', $env:RELEASE_TAG, $archivePath
+            '--repo', $env:GH_REPO
+            '--target', $env:GITHUB_SHA
+            '--title', $title
+            '--draft'
+          )
+
+          if ([string]::IsNullOrWhiteSpace($env:RELEASE_NOTES)) {
+            $releaseArguments += '--generate-notes'
+          }
+          else {
+            $releaseArguments += @('--notes', $env:RELEASE_NOTES)
+          }
+
+          if ($env:PRERELEASE -eq 'true') {
+            $releaseArguments += '--prerelease'
+          }
+
+          $releaseUrl = gh @releaseArguments
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Creating the draft release failed.'
+          }
+
+          "[$env:RELEASE_TAG]($releaseUrl) is ready for review." |
+            Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY -Encoding utf8

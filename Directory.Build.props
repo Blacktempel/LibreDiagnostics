@@ -1,0 +1,22 @@
+﻿<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'LibreDiagnostics' or '$(MSBuildProjectName)' == 'LibreDiagnostics.Updater'">
+    <LibreDiagnosticsVersionFile>$(MSBuildThisFileDirectory)Versions/LIBRE_DIAGNOSTICS.VERSION</LibreDiagnosticsVersionFile>
+    <LibreDiagnosticsVersion Condition="Exists('$(LibreDiagnosticsVersionFile)')">$([System.IO.File]::ReadAllText('$(LibreDiagnosticsVersionFile)').Trim())</LibreDiagnosticsVersion>
+    <Version>$(LibreDiagnosticsVersion)</Version>
+    <AssemblyVersion>$(LibreDiagnosticsVersion)</AssemblyVersion>
+    <FileVersion>$(LibreDiagnosticsVersion)</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(LibreDiagnosticsVersionFile)' != ''">
+    <UpToDateCheckInput Include="$(LibreDiagnosticsVersionFile)" />
+  </ItemGroup>
+
+  <Target Name="ValidateLibreDiagnosticsVersion"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$(LibreDiagnosticsVersionFile)' != ''">
+    <Error Condition="!Exists('$(LibreDiagnosticsVersionFile)')"
+           Text="The version file '$(LibreDiagnosticsVersionFile)' does not exist." />
+    <Error Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch('$(LibreDiagnosticsVersion)', '^[0-9]+\.[0-9]+\.[0-9]+$'))"
+           Text="The version '$(LibreDiagnosticsVersion)' in '$(LibreDiagnosticsVersionFile)' must have three numeric parts." />
+  </Target>
+</Project>
