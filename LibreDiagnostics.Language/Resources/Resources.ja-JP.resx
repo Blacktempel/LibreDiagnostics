@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>ウィンドウの表示状態を反転します（表示 / 非表示）。</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>ネットワークアダプターをフィルター</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>非アクティブ、仮想、非表示、およびフィルターネットワークアダプターを非表示にします。</value>
+  </data>
 </root>

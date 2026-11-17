@@ -501,6 +501,7 @@ namespace LibreDiagnostics.Models.Configuration
                         Configuration.HardwareConfigOptions.Defaults.DataRateUnit,
                         Configuration.HardwareConfigOptions.Defaults.BandwidthInAlert,
                         Configuration.HardwareConfigOptions.Defaults.BandwidthOutAlert,
+                        Configuration.HardwareConfigOptions.Defaults.FilterNetworkAdapters,
                     }
                 },
                 new()

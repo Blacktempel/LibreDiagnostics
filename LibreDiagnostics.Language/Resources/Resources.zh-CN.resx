@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>将窗口可见性切换为相反状态（显示 / 隐藏）。</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>筛选网络适配器</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>隐藏非活动、虚拟、隐藏和筛选网络适配器。</value>
+  </data>
 </root>

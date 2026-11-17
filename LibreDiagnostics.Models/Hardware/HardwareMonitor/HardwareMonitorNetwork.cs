@@ -107,6 +107,20 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 return;
             }
 
+            bool filterAdapters = e.NewSettings.GetHardwareConfigOptionValue<bool>(HardwareMonitorType.Network, HardwareConfigOption.FilterNetworkAdapters);
+            if (filterAdapters)
+            {
+                var visibleIdentifiers = NetworkAdapterFilter.GetVisibleAdapterIdentifiers();
+                if (visibleIdentifiers != null)
+                {
+                    Enabled = visibleIdentifiers.Contains(ID);
+                }
+            }
+            else
+            {
+                Enabled = true;
+            }
+
             ShowName = e.NewSettings.GetHardwareConfigOptionValue<bool>(HardwareMonitorType.Network, HardwareConfigOption.HardwareNames);
 
             bool roundAll = e.NewSettings.GetHardwareConfigOptionValue<bool>(HardwareMonitorType.Network, HardwareConfigOption.RoundAll);

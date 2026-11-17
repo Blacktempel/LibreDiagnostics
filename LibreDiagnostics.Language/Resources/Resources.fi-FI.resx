@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Vaihtaa ikkunan näkyvyyden vastakkaiseksi (näytä / piilota).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Suodata verkkosovittimet</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Piilota epäaktiiviset, virtuaaliset, piilotetut ja suodattavat verkkosovittimet.</value>
+  </data>
 </root>

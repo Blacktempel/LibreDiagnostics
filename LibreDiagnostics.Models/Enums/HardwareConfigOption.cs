@@ -32,6 +32,7 @@ namespace LibreDiagnostics.Models.Enums
         //Network
         BandwidthInAlert  = 30,
         BandwidthOutAlert     ,
+        FilterNetworkAdapters ,
 
         //Fans
         ShowInactiveFans  = 40,

@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Inverse la visibilité de la fenêtre (afficher / masquer).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtrer les cartes réseau</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Masquer les cartes réseau inactives, virtuelles, masquées et de filtrage.</value>
+  </data>
 </root>

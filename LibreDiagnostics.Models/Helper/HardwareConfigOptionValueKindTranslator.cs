@@ -24,6 +24,7 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareConfigOption.CoreLoads:
                 case HardwareConfigOption.ForceDriveWakeup:
                 case HardwareConfigOption.ShowInactiveFans:
+                case HardwareConfigOption.FilterNetworkAdapters:
                     return HardwareConfigOptionValueKind.Boolean;
                 case HardwareConfigOption.TempAlert:
                 case HardwareConfigOption.UsedSpaceAlert:

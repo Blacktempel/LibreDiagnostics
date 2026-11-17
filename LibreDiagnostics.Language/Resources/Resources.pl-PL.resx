@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Zmienia widoczność okna na przeciwną (pokaż / ukryj).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtruj karty sieciowe</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Ukryj nieaktywne, wirtualne, ukryte i filtrujące karty sieciowe.</value>
+  </data>
 </root>

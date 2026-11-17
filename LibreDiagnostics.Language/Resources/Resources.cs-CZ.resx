@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Změní viditelnost okna na opačnou (zobrazit / skrýt).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtrovat síťové adaptéry</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Skrýt neaktivní, virtuální, skryté a filtrovací síťové adaptéry.</value>
+  </data>
 </root>

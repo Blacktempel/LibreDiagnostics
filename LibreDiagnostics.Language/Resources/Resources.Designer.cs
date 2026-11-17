@@ -1501,6 +1501,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filter network adapters.
+        /// </summary>
+        public static string SettingsFilterNetworkAdapters {
+            get {
+                return ResourceManager.GetString("SettingsFilterNetworkAdapters", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Hide inactive, virtual, hidden and filter network adapters..
+        /// </summary>
+        public static string SettingsFilterNetworkAdaptersTooltip {
+            get {
+                return ResourceManager.GetString("SettingsFilterNetworkAdaptersTooltip", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Wake drive.
         /// </summary>
         public static string SettingsForceDriveWakeup {

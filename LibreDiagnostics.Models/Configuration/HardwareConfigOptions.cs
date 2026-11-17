@@ -115,6 +115,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsBandwidthInAlert;
                 case HardwareConfigOption.BandwidthOutAlert:
                     return Resources.SettingsBandwidthOutAlert;
+                case HardwareConfigOption.FilterNetworkAdapters:
+                    return Resources.SettingsFilterNetworkAdapters;
 
                 case HardwareConfigOption.ShowInactiveFans:
                     return Resources.SettingsShowInactiveFans;
@@ -155,6 +157,8 @@ namespace LibreDiagnostics.Models.Configuration
                     return Resources.SettingsBandwidthInAlertTooltip;
                 case HardwareConfigOption.BandwidthOutAlert:
                     return Resources.SettingsBandwidthOutAlertTooltip;
+                case HardwareConfigOption.FilterNetworkAdapters:
+                    return Resources.SettingsFilterNetworkAdaptersTooltip;
 
                 case HardwareConfigOption.ShowInactiveFans:
                     return Resources.SettingsShowInactiveFansTooltip;
@@ -212,8 +216,9 @@ namespace LibreDiagnostics.Models.Configuration
             public static HardwareConfigOptions ForceDriveWakeup      { get { return GetDefaultConfig(HardwareConfigOption.ForceDriveWakeup     , false        ); } }
 
             //Network
-            public static HardwareConfigOptions BandwidthInAlert      { get { return GetDefaultConfig(HardwareConfigOption.BandwidthInAlert , 0                ); } }
-            public static HardwareConfigOptions BandwidthOutAlert     { get { return GetDefaultConfig(HardwareConfigOption.BandwidthOutAlert, 0                ); } }
+            public static HardwareConfigOptions FilterNetworkAdapters { get { return GetDefaultConfig(HardwareConfigOption.FilterNetworkAdapters, true         ); } }
+            public static HardwareConfigOptions BandwidthInAlert      { get { return GetDefaultConfig(HardwareConfigOption.BandwidthInAlert     , 0            ); } }
+            public static HardwareConfigOptions BandwidthOutAlert     { get { return GetDefaultConfig(HardwareConfigOption.BandwidthOutAlert    , 0            ); } }
 
             //Fans
             public static HardwareConfigOptions ShowInactiveFans      { get { return GetDefaultConfig(HardwareConfigOption.ShowInactiveFans , false            ); } }

@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Växlar fönstrets synlighet till motsatsen (visa/dölj).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtrera nätverkskort</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Dölj inaktiva, virtuella, dolda och filtrerande nätverkskort.</value>
+  </data>
 </root>

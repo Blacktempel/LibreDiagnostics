@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Schimbă vizibilitatea ferestrei în opusul ei (afișare / ascundere).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtrează adaptoarele de rețea</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Ascunde adaptoarele de rețea inactive, virtuale, ascunse și de filtrare.</value>
+  </data>
 </root>

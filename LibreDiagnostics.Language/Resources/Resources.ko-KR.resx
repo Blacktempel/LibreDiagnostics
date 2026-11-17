@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>창 표시 상태를 반대로 변경합니다(표시/숨기기).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>네트워크 어댑터 필터링</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>비활성, 가상, 숨김 및 필터 네트워크 어댑터를 숨깁니다.</value>
+  </data>
 </root>

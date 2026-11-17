@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Cambia la visibilità della finestra al contrario (mostra / nascondi).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtra gli adattatori di rete</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Nascondi gli adattatori di rete inattivi, virtuali, nascosti e di filtro.</value>
+  </data>
 </root>

@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Ændrer vinduets synlighed til det modsatte (vis/skjul).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Filtrer netværkskort</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Skjul inaktive, virtuelle, skjulte og filtrerende netværkskort.</value>
+  </data>
 </root>

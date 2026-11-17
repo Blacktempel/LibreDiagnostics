@@ -918,4 +918,10 @@
   <data name="SettingsHotKeyToggleWindowVisibilityTooltip" xml:space="preserve">
     <value>Меняет видимость окна на противоположную (показать / скрыть).</value>
   </data>
+  <data name="SettingsFilterNetworkAdapters" xml:space="preserve">
+    <value>Фильтровать сетевые адаптеры</value>
+  </data>
+  <data name="SettingsFilterNetworkAdaptersTooltip" xml:space="preserve">
+    <value>Скрывать неактивные, виртуальные, скрытые и фильтрующие сетевые адаптеры.</value>
+  </data>
 </root>
