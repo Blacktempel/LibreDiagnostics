@@ -19,6 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreDiagnostics.Updater", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{7C004184-6DF3-46ED-AADC-58F2CAFC55B5}"
 	ProjectSection(SolutionItems) = preProject
+		Versions\LIBRE_DIAGNOSTICS.VERSION = Versions\LIBRE_DIAGNOSTICS.VERSION
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
