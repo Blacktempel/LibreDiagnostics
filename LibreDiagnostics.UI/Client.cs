@@ -11,15 +11,14 @@ using Avalonia;
 using Avalonia.Controls;
 using BlackSharp.Core.Extensions;
 using BlackSharp.Core.Logging;
-using BlackSharp.MVVM.Dialogs;
-using BlackSharp.MVVM.Dialogs.Enums;
 using LibreDiagnostics.Language.Resources;
 using LibreDiagnostics.Models.Configuration;
 using LibreDiagnostics.Models.Enums;
 using LibreDiagnostics.Models.Globals;
 using LibreDiagnostics.Models.Logging;
-using LibreDiagnostics.MVVM.Utilities;
+using LibreDiagnostics.MVVM.ViewModels;
 using LibreDiagnostics.Tasks.Github;
+using LibreDiagnostics.UI.Windows;
 using System.Diagnostics;
 using System.Reflection;
 using OS = BlackSharp.Core.Platform.OperatingSystem;
@@ -121,43 +120,26 @@ namespace LibreDiagnostics.UI
                         //Update tray icon and menu to show an update is available
                         Global.TrayIcon.ChangeTrayIconIcon(TrayIconID.UpdateAvailable);
 
-                        //Format message to include release notes
-                        var message = string.Format(Resources.UpdateAvailableMessage.Replace(@"\n", Environment.NewLine), updateCheckResult.ReleaseNotes);
-
-                        var reminderButtons = new List<DialogButton>
-                        {
-                            new DialogButton
-                            {
-                                Content = Resources.ButtonUpdate,
-                                ButtonType = DialogButtonType.Custom,
-                                Command = new(async () => await TryUpdate(updateCheckResult, false)),
-                                IsCancel = true,
-                            },
-                            new DialogButton
-                            {
-                                Content = Resources.ButtonReminderOneWeek,
-                                ButtonType = DialogButtonType.Custom,
-                                Command = new(() => SetUpdateReminder(DateTime.Now.AddDays(7))),
-                                IsCancel = true,
-                            },
-                            new DialogButton
-                            {
-                                Content = Resources.ButtonReminderOneMonth,
-                                ButtonType = DialogButtonType.Custom,
-                                Command = new(() => SetUpdateReminder(DateTime.Now.AddMonths(1))),
-                                IsCancel = true,
-                            },
-                        };
-
                         //Ask user for confirmation with a timeout
-                        //Result is not needed as commands handle everything
-                        MessageBro.DoShowMessageTimeout(
-                            $"{Resources.AppName} {Resources.UpdateAvailableTitle}",
-                            message,
-                            DialogButtons.Custom,
-                            reminderButtons,
+                        var viewModel = new UpdateViewModel(
+                            updateCheckResult.ReleaseNotes,
                             TimeSpan.FromSeconds(UpdateConfirmationTimeoutSeconds),
-                            out var timeouted);
+                            true);
+
+                        var window = new UpdateWindow(viewModel);
+
+                        switch (await window.ShowAsync())
+                        {
+                            case UpdateAction.Update:
+                                await TryUpdate(updateCheckResult, false);
+                                break;
+                            case UpdateAction.RemindInOneWeek:
+                                SetUpdateReminder(DateTime.Now.AddDays(7));
+                                break;
+                            case UpdateAction.RemindInOneMonth:
+                                SetUpdateReminder(DateTime.Now.AddMonths(1));
+                                break;
+                        }
                     }
                 }
             }
@@ -222,14 +204,14 @@ namespace LibreDiagnostics.UI
                 //Ask user for confirmation if needed
                 if (askForConfirmation)
                 {
-                    //Format message to include release notes
-                    var message = string.Format(Resources.UpdateAvailableMessage.Replace(@"\n", Environment.NewLine), updateCheckResult.ReleaseNotes);
+                    var viewModel = new UpdateViewModel(
+                        updateCheckResult.ReleaseNotes,
+                        TimeSpan.FromSeconds(UpdateConfirmationTimeoutSeconds),
+                        false);
 
-                    //Ask user for confirmation with a timeout
-                    var result = MessageBro.DoShowMessageTimeout(Resources.UpdateAvailableTitle, message, DialogButtons.YesNo, TimeSpan.FromSeconds(UpdateConfirmationTimeoutSeconds), out var timeouted);
+                    var window = new UpdateWindow(viewModel);
 
-                    //If user declined or timeouted, abort update
-                    if (timeouted || result == DialogButtonType.No)
+                    if (await window.ShowAsync() != UpdateAction.Update)
                     {
                         return;
                     }

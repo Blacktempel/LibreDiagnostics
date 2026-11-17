@@ -1,0 +1,41 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lang="clr-namespace:LibreDiagnostics.Language.Resources;assembly=LibreDiagnostics.Language"
+        xmlns:md="clr-namespace:BlackSharp.UI.Avalonia.Markdown.Controls;assembly=BlackSharp.UI.Avalonia.Markdown"
+        xmlns:vm="clr-namespace:LibreDiagnostics.MVVM.ViewModels;assembly=LibreDiagnostics.MVVM"
+        mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="460"
+        x:Class="LibreDiagnostics.UI.Windows.UpdateWindow"
+        x:DataType="vm:UpdateViewModel"
+        Title="{Binding Title}"
+        Icon="avares://LibreDiagnostics.UI/Assets/Icon_Update.ico"
+        Width="640" Height="460" MinWidth="400" MinHeight="300"
+        WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:MockUpdateViewModel/>
+    </Design.DataContext>
+
+    <Grid Margin="20" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+        <TextBlock Text="{Binding UpdateMessage}" TextWrapping="Wrap"/>
+
+        <md:GitHubMarkdownViewer Grid.Row="1" Text="{Binding ReleaseNotes, Mode=OneWay}"
+                                 AllowRemoteImages="True" LinkClicked="OnLinkClicked"/>
+
+        <DockPanel Grid.Row="2">
+            <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center"
+                       Margin="0,0,12,0" Text="{Binding Countdown}"/>
+
+            <WrapPanel HorizontalAlignment="Right" ItemSpacing="8" LineSpacing="8">
+                <Button Content="{x:Static lang:Resources.ButtonUpdate}" Command="{Binding UpdateCommand}"/>
+                <Button Content="{x:Static lang:Resources.ButtonReminderOneWeek}"
+                        IsVisible="{Binding ShowReminderButtons}" Command="{Binding RemindInOneWeekCommand}"/>
+                <Button Content="{x:Static lang:Resources.ButtonReminderOneMonth}"
+                        IsVisible="{Binding ShowReminderButtons}" Command="{Binding RemindInOneMonthCommand}"/>
+                <Button Content="{x:Static lang:Resources.ButtonClose}"
+                        IsVisible="{Binding !ShowReminderButtons}" Command="{Binding CloseCommand}"/>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</Window>
