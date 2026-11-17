@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Fläkt</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Temperatur vid den varmaste punkten</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Varmaste punkt</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Temperatur</value>
   </data>

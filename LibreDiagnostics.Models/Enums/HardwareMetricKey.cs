@@ -35,6 +35,7 @@ namespace LibreDiagnostics.Models.Enums
         GPUTemp          ,
         GPUFan           ,
         GPUPower         ,
+        GPUHotspot       ,
 
         NetworkIP    = 30,
         NetworkExtIP     ,

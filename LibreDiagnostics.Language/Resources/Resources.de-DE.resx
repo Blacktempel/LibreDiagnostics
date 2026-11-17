@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Lüfter</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Hotspot-Temperatur</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Hotspot</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Temperatur</value>
   </data>

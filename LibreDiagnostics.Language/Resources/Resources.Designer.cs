@@ -547,6 +547,24 @@ namespace LibreDiagnostics.Language.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hotspot Temperature.
+        /// </summary>
+        public static string GPUHotspot {
+            get {
+                return ResourceManager.GetString("GPUHotspot", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Hotspot.
+        /// </summary>
+        public static string GPUHotspotLabel {
+            get {
+                return ResourceManager.GetString("GPUHotspotLabel", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to GPU Power draw.
         /// </summary>
         public static string GPUPower {

@@ -116,6 +116,16 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
                 }
             }
 
+            //GPU Hotspot
+            {
+                ISensor tempSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Temperature && s.Name.Equals("GPU Hot Spot", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+
+                if (tempSensor != null)
+                {
+                    sensorList.Add(new MetricGPU(tempSensor, HardwareMetricKey.GPUHotspot, DataType.Celsius));
+                }
+            }
+
             //Fan
             {
                 ISensor fanSensor = Hardware.Sensors.Where(s => s.SensorType == SensorType.Control).OrderBy(s => s.Index).FirstOrDefault();
@@ -182,6 +192,10 @@ namespace LibreDiagnostics.Models.Hardware.HardwareMonitor
             //Set Temp
             var temp = HardwareMetrics.Find(hm => hm.HardwareMetricKey == HardwareMetricKey.GPUTemp);
             temp?.Enabled = e.NewSettings.IsConfigEnabled(HardwareMonitorType.GPU, HardwareMetricKey.GPUTemp);
+
+            //Set Hotspot
+            var hotspot = HardwareMetrics.Find(hm => hm.HardwareMetricKey == HardwareMetricKey.GPUHotspot);
+            hotspot?.Enabled = e.NewSettings.IsConfigEnabled(HardwareMonitorType.GPU, HardwareMetricKey.GPUHotspot);
 
             //Set Fan
             var fan = HardwareMetrics.Find(hm => hm.HardwareMetricKey == HardwareMetricKey.GPUFan);

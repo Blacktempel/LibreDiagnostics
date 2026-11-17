@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>風扇</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>熱點溫度</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>熱點</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>溫度</value>
   </data>

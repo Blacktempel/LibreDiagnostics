@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Ventola</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Temperatura del punto più caldo</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Punto caldo</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Temperatura</value>
   </data>

@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Tuuletin</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Kuumimman kohdan lämpötila</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Kuumin kohta</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Lämpötila</value>
   </data>

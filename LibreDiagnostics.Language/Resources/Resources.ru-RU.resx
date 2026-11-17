@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Вентилятор</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Температура самой горячей точки</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Горячая точка</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Температура</value>
   </data>

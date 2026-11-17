@@ -111,6 +111,9 @@ namespace LibreDiagnostics.Models.Helper
                 case HardwareMetricKey.GPUPower:
                     return Resources.GPUPower;
 
+                case HardwareMetricKey.GPUHotspot:
+                    return Resources.GPUHotspot;
+
                 case HardwareMetricKey.NetworkIP:
                     return Resources.NetworkIP;
 
@@ -236,6 +239,9 @@ namespace LibreDiagnostics.Models.Helper
 
                 case HardwareMetricKey.GPUPower:
                     return Resources.GPUPowerLabel;
+
+                case HardwareMetricKey.GPUHotspot:
+                    return Resources.GPUHotspotLabel;
 
                 case HardwareMetricKey.NetworkIP:
                     return Resources.NetworkIPLabel;

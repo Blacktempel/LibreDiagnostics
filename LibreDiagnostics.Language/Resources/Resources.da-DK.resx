@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Blæser</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Hotspottemperatur</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Hotspot</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Temperatur</value>
   </data>

@@ -441,6 +441,7 @@ namespace LibreDiagnostics.Models.Configuration
                         new() { HardwareMetricKey = HardwareMetricKey.GPUVRAMLoad , Enabled = true  },
                         new() { HardwareMetricKey = HardwareMetricKey.GPUVoltage  , Enabled = true  },
                         new() { HardwareMetricKey = HardwareMetricKey.GPUTemp     , Enabled = true  },
+                        new() { HardwareMetricKey = HardwareMetricKey.GPUHotspot  , Enabled = true  },
                         new() { HardwareMetricKey = HardwareMetricKey.GPUFan      , Enabled = true  },
                         new() { HardwareMetricKey = HardwareMetricKey.GPUPower    , Enabled = true  },
                     },

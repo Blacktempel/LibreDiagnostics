@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Ventilator</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Temperatura punctului fierbinte</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Punct fierbinte</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Temperatură</value>
   </data>

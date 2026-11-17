@@ -243,6 +243,12 @@
   <data name="GPUFanLabel" xml:space="preserve">
     <value>Ventilateur</value>
   </data>
+  <data name="GPUHotspot" xml:space="preserve">
+    <value>Température du point chaud</value>
+  </data>
+  <data name="GPUHotspotLabel" xml:space="preserve">
+    <value>Point chaud</value>
+  </data>
   <data name="GPUTemp" xml:space="preserve">
     <value>Température</value>
   </data>
