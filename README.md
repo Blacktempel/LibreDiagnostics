@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
     <img src="LibreDiagnostics.UI/Assets/Icon.ico" width="128" height="128"/>
 </p>
 <h1 align="center">LibreDiagnostics</h1>
@@ -54,7 +54,7 @@ Please note that an exact timeframe for a feature cannot be provided.
 ## Requirements
 
 #### All platforms
-- .NET 8 Desktop Runtime<br/>
+- .NET 10 Desktop Runtime<br/>
 
 #### Windows 10+
 - [PawnIO](https://pawnio.eu/) (Kernel Driver) - source available on [github](https://github.com/namazso/PawnIO)
@@ -108,13 +108,13 @@ Feel free to contribute translations for other languages !
 ## Project overview
 | Project | .NET Version[s] |
 | --- | --- |
-| **[LibreDiagnostics](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics)** <br/> Main entry assembly that starts the application. | .NET 8 |
-| **[LibreDiagnostics.Language](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Language)** <br/> Localization resources and translations.<br/>Provides resources used in UI text, dialogs and messages. | .NET 8 |
-| **[LibreDiagnostics.Models](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Models)** <br/> Data models and global helpers used across the app (e.g. configuration).<br/>Central place for strongly-typed settings and shared model structures. | .NET 8 |
-| **[LibreDiagnostics.MVVM](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.MVVM)** <br/> ViewModels and MVVM utilities.<br/>Binds models to the UI, implements app logic / state, and supports data flow between monitors and views. | .NET 8 |
-| **[LibreDiagnostics.Tasks](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Tasks)** <br/> Background tasks and services (e.g. GitHub updater logic). | .NET 8 |
-| **[LibreDiagnostics.UI](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.UI)** <br/> UI entry and application wiring.<br/>Hosts [Avalonia UI](https://avaloniaui.net/) startup, icon setup, and user-facing update prompts.<br/>Contains client logic for launching the desktop app. | .NET 8 |
-| **[LibreDiagnostics.Updater](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Updater)** <br/> Standalone updater executable. | .NET 8 |
+| **[LibreDiagnostics](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics)** <br/> Main entry assembly that starts the application. | .NET 10 |
+| **[LibreDiagnostics.Language](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Language)** <br/> Localization resources and translations.<br/>Provides resources used in UI text, dialogs and messages. | .NET 10 |
+| **[LibreDiagnostics.Models](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Models)** <br/> Data models and global helpers used across the app (e.g. configuration).<br/>Central place for strongly-typed settings and shared model structures. | .NET 10 |
+| **[LibreDiagnostics.MVVM](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.MVVM)** <br/> ViewModels and MVVM utilities.<br/>Binds models to the UI, implements app logic / state, and supports data flow between monitors and views. | .NET 10 |
+| **[LibreDiagnostics.Tasks](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Tasks)** <br/> Background tasks and services (e.g. GitHub updater logic). | .NET 10 |
+| **[LibreDiagnostics.UI](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.UI)** <br/> UI entry and application wiring.<br/>Hosts [Avalonia UI](https://avaloniaui.net/) startup, icon setup, and user-facing update prompts.<br/>Contains client logic for launching the desktop app. | .NET 10 |
+| **[LibreDiagnostics.Updater](https://github.com/Blacktempel/LibreDiagnostics/tree/master/LibreDiagnostics.Updater)** <br/> Standalone updater executable. | .NET 10 |
 
 ## Reporting issues
 LibreDiagnostics is using existing hardware monitoring libraries and drivers.<br/>
